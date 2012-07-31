@@ -1,0 +1,30 @@
+body {
+    font-family: Georgia;
+    padding: 10px;
+}
+
+h1 {
+	color: green;
+    font-size: 2.0em;
+    margin: 30px 0px 20px 0px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: 20px 0px 8px 0px;
+}
+
+img {
+    display: block;
+}
+
+.caption {
+    font-style: italic;
+}
+
+.warning {
+    display: block;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 20px 0px 20px 0px;
+}
