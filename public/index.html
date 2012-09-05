@@ -1,18 +1,218 @@
- <html>
- <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>QuickSchools Online Manual</title>
+<link rel="stylesheet" href="css/style.css" />
+<!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
  	<script src="jquery-1.7.2.js"></script>
  	<script src="process.js"></script>
  	<script src="chapters.js"></script>
-    <link href="reset.css" rel="stylesheet" type="text/css"></script>
- 	<link href="manual.css" rel="stylesheet" type="text/css"></script>
- </head>
- <body onload="loadedPage();">
- 	<b>Table Of Contents</b>
- 	<div id="toc">
- 	</div>
+    
+    <!--<link href="reset.css" rel="stylesheet" type="text/css"></script>
+ 	<link href="manual.css" rel="stylesheet" type="text/css"></script> -->
 
- 	<div id="contentDiv">
- 	</div>
- </body>
- </html>
+
+
+
+
+<script>
+function ready1() {
+  function filterPath(string) {
+  return string
+    .replace(/^\//,'')
+    .replace(/(index|default).[a-zA-Z]{3,4}$/,'')
+    .replace(/\/$/,'');
+  }
+  var locationPath = filterPath(location.pathname);
+  var scrollElem = scrollableElement('html', 'body');
  
+  $('a[href*=#]').each(function() {
+    var thisPath = filterPath(this.pathname) || locationPath;
+    if (  locationPath == thisPath
+    && (location.hostname == this.hostname || !this.hostname)
+    && this.hash.replace(/#/,'') ) {
+      var $target = $(this.hash), target = this.hash;
+      if (target && $target.length > 0) {
+        $(this).click(function(event) {
+            event.preventDefault();
+            
+            var targetOffset = $target.offset().top;
+            
+            $(scrollElem).animate({scrollTop: targetOffset}, 500, function() {
+                location.hash = target;
+            });
+        });
+      }
+    }
+  });
+ 
+  // use the first element that is "scrollable"
+  function scrollableElement(els) {
+    for (var i = 0, argLength = arguments.length; i <argLength; i++) {
+      var el = arguments[i],
+          $scrollElement = $(el);
+      if ($scrollElement.scrollTop()> 0) {
+        return el;
+      } else {
+        $scrollElement.scrollTop(1);
+        var isScrollable = $scrollElement.scrollTop()> 0;
+        $scrollElement.scrollTop(0);
+        if (isScrollable) {
+          return el;
+        }
+      }
+    }
+    return [];
+  }
+} // ready 1
+
+function ready2() {
+//ACCORDION BUTTON ACTION (ON CLICK DO THE FOLLOWING)
+    $('.accordionButton').click(function() {
+
+    	//REMOVE THE ON CLASS FROM ALL BUTTONS
+		$('.accordionButton').removeClass('on');
+		  
+		//NO MATTER WHAT WE CLOSE ALL OPEN SLIDES
+	 	$('.accordionContent').slideUp(500);
+   
+		//IF THE NEXT SLIDE WASN'T OPEN THEN OPEN IT
+		if($(this).next().is(':hidden') == true) {
+			
+			//ADD THE ON CLASS TO THE BUTTON
+			$(this).addClass('on');
+			  
+			//OPEN THE SLIDE
+			$(this).next().slideDown(500);
+		 } 
+		  
+	 });
+	  
+	
+	/*** REMOVE IF MOUSEOVER IS NOT REQUIRED ***/
+	
+	//ADDS THE .OVER CLASS FROM THE STYLESHEET ON MOUSEOVER 
+	$('.accordionButton').mouseover(function() {
+		$(this).addClass('over');
+		
+	//ON MOUSEOUT REMOVE THE OVER CLASS
+	}).mouseout(function() {
+		$(this).removeClass('over');										
+	});
+	
+	/*** END REMOVE IF MOUSEOVER IS NOT REQUIRED ***/
+	
+	
+	/********************************************************************************************************************
+	CLOSES ALL S ON PAGE LOAD
+	********************************************************************************************************************/	
+	$('.accordionContent').hide();
+
+} // ready2
+
+</script>
+
+
+
+
+
+
+</head>
+
+<body onload="loadedPage();">
+
+<div id="top"></div>
+<!-- Begin Hero -->
+<div class="wrap">
+    <div class="wrap-inner">
+    
+    <aside>
+        <a href="index.html"><div class="logo"><img src="images/logo.png"></div></a>
+        <div class="top">Manual version:
+            <a href="#top" class="selected">Teachers</a>
+            <a href="#top">Administrators</a>
+            <a href="#top">Parents</a>
+            <a href="#top">Students</a>
+        </div>
+
+        <div id="wrapper">
+            
+            <div class="toc1">
+                <div class="line"></div>
+                <div class="accordionButton"><a href="#top" class="nav"><span class="chap-text">Introduction</span> <span class="chap-num">Ch. 0</span></a></div>
+                
+                <div class="toc2Holder accordionContent">
+                    <a href="#chap1-1" class="toc2 sub-nav"><span class="header-text">Sub Section</span> <span class="header-num">1.1</span></a>
+                </div>
+            
+            </div>
+            
+            <div class="line"></div>
+            
+            <div class="accordionButton"><a href="#chap1" class="nav">Teachers <span>Ch. 1</span></a></div>
+            
+            <div class="accordionContent">
+                <a href="#chap1-1" class="sub-nav">Sub Section <span>1.1</span></a><br/>
+                <a href="#chap1-2" class="sub-nav">Lorum Ipsum <span>1.2</span></a><br/>
+                <a href="#chap1-3" class="sub-nav">Dolor <span>1.3</span></a><br/>
+            </div>
+            
+            <div class="line"></div>
+            
+            <div class="accordionButton"><a href="#chap2" class="nav">Students <span>Ch. 2</span></a></div>
+            <div class="accordionContent">
+                <a href="#chap2-1" class="sub-nav">Lorum <span>2.1</span></a><br/>
+                <a href="#chap2-2" class="sub-nav">Sub Section <span>2.2</span></a><br/>
+                <a href="#chap2-3" class="sub-nav">Dolor <span>2.3</span></a><br/>
+            </div>
+            
+            <div class="line"></div>
+            
+            <div class="accordionButton"><a href="#chap3" class="nav">Attendance <span>Ch. 3</span></a></div>
+            <div class="accordionContent">
+                <a href="#chap3-1" class="sub-nav">Ipsum <span>3.1</span></a><br/>
+                <a href="#chap3-2" class="sub-nav">Dolor <span>3.2</span></a><br/>
+                <a href="#chap3-3" class="sub-nav">Sub Section <span>3.3</span></a><br/>
+            </div>
+            
+            <div class="line"></div>
+
+      	</div> <!-- wrapper -->
+    </aside>
+
+<div id="content-div">
+
+<section>
+
+<h1 class="title"><span class="header-text">Introduction</span> <span class="header-num">00</span></h1>
+<h1>Heading here</h1>
+	       
+<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. 
+Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. 
+Donec eu libero sit amet quam egestas semper. 
+<em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. 
+Quisque sit amet est et sapien ullamcorper pharetra. 
+Vestibulum erat wisi, condimentum sed, <i>commodo vitae</i>, ornare sit amet, wisi. 
+Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. 
+<a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+
+</section> 
+
+</div> <!-- content-div -->
+
+<footer>
+Copyright 2012 Quickschools
+</footer>
+</div>
+</div>
+
+
+</body>
+</html> 

@@ -23,35 +23,87 @@ function loadedPage() {
 }
 
 function renderChapters() {
-	var toc = $("#toc");
-	var contentDiv = $("#contentDiv");
-
+    var toc1 = $(".toc1");
+    var tocParent = toc1.parent();
+    
+    tocParent.empty();
+    
+    var contentDiv = $("#content-div");
+    contentDiv.empty();
+    
 	for(var i=0; i<chapterData.length; i++) {
 
-		var chapterTitle = $(chapterData[i]).filter("h1").text();
+        var h1Id = $(chapterData[i]).find("h1").attr("id");
+        if(h1Id == null || h1Id == "") {
+            h1Id = "chapter-" + i;
+        }
+        
+        
+		var chapterTitle = $(chapterData[i]).find("h1").text();
 		
-		toc.append("<div>" + chapterTitle + "</div>");
-
-        var body = $(chapterData[i]);
-		contentDiv.append(body);
+        var newToc = toc1.clone();
+        
+        newToc.find(".accordionButton>a").attr("href", "#" + h1Id);
+        newToc.find(".chap-text").text(chapterTitle);
+        newToc.find(".chap-num").text(getChapNum(i));
+        
+        console.log("newToc", newToc);
+        
+        tocParent.append(newToc);
+        
+        var chapterFile = $(chapterData[i]);
+        var chapterContent = chapterFile.filter(".content");
+        
+        contentDiv.append("<div class='anchor' id='" + h1Id + "'></div>");
+        
+        var section = $("<section></section>");
+        section.append(chapterContent);
+        
+        
+		contentDiv.append(section);
+        
+        processHeaders(h1Id, chapterContent, i, newToc);
 	}
-
-	processHeaders();
+    
+    ready1();
+    ready2();
 }
 
-function processHeaders() {
-	var body = $("html");
-	var headers = body.find("h1");
+function processHeaders(h1Id, section, i, newToc) {
+	var header = section.find("h1");
 
-	console.log("Found headers: ", headers.length);
-
-	for(var i=0; i<headers.length; i++) {
-		var h = $(headers[i]);
-		var headerText = h.text();
-		h.text("Chapter " + (i+1) + " - " + headerText);
-
-		var chNodes = getNodes(h, "h1");
-	}
+	var headerText = header.text();
+    
+    header.empty();
+    header.append("<span class='header-text'>" + headerText+ "</span><span class='header-num'>" + getChapNum(i) + "</span>");
+    
+    var toc2Holder = newToc.find(".toc2Holder");
+    var toc2 = newToc.find(".toc2");
+    toc2.detach();
+    
+    var h2s = section.find("h2");
+    
+    for(var j=0; j<h2s.length; j++) {
+        var h2 = $(h2s[j]);
+        var h2Text = h2.text();
+        var h2Id = h2.attr("id");
+        if(h2Id == null || h2Id == "") {
+            h2Id = "chapter-" + i + "-" + j;
+        }
+        
+        h2.empty();
+        h2.append("<span id='" + h2Id + "' class='header-text'>" + h2Text + "</span><span class='header-num'>" + getSubNum(i, j) + "</span>");
+        
+        var newToc2 = toc2.clone();
+        newToc2.attr("href", "#" + h2Id);
+        newToc2.find(".header-text").text(h2Text);
+        newToc2.find(".header-num").text(getSubNum(i, j));
+        toc2Holder.append(newToc2);
+    }
+    
+    if(h2s.length == 0) {
+        toc2Holder.detach();
+    }
 }
 
 function getNodes(firstNode, endTag) {
@@ -83,4 +135,13 @@ function loadHtml(htmlFile, successFunction) {
       },
       dataType: "html"
     });
+}
+
+function getChapNum(index) {
+    var chapNum = index+1;
+    return "Ch. " + chapNum;
+}
+
+function getSubNum(index1, index2) {
+    return (index1+1) +"." + (index2+1);
 }
