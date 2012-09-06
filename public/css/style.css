@@ -226,6 +226,14 @@ section {
 	width:690px;
 }
 
+.video {
+    background-color:#ecf5f8;
+	text-align:center;
+	padding:5px;
+	margin:20px auto 20px auto;
+	width:690px;
+}
+
 .caption {
     display: block;
 	text-align:center;
