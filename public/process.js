@@ -1,4 +1,5 @@
 var chapterData = [];
+var pauseHashChangeDetection = false;
 
 function loadedPage() {
 	console.log("Loading chapters " + chapters.length);
@@ -35,7 +36,7 @@ function renderChapters() {
 
         var h1Id = $(chapterData[i]).find("h1").attr("id");
         if(h1Id == null || h1Id == "") {
-            h1Id = "chapter-" + i;
+            h1Id = "chapter-" + (i+1);
         }
         
         
@@ -65,8 +66,7 @@ function renderChapters() {
         processHeaders(h1Id, chapterContent, i, newToc);
 	}
     
-    ready1();
-    ready2();
+    finalSteps();
 }
 
 function processHeaders(h1Id, section, i, newToc) {
@@ -88,7 +88,7 @@ function processHeaders(h1Id, section, i, newToc) {
         var h2Text = h2.text();
         var h2Id = h2.attr("id");
         if(h2Id == null || h2Id == "") {
-            h2Id = "chapter-" + i + "-" + j;
+            h2Id = "chapter-" + (i+1) + "-" + (j+1);
         }
         
         h2.empty();
@@ -106,23 +106,118 @@ function processHeaders(h1Id, section, i, newToc) {
     }
 }
 
-function getNodes(firstNode, endTag) {
-	console.log("First:", firstNode);
+function finalSteps() {
+    $(".initial-load").hide();
+    $(".post-load").show();
+    
+    processAnchors();
+    ready2();
+    
+    // Process initial hash
+    var hash = window.location.hash;
+    if(hash != null && hash != "") {
+        console.log("Initial scrollto:", hash);
+        var anchor = $("a[href=" + hash +"]").first()
+        scrollToSection(anchor, false);
+    }
+    
+    $(window).hashchange(function(event) {
+        if(!pauseHashChangeDetection) {
+            console.log("Triggering hash change:", location.hash);
+            
+            var anchor = $("a[href=" + location.hash +"]");
+            console.log("Anchor is ", anchor);
+            
+            scrollToSection(anchor, false);
+        }
+    });
+    
+}
 
-	var chNodes = [];
+function filterPath(string) {
+    return string.replace(/^\//, '').replace(/(index|default).[a-zA-Z]{3,4}$/, '').replace(/\/$/, '');
+}
 
-	var nextNode = firstNode.next();
-	for(var i=0; i<10; i++) {
+// use the first element that is "scrollable"
+function scrollableElement(els) {
+    for (var i = 0, argLength = arguments.length; i < argLength; i++) {
+        
+        var el = arguments[i];
+        var $scrollElement = $(el);
+        
+        if ($scrollElement.scrollTop() > 0) {
+            return el;
+        }
+        else {
+            $scrollElement.scrollTop(1);
+            var isScrollable = $scrollElement.scrollTop() > 0;
+            $scrollElement.scrollTop(0);
+            if (isScrollable) {
+                return el;
+            }
+        }
+    }
+    return [];
+}
 
-		if(nextNode.length == 0) break;
+var scrollElem = scrollableElement('html', 'body');
+console.log("Scroll elem:", scrollElem);
 
-		//console.log("Next node:", nextNode);
-		chNodes[chNodes.length] = nextNode[0];
+function processAnchors() {
+    var locationPath = filterPath(location.pathname);
 
-		nextNode = nextNode.next();
-	}
+    var anchors = $('a[href*=#]');
+    
+    for(var i=0; i<anchors.length; i++) {
+        var anchor = anchors[i];
+        
+        var thisPath = filterPath(anchor.pathname) || locationPath;
+        if (locationPath == thisPath && (location.hostname == anchor.hostname || !anchor.hostname) && anchor.hash.replace(/#/, '')) {
+            var $target = $(anchor.hash);
+            var target = anchor.hash;
+            
+            if (target && $target.length > 0) {
+                $(anchor).click(function(anchor, $target, target) {
+                    return function(event) {
+                        event.preventDefault();
+    
+                        var targetOffset = $target.offset().top;
+                        console.log("Anchor: ", anchor, "Target:", $target, targetOffset);
+    
+                        scrollToSection($(anchor), true);
+                    }
+                }(anchor, $target, target));
+            }
+        }
+    }
+}
 
-	console.log("Next:", chNodes);
+function scrollToSection($anchor, isFromClick) {
+    var target = $anchor[0].hash;
+    var $target = $(target);
+        
+    var offset = $target.offset().top;
+        
+    $('html, body').stop().animate({
+        scrollTop: offset
+    }, 500, function() {// We need to check again because pictures may still be loading.
+        var offset = $target.offset().top;
+        $('html, body').stop().animate({
+            scrollTop: offset
+        }, 100, function() {
+            console.log("Done scrolling");
+            if(isFromClick) {
+                console.log("Setting location.hash now");
+                pauseHashChangeDetection = true;
+                
+                location.hash = target;
+                
+                setTimeout(function() {
+                    pauseHashChangeDetection = false;
+                }, 500);
+            }
+        });
+    });
 }
 
 function loadHtml(htmlFile, successFunction) {

@@ -227,6 +227,7 @@ section {
 }
 
 .caption {
+    display: block;
 	text-align:center;
 	margin-bottom:0px;
 }
@@ -344,6 +345,7 @@ cite {
 
 ul {
 	list-style:inside;
+    margin-top: 10px;
 	margin-left:40px;
 }
 
@@ -483,6 +485,24 @@ footer{
 	margin-left:10px;
 	_float: none; /* Float works in all browsers but IE6 */
 	padding-bottom:20px;
+}
+
+/***
+ * [aris] My additions
+ */
+.loading-section {
+    background:url(../images/transparent-loading.gif);
+    background-repeat:no-repeat;
+    background-position:50% 10px;
+    clear:both;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.post-load {
+    display: none;
 }
 	
 /***********************************************************************************************************************
