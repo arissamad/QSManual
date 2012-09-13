@@ -299,6 +299,15 @@ h1 .header-num {
 	position:absolute;
 }
 
+h1 .header-comments-link {
+    color: red;
+    font-size: 10px;
+    text-decoration: underline;
+    float: right;
+    margin-right: 110px;
+    cursor: pointer;
+}
+
 h2 {
 	position:relative;
 	padding-bottom:10px;

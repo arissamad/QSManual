@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Discuss QuickSchools Manual</title>
+</head>
+
+<body>
+
+<h1>Discuss</h1>
+Let's see...
+
+<div id="disqus_thread"></div>
+
+<script>
+    var disqus_developer = 1;
+    
+    var href = location.href;
+    console.log("HRef is ", href);
+    var i = href.indexOf("comments/");
+    var cl = "comments/".length;
+    
+    if(i >= 0) {
+        var endIndex = href.indexOf("/", i + cl);
+        console.log("Begin:", i, "End:", endIndex);
+        var disqus_identifier = href.substring(i + cl, endIndex);
+        console.log("got:", disqus_identifier);
+        
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://qsmanual.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+            
+    } else {
+        console.log("Got nothing.");
+    }
+</script>
+
+</body>
+</html>

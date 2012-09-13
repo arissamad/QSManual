@@ -23,9 +23,15 @@ function loadedPage() {
 	}
 }
 
+var h1Template;
+var h2Template;
+
 function renderChapters() {
     var toc1 = $(".toc1");
     var tocParent = toc1.parent();
+    
+    h1Template = $("h1").first();
+    h2Template = $("h2").first();
     
     tocParent.empty();
     
@@ -75,7 +81,15 @@ function processHeaders(h1Id, section, i, newToc) {
 	var headerText = header.text();
     
     header.empty();
-    header.append("<span class='header-text'>" + headerText+ "</span><span class='header-num'>" + getChapNum(i) + "</span>");
+    var newH1 = h1Template.clone();
+    newH1.find(".header-text").text(headerText);
+    newH1.find(".header-num").text(getChapNum(i));
+    
+    newH1.find(".header-comments-link").click(function() {
+        window.open("./comments/" + h1Id + "/", "_blank");
+    });
+    
+    header.append(newH1.children());
     
     var toc2Holder = newToc.find(".toc2Holder");
     var toc2 = newToc.find(".toc2");
@@ -92,7 +106,10 @@ function processHeaders(h1Id, section, i, newToc) {
         }
         
         h2.empty();
-        h2.append("<span id='" + h2Id + "' class='header-text'>" + h2Text + "</span><span class='header-num'>" + getSubNum(i, j) + "</span>");
+        var newH2 = h2Template.clone();
+        newH2.find(".header-text").text(h2Text);
+        newH2.find(".header-num").text(getSubNum(i, j));
+        h2.append(newH2.children());
         
         var newToc2 = toc2.clone();
         newToc2.attr("href", "#" + h2Id);
