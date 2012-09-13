@@ -4,6 +4,9 @@ console.log("Here");
 var express = require('express');
 var app = express.createServer(express.logger()); // Can put in express.logger("tiny") or express.logger() if you want debugging
 
+//Favicon
+app.get("/favicon.ico", express.favicon(__dirname + "/public/favicon.ico"));
+
 // Static files in public
 app.use(express.static(__dirname + "/public"));
 
