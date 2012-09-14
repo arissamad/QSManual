@@ -521,6 +521,24 @@ footer{
 .post-load {
     display: none;
 }
+
+.comment {
+    font-style: italic;
+    line-height: 1.2em;
+    padding: 10px;
+    background: #003c31;
+    color: white;
+    margin: 10px 50px;
+}
+
+.andy {
+    border: 2px solid red;
+}
+
+img.inline {
+    vertical-align: bottom;
+    zoom: 0.8;
+}
 	
 /***********************************************************************************************************************
  EXTRA STYLES ADDED FOR MOUSEOVER / ACTIVE EVENTS
