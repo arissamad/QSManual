@@ -7,4 +7,3 @@ chapters[chapters.length] = "04-admissions.html";
 chapters[chapters.length] = "05-attendance.html";
 chapters[chapters.length] = "06-gradebook.html";
 chapters[chapters.length] = "063-ksgradebook.html";
-chapters[chapters.length] = "065-jeangradebook.html";
