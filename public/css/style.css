@@ -637,6 +637,10 @@ img.inline {
 	top:50px;
 	
 }	
+
+#printIframe{
+    display: none;
+}
 	
 /***********************************************************************************************************************
  EXTRA STYLES ADDED FOR MOUSEOVER / ACTIVE EVENTS
