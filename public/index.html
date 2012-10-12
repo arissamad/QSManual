@@ -66,8 +66,14 @@ function ready2() {
     
     /** ADD PRINT CAPABLITY **/
     $(".print-icon").click(function(){
+        //loading icon
+        //var $loadingDiv = $("<div/>").addClass("loading-section-cover");
+        //$loadingDiv.prependTo("body");
+        
         var $this = $(this);
         var $section = $this.parents("section");
+
+        
     
         var $iframe;
         if($("#printIframe").length > 0){
@@ -80,16 +86,19 @@ function ready2() {
             $iframe.prependTo("body");
         }
          
+        var $iframeHead = $iframe.contents().find("head");
         var $iframeBody = $iframe.contents().find("body");
+        
         //append stylesheet
-        $iframeBody.append("<link rel='stylesheet' type='text/css' media='print' href='css/print.css' />");
+        $iframeHead.append("<link rel='stylesheet' type='text/css' media='print' href='css/print.css' />");
         
         //append section content
         $iframeBody.append($section.html());
         
         var w = window.frames['printIframe'];
-        w.focus();
+        w.focus();//IE
         w.print();
+        //$loadingDiv.remove();
         
         
     });
@@ -113,7 +122,7 @@ function ready2() {
 </head>
 
 <body onload="loadedPage();">
-
+<img style="position:fixed; z-index:999999;" src="images/beta.png">
 <div id="top"></div>
 <!-- Begin Hero -->
 
@@ -128,8 +137,7 @@ function ready2() {
         </div>
         
         <div class="post-load">
-        
-            <div class="top">Manual version:
+            <div class="top">Online Manual Version:
                 <a href="#top" class="selected">Teachers</a>
                 <a href="#top">Administrators</a>
                 <a href="#top">Parents</a>

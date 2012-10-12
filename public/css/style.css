@@ -337,9 +337,10 @@ h2 span.header-num {
 
 p {
 	line-height:24px;
-	font-size:13px;
+	font-size:14px;
 	letter-spacing:normal;
 	margin-bottom:20px;
+    font-family: 'ProximaNovaRegular';
 }
 
 label {
@@ -521,7 +522,16 @@ footer{
 
 /***
  * [aris] My additions
- */
+ */ 
+.loading-section-cover{
+    background:url(../images/transparent-loading.gif);
+    background-repeat:no-repeat;
+    background-position:50% 50%;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+} 
+ 
 .loading-section {
     background:url(../images/transparent-loading.gif);
     background-repeat:no-repeat;
@@ -639,7 +649,7 @@ img.inline {
 }	
 
 #printIframe{
-    display: none;
+    display:none;
 }
 	
 /***********************************************************************************************************************
