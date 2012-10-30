@@ -7,19 +7,19 @@
 
 <div class="content">
 <h1 id="stu-ks">Students</h1>
-<div class="summary"><p>The <b>Students</b> portal is a gateway to a comprehensive database of student-related information, 
-linking basic student directory record information to related data of interest, such as 
-Parents/Siblings, Gradebook, Homework, Attendance, Bills, Medical, Reports and Certificates.
-QuickSchools also offers administrators the ability to link additional custom fields of their choice to 
-this area of the site.<p>
+<div class="summary"><p>The <b>Students</b> tab is a gateway to a comprehensive database of student-related information, 
+linking basic student directory record information (such as biographical and school-related data and contact information)
+to related data of interest in categories such as Parents/Siblings, Gradebook, Homework, Attendance, Bills, Medical, 
+Reports and Certificates.QuickSchools also offers administrators the ability to link additional custom fields of their 
+choice to this area of the site.<p>
 
-<p>For teachers, the Students portal is a convenient way to see at a glance which students are 
+<p>For teachers, the Students tab is a convenient way to see at a glance which students are 
 enrolled in their classes, as well as follow their progress through the Attendance, Gradebook, and Homework 
 tabs. Parents and students may also find the Student portal extremely useful in keeping track of attendance,
 homework, and academic development in multiple subjects.</p>
 </div>
 
-<h3>A video tutorial giving an overview of the Students portal and how to utilize its main features can be viewed in 
+<h3>A video tutorial giving an overview of the Students tab and how to utilize its main features can be viewed in 
 two parts, as follows:</h3>
 <div class="video">Video link coming soon
 </div>
@@ -31,10 +31,431 @@ Features described include adding student records manually and via import from X
 address and class information, uploading a photo, managing parent and sibling relationships, searching student data, 
 sorting by different categories, managing medical data, uploading certificates, and adding custom fields.</p>
 
+<ul>
+<li><a href="#accessingstudents">Accessing the Students Tab</a></li>
+<li><a href="#addingstudents">Adding Student Records Manually</a></li>
+<ul>
+<li><a href="#enteringinfo">Entering Contact Information</a></li>
+</ul>
+<li><a href="#importing">Importing Student Records from Excel</a></li>
+<li><a href="#managing">Displaying and Managing Student Records</a></li>
+<ul>
+<li><a href="#reversealpha">Displaying Students in Reverse Alphabetical Order</a></li>
+<li><a href="#removing">Removing Students From Active Enrolled Status</a></li>
+<li><a href="#search">Using the Search Feature to Display a Subset of Students</a></li>
+<li><a href="#modifying">Modifying Page Display</a></li>
+</ul>
+<li><a href="#editingstudents">Editing Student Records</a></li>
+<ul>
+<li><a href="#uploadingphoto">Uploading a Photo</a></li>
+<li><a href="#enrollmentstatus">Changing Enrollment Status</a></li>
+<li><a href="#editsubjects">Editing Subjects in Student Schedule</a></li>
+<li><a href="#editbio">Editing Biographical and School Data</a></li>
+<li><a href="#editcontact">Editing Contact Information</a></li>
+</ul>
+<li><a href="#parentsibling">Managing Parent and Sibling Relationships</a></li>
+<ul>
+<li><a href="#addingsiblings">Adding Siblings</a></li>
+<li><a href="#addingparents">Adding Parents and Guardians</a></li>
+<li><a href="#managingcomplex">Managing Complex Student-Parent Relationships</a></li>
+</ul>
+<li><a href="#gradebook">Gradebook</a></li>
+<li><a href="#attendance">Attendance</a></li>
+<ul>
+<li><a href="#editingattendance">Editing Student Attendance</a></li>
+</ul>
+<li><a href="#medical">Medical</a></li>
+<li><a href="#reports">Reports</a></li>
+<li><a href="#certificates">Certificates</a></li>
+<li><a href="#customfields">Custom Fields</a></li>
+</ul>
+
+<h2 id="accessingstudents">Accessing the Students Tab</h2>
+<p>To access the student information tab from your login page, click on the <b>Students</b> link in the green 
+bar at the top of the screen, as shown:</p>
+
+<div class="center"><img src="images_ks_students/accessingstudents.png" /></div>
+
+<p>Now you are ready to add and manage student records! Students can be manually added one by one, or imported as a group from an Excel file.</p>
+
+<h2 id="addingstudents">Adding Student Records Manually</h2>
+<p>If you are accessing the <b>Students</b> tab for the first time, the page will be empty initially, and will look like this:<p>
+
+<div class="center"><img src="images_ks_students/emptystudents.png" /></div>
+
+<p>To add an individual student, click on the <b>Add Student</b> button 
+(<img class="inline" src="images_ks_students/addstudentbutton.png" />). This will bring up an 
+<b>Add New Student</b> record entry that can be completed to add the student to the list:</p>
+
+<div class="center"><img src="images_ks_students/newstudentrecord.png" /></div>
+
+<p>If you would like to sort the students by last name, be sure to enter them as [Last Name], [First Name] 
+in the name field; otherwise they will be alphabetized by first name. The student's <b>preferred name</b> or nickname can be entered separately on the following line. 
+Other identifying information includes the student's <b>birthdate</b>, <b>gender</b>, and <b>nationality</b>. Each student 
+record should also be associated with the student's <b>current grade</b> (selected from a dropdown menu from Kindergarten through 
+Grade 12), and <b>homeroom teacher</b>, so that student records may be sorted by grade level and class lists may be made 
+for each teacher.</p>
+
+<h3 id="enteringinfo">Entering Contact Information</h3>
+
+<p>The lower half of the New Student record consists of <b>contact information</b>, including current address, telephone 
+numbers, fax, and email. Filling these fields in completely with accurate information ensures that teachers and 
+administrators can easily contact students and their families when necessary. After all fields have been completed, click 
+on the red <b>Save</b> button (<img class="inline" src="images_ks_students/savebutton.png" />) or type <i>Ctrl-S</i>.</p>
+
+<p>Should you wish to exit without saving (therefore <i>not</i> adding the student record), you may do so by 
+clicking on the <b>Close</b> button (<img class="inline" src="images_ks_students/closebutton.png" />) to escape the screen.
+
+<h2 id="importing">Importing Student Records from Excel</h2>
+
+<p>An efficient way to add large numbers of students to your QuickSchools account is to use the <b>Import</b>
+feature. To do this you need to have your student data accessible in an Excel file, one with either an ".xls" or
+".xlsx" extension. QuickSchools will automatically analyze your file and map commonly-named columns 
+to the fields in a QuickSchools student record.</p>
+
+<p>To proceed, click on the <b>Import</b> button (<img class="inline" src="images_ks_students/importbutton.png" />).
+This will bring up a file selection screen, as shown:</p>
+
+<div class="center"><img src="images_ks_students/importscreen1.png" /></div>
+
+<p>Once you select the .xls or .xlsx file containing your student data, you will see a second screen 
+displaying each set of data from your file and the corresponding field it will be mapped to in the 
+QuickSchools database:</p>
+
+<div class="center"><img src="images_ks_students/modifyimport.png" /></div>
+
+<p>First, check to make sure that the file you have selected is correct. If not, click on the <b>Change</b> link and 
+select the right one. Each field in the .xls or .xlsx file will be mapped to a corresponding field in 
+the QuickSchools database. Again, if the choice given is not the best one, you can change it by selecting 
+a different one from the drop-down menu. If you want to omit an entire column of data and prevent it from 
+being mapped onto a QuickSchools field, place your mouse over the <b>Don't import this column</b> button 
+(<img class="inline" src="images_ks_students/dontimportbutton.png" />) on the right and click it to prevent 
+that data set from being uploaded.</p>
+
+<p>When you have made all the necessary changes, scroll down to the bottom of the screen, which should look like this:</p>
+
+<div class="center"><img src="images_ks_students/importdatabutton.png" /></div>
+
+<p>Now click the red button 
+<b>Click here to import data</b> (<img class="inline" src="images_ks_students/redimportbutton.png" />) to initiate the
+import. Depending on the size of your file, the process may take a few minutes, during which time you may see either of the 
+following popup message boxes:</p>
+
+<div class="center"><img src="images_ks_students/processing1.png" /> or <img src="images_ks_students/processing2.png" />  </div>
+
+<p>After the import process is complete, your data will be added to your QuickSchools account!</p>
+
+<h2 id="managing">Displaying and Managing Student Records</h2>
+
+<p>Once you have entered or imported student record data into QuickSchools, your <b>Students</b> tab will 
+list those students on the main page, <b>in alphabetical order by the first letter in the Name field</b> (this means that if 
+you want them to be sorted by last name, you must enter the last name first), as shown below:</p>
+
+<div class="center"><img src="images_ks_students/studentspage.png" /></div>
+
+<h3 id="reversealpha">Displaying Students in Reverse Alphabetical Order</h3>
+
+<p>It is easy to display students in reverse alphabetical order; click once on the dark green border labeled 
+<b>Student</b> next to the white triangle and it will reverse to list them from "Z" to "A."</p>
+
+<h3 id="removing">Removing Students from Active Enrolled Status</h3>
+
+<p>The checkboxes on the left-hand side of the <b>Students</b> screen can be used to select records and remove 
+them from active enrolled status, either individually or globally.</p>
+<div class="center"><img src="images_ks_students/changestatusdropdown.png" /></div>
+
+<p>Use the dropdown menu at the top of the column 
+to globally select all records or deselect all records on the page. The menu can also be used to mark selected
+students as having graduated, having left the school, or having been expelled. Finally, records can be deleted 
+entirely. Use caution when utilizing this menu as there is no confirmation screen appearing 
+prior to the deletion or status modification of student records. If you erroneously delete or de-enroll a 
+student, you can reverse this action by searching for and entering the student record and either un-deleting it, or 
+changing the enrollment status back to active (see <a href="#search"><b>Using the Search Feature</b></a> and 
+<a href="#editingstudents"><b>Editing Student Records</b></a> below)</p>
+
+<h3 id="search">Using the Search Feature to Display a Subset of Students</h3>
+
+<p>If you would like to locate a single student record, or a set of records that share a single attribute (such 
+as students in a particular homeroom or grade level, you can use the search box at the top right of the screen,
+ as shown here in this sample search for first grade students:</p>
+
+<div class="center"><img src="images_ks_students/searchdemo.png" /></div>
+
+<p>To clear the search and return to the full list of students, click the <b>Clear Search</b> link directly below 
+the search box.</p>
+
+<div class="left"><img src="images_ks_students/searchdropdown.png" /></div>
+
+<p>The search feature will automatically pull records from the list of <b>active students</b>. If you would like it to 
+include students <b>who have been deleted</b>, students <b>who have left</b>, and <b>expelled students</b>, you can select those 
+additional categories by checking the appropriate boxes on the dropdown menu activated by clicking on the triangle
+at the far right of the search box, as shown to the left. When you have made your selections, click on the red 
+<b>Search</b> button (<img class="inline" src="images_ks_students/searchbutton.png" />) to complete the search.</p>
+
+<p>Search returns including deleted records will indicate which are no longer active with the inclusion 
+of the words <b>Status: Deleted</b> in bold below the name of the student, as shown below:</p>
+
+<div class="center"><img src="images_ks_students/searchdisplaydeleted.png" /></div>
+
+<p>If you wish to undelete or otherwise restore a departed or expelled student to active enrolled status, you 
+must enter the record by clicking on it and using the enrollment menu to change status (see 
+<a href="#editingstudents"><b>Editing Student Records</b></a> below for more detailed description of this process).</p>
+
+<h3 id="modifying">Modifying Page Display to Change Number of Rows Per Page</h3>
+
+<p>The number of students displayed on the screen may be set and/or customized by clicking on this icon 
+(<img class="inline" src="images_ks_students/tableviewicon.jpg" />) in the very last row 
+in the table. This reveals the following selection menu:</p>
+
+<div class="center"><img src="images_ks_students/tableviewmenu.jpg" /></div>
+
+<p>As indicated, the default setting is to display 10 rows on the screen; additional rows will then be shown 
+on subsequent screens. You may change this to enable viewing of 25, 50, or 100 column categories at a time. The number of rows can also be 
+customized by selecting the <b>Custom</b> selection, in which case you will be prompted to sfill in the desired number of rows to be 
+made visible per page by the following popup box:</p>
+
+<div class="center"><img src="images_ks_students/customrows.jpg" /></div>
+
+<p>Enter the desired number of rows to display and click on the <b>OK</b> button (<img class="inline" src="images_ks_students/okbutton.jpg" />) 
+to save your preference.</p>
+
+<p>Finally, to restore the selection to the default, select <b>Clear Preferences</b> from the selection menu. This will erase any prior 
+selection you may have made and revert to the default view of the <b>Students</b> page.</p>
+
+<h2 id="editingstudents">Editing Student Records</h2>
+
+<p>To view and edit an individual student record, click on the desired row on the main <b>Students</b> page. This 
+will bring up the long view of the record, as shown below:</p>
+
+<div class="center"><img src="images_ks_students/samplestudentrecord.png" /></div>
+
+<p>Now you can <a href="#uploadingphoto"><b>add a photo</b></a>, change a student's <a href="#enrollmentstatus"><b>enrollment status</b></a>, 
+<a href="#editsubjects"><b>modify the subjects</b></a> in which a student is enrolled, 
+<a href="#editbio"><b>edit biographical and school data</b></a> (such as gender, birth date, and nationality, grade or
+homeroom teacher information), and/or <a href="#editcontact"><b>update contact information</b></a> for the student. 
+In addition, tabs at the bottom provide an easy way to link the student's record with other information, such as
+parent/sibling data, documentation of academic progress, medical records, reports, and certificates. Custom 
+fields can also be defined and linked to student records.</p>
+
+<h3 id="uploadingphoto">Uploading a Photo</h3>
+
+<div class="left"><img src="images_ks_students/upload.png" /></div>
+<p>Adding a photo to a student record is easy! You can either drag and drop the image onto the photo box, or
+click on the <b>Upload Photo</b> button  (<img class="inline" src="images_ks_students/uploadphoto.png" />) and 
+select the image from your hard drive.</p>
+<p>Then click on the red <b>Save</b> button (<img class="inline" src="images_ks_students/savebutton.png" />) 
+to associate the image with the student record.</p>
+<div class="center"><img src="images_ks_students/samplephoto1.png" /></div>
+
+<p>The image should appear in the photo box, and also as a thumbnail on the centralized list of records on 
+the <b>Students</b> page.</p>
+
+<div class="center"><img src="images_ks_students/thumbnail.png" /></div>
+
+<p>Student records are divided into <b>three sections</b> on the screen. The <b>upper box</b> consists of important school enrollment 
+information and biographical data, the <b>second box</b> contains contact information, and the <b>lower section</b> of the record is organized
+into individual tabs that associate the student with other records in the database. Information in these boxes may be edited or 
+added, and then saved to the student's record by clicking on the red <b>Save</b> button (<img class="inline" src="images_ks_students/savebutton.png" />) 
+at the top of the screen.</p>
+
+<div class="center"><img src="images_ks_students/enrollment.png" /></div>
+
+<h3 id="enrollmentstatus">Changing Enrollment Status</h3>
+
+<p>A student's enrollment status may be changed from inside the record through the gray dropdown <b>Actions</b> menu. 
+First, check the student's current status, which is listed at the top of the record in the upper box, to the left of the <b>Actions</b>
+ menu. Then scroll over the menu header to display your choices.</p>
+ 
+<div class="center"><img src="images_ks_students/actionsmenu.png" /></div>
+
+<p>You may delete the record, mark the student as having left the school, having been expelled, or having graduated. Once selected, this will 
+change the status listed to the left of the <b>Actions</b> menu, and the new status will be reflected on the student's transcript 
+as well. Deleted students can also be restored to active enrolled status through this menu.</p>
+
+<p>If the student has not yet left the school, but is planning to do so at a future date, you can indicate that by selecting <b>Set Leave Date</b>. 
+Selecting this option will cause a <b>Set Leave Date</b> popup box to appear, as shown:</p>
+ 
+<div class="center"><img src="images_ks_students/setleavedatepopup.png" /></div>
+
+<p>Clicking on the box provided for the leave date will bring up a small calendar for easy date selection. Choose the leave 
+date by clicking on the appropriate day on the calendar, and then the red <b>Save</b> button
+(<img class="inline" src="images_ks_students/saveleavedate.png" />).</p>
+
+<div class="center"><img src="images_ks_students/leavedateselection.png" /></div>
+
+<p>The selected leave date will now appear next to the student's status in the student record, and is also automatically 
+copied to the transcript.</p>
+
+<h3 id="editsubjects">Editing Subjects in Student Schedule</h3>
+
+<p>The student record can be set to display the schedule of subjects currently taken by the student, and the name of the teacher 
+of each class. It is easy to change the list of subjects by clicking on the <b>Edit</b> link next to the gray Subjects box:</p>
+
+<div class="center"><img src="images_ks_students/subjectsbox.png" /></div>
+
+<p>This will bring up an Edit Subjects popup box that looks like this:</p>
+
+<div class="center"><img src="images_ks_students/subjectspopup.png" /></div>
+
+<p>The list of classes on the left side are those in which the student is currently enrolled. You can remove a student from an enrolled 
+subject by clicking on the <b>Unenroll</b> link. Use the table view icon (<img class="inline" src="images_ks_students/tableviewicon.jpg" />)
+at the bottom to change the number of courses that can be be seen on a single screen.</p>
+
+<p>On the right-hand side of the popup box, we see a list of available subjects for the student's grade level (in this example, 
+1st grade). Clicking on <b>Enroll</b> next to the available Math class will enroll the student and move the subject to the 
+left side, adding it to the list of enrolled subjects, as shown:</p>
+
+<div class="center"><img src="images_ks_students/addingmath.png" /></div>
+
+<p>You may find additional subjects to add by either changing the grade level in the drop-down menu, or using the Search box. 
+Students may be enrolled in courses listed for any grade level, with permission from the instructor or administrator. Don't 
+forget to click on the red <b>OK</b> button (<img class="inline" src="images_ks_students/okbutton.jpg" />)  to save any changes you have made to the student record.</p>
+
+<p>Now the updated list of subjects will appear in the <b>Subjects</b> column on the main page:</p>
+
+<div class="center"><img src="images_ks_students/updatingsubjects.png" /></div>
+
+<h3 id="editbio">Editing Biographical and School Data</h3>
+
+<p>Note that the student's grade level and homeroom teacher are also visible on the main page; these fields can be edited in the 
+upper box of the long view of the student record as well, along with fields for the student's birth date, gender and nationality:</p>
+
+<div class="center"><img src="images_ks_students/editingrecord.png" /></div>
+
+<h3 id="editcontact">Editing Contact Information</h3>
+<p>The second box displayed in the long view of the student record consists of <b>contact information</b>, including current address, 
+telephone numbers, fax, and email.</p>
+
+<div class="center"><img src="images_ks_students/contactinfo.png" /></div>
+
+<p>Filling these fields in completely with accurate information ensures that teachers and 
+administrators can easily contact students and their families when necessary. After all fields have been completed, click 
+on the red <b>Save</b> button (<img class="inline" src="images_ks_students/savebutton.png" />) or type <i>Ctrl-S</i>.</p>
+
+<h2 id="parentsibling">Managing Parent and Sibling Relationships</h2>
+
+<p>The <b>Parent/Siblings</b> tab enables the student's record to be linked to sibling records and parent information, including 
+emergency contact information, and designation of people eligible to pick up a child from school.</p> 
+
+<h3 id="addingsiblings">Adding Siblings</h3>
+
+<p>To add siblings, place your cursor in the <b>Siblings</b> box. This will bring up the comprehensive list of students 
+in the database as a drop-down menu, from which siblings can be selected, as shown:</p>
+
+<div class="center"><img src="images_ks_students/siblingselection.png" /></div>
+
+<p>Selected siblings will appear in the Siblings box, as seen below:</p>
+
+<div class="center"><img src="images_ks_students/complexsiblings.png" /></div>
+
+<p>Adding siblings will automatically associate the parents of the selected siblings with the current student record. 
+Now you can add additional parents and guardians, and designate complex relationships between siblings with different parents.</p>
+
+<h3 id="addingparents">Adding Parents and Guardians</h3>
+
+<p>To add a parent or guardian to the student record, click on the <b>Add parent/guardian</b> button 
+(<img class="inline" src="images_ks_students/addparentbutton.png" />) at the bottom of the page.</p> Then fill out the 
+parent form, including relationship to the student, contact information, and communication preferences.
+The parent/guardian record should also designate whether the parent or guardian is 
+ authorized to pick up the student from school and/or is an emergency contact for that student.</p>
+
+<div class="center"><img src="images_ks_students/addingparent.png" /></div>
+
+<p>After completing the parent/guardian form, don't forget to click on the red <b>Save</b> button 
+(<img class="inline" src="images_ks_students/saveleavedate.png" />) to associate the new parent or guardian information
+with the student's record.</p>
+
+<h3 id="managingcomplex">Managing Complex Student-Parent Relationships</h3>
+
+<p>In recognition of the fact that many families today are blended or contain complex sibling and parent relationships, 
+QuickSchools makes it possible to designate specific relationships between siblings and parents. To use this feature, click on 
+the <b>Manage Complex Relationships</b> link located directly under the Siblings box.</p>
+
+<div class="center"><img src="images_ks_students/managecomplex.png" /></div>
+
+<p>This will bring up a <b>Manage Complex Student-Parent Relationships</b> box listing the student and all siblings linked with 
+that student. The identities of associated parents or guardians can be specified in relationship to each child in the family, using 
+the drop-down menu provided. Click on the <b>OK</b> button (<img class="inline" src="images_ks_students/okbutton.jpg" />) to save the selected relationships.</p>
+
+<h2 id="gradebook">Gradebook</h2>
+
+<p>The <b>Gradebook</b> tab on the <b>Students</b> information page is one of the most valued features of QuickSchools, because 
+it enables students and their families to see at a glance how the student is doing in his or her classes. Grades from previous 
+terms can also be viewed through this tab if available, by selecting the relevant semester from the drop-down menu at the top
+left of the page.</p>
+
+<div class="center"><img src="images_ks_students/gradebookmenu.png" /></div>
+
+<p>A detailed view of the student's grades and teacher comments for each subject can be seen by clicking on the <b>Details</b>
+link to the right of each course name. This will display the comprehensive table of the student's grades identical to those entered 
+into the teacher's Gradebook:</p>
+
+<div class="center"><img src="images_ks_students/gradesdetail.png" /></div>
+
+<p>Not only does the Gradebook tab display scores and teacher comments entered into the Gradebook for each of the student's 
+subjects, but it also centralizes all grade information into an easy-to read Progress Report which can be viewed or 
+downloaded as a .pdf file:</p>
+
+<div class="center"><img src="images_ks_students/progressreport.png" /></div>
+
+<p>This is a convenient document that can be printed and filed for your own records, and can be used to help chart student 
+progress in one or more subjects over time.</p>
 
 
+<h2 id="attendance">Attendance</h2>
+
+<p>The <b>Attendance</b> tab displays the student's cumulative attendance record, displayed in both numerical totals, via a
+color-coded pie chart with percentages of tardiness and absences, and via monthly calendar:</p>
+
+<div class="center"><img src="images_ks_students/attendance.png" /></div>
+
+<p>This makes it easy to track absences and discover patterns in tardiness that may be adversely affecting the student's performance.</p>
+
+<h3 id="editingattendance">Editing Student Attendance</h3>
+
+<p>Teachers may edit attendance records on this page by clicking on the relevant period on the calendar. This calls up an <b>Edit 
+Attendance</b> popup box, which looks like this:</p>
+
+<div class="center"><img src="images_ks_students/editattendancepopup.png" /></div>
+
+<p>After making changes to the attendance record for that period, click on the red <b>Update</b> button 
+(<img class="inline" src="images_ks_students/updatebutton.png" />) to save the new information.</p>
+
+<h2 id="medical">Medical</h2>
+
+<p>The <b>Medical</b> tab is a place to keep records of vital student medical and allergy information. Enter data 
+on relevant fields in the record:</p>
+
+<div class="center"><img src="images_ks_students/medical.png" /></div>
+
+<p>Allergies and known medical conditions are easily documented and referenced using this tab, which becomes part of the student
+record.</p>
+
+
+<h2 id="reportsk">Reports</h2>
+<h2 id="certificates">Certificates</h2>
+
+<p> The <b>Certificates</b> tab may be used to upload an existing certificate document to keep with the student record.</p>
+
+<div class="center"><img src="images_ks_students/certificates.png" /></div>
+
+<h2 id="customfields">Custom Fields</h2>
+
+<p>The <b>Custom Fields</b> tab may be used by an individual school to create data fields of specific relevance to their situation.
+For example, a custom field has been created here to link the student's record to a paricular bus district:</p>
+
+<div class="center"><img src="images_ks_students/custom.png" /></div>
+
+<p>To add a custom field line, click on the <b>Add New Field</b> button 
+(<img class="inline" src="images_ks_students/addnewfieldbutton.png" />). A new line will appear in the Custom Field table, 
+with the words "Field name change this."</p>
+
+<div class="center"><img src="images_ks_students/fieldname.png" /></div>
+
+<p>Mouseover these words and add your own to customize the field. To delet the line, click on the red "X" to the left of the line.</p>
 
 </div>
+
 
 </body>
 </html>
