@@ -7,7 +7,121 @@
 
 <div class="content">
 <h1>Fee Tracking</h1>
-</div>
+
+
+<h2>Special Behaviors</h2>
+
+<h3>Refunds</h3>
+    <p>
+        If a parent's payment should be refunded, this needs to be handled directly within the school's Stripe account.
+    </p>
+    <p>
+        Schools will then have go back to their QS account and sync that payment (either directly or with "Synchonrize with Stripe" 
+    if the refund occured in the last 30 days).
+    </p>
+    <p>
+        Once synched, all bill items associated with this online payment should become zero in "Fee Tracking". 
+    In the Parents Payment screen, the originally charged amount will still appear, but updated with a red "Refunded" status. 
+    </p>
+    <p>
+        The parent will recieve the full amount back, but the school will still be charged the fees as Stripe does not refund fees.
+        (For example, say a parent initially paid $1. The school would recieve $0.65 cents as there are $0.35 in fees. If the school 
+        chooses to refund this payment, the parent will recieve his or her $1.00 back and the school will lose $1.00 resulting in a net 
+        loss of $0.35 for the school).
+    </p>
+    <p>
+        Read more about <a href="https://stripe.com/us/help/pricing">Stripe.com's Pricing</a>.
+    </p>
+
+<h3>Partial Refunds</h3>
+    <p>
+        If a parent's payment should be partially refunded, this needs to be handled directly within the school's Stripe account.
+    </p>
+    <p>
+         Schools will then have go back to their QS account and sync that payment (either directly or with "Synchonrize with Stripe" 
+    if the refund occured in the last 30 days).
+    </p>
+    <p>
+        Once synched, all bill items associated with this online payment should become proportional to the amount refunded. 
+    In the Parents Payment screen, the originally charged amount will still appear, but updated with a red "PartiallyRefunded" status. 
+    </p>
+    <p>
+        The parent will recieve the full partial refund amount back, but the school may be charged the fees as Stripe does not refund fees.
+        (For example, say a parent initially paid $1. The school would recieve $0.65 cents as there are $0.35 in fees. If the school 
+        chooses to partially refund this payment at $0.50, the parent will recieve $0.50 back and the school will lose $0.50 resulting 
+        in a $0.15 net total for the school).
+    </p>
+    <p>
+        Read more about <a href="https://stripe.com/us/help/pricing">Stripe.com's Pricing</a>.
+    </p>
+
+<h3>Payment Failure</h3>
+    <p>
+        If a parent's payment should fail, this payment may need to be synced with QuickSchools.
+    </p>
+
+    <p>
+        If in the school's Stripe account a payment is marked failed, but is marked otherwise on the school's QS account, the school should sync that payment. 
+        (Some payments will fail automatically and not require synchronization.)
+    </p>
+    <p>
+        Once synched, all bill items associated with this online payment should become $0.00 in "Fee Tracking". 
+    In the Parents Payment screen, the originally charged amount will still appear, but updated with a red "Failed" status. 
+    The parent will see an online payment of $0.00.
+    </p>
+    <p>
+       No fees are charged when a payment has failed.
+    </p>
+    <p>
+        Read more about <a href="https://stripe.com/us/help/pricing">Stripe.com's Pricing</a>.
+    </p>
+
+<h3>Disputed</h3>
+    <p>
+        If a parent's payment should be disputed, this needs to be handled directly within the school's Stripe account.
+    </p>
+
+    <p>
+        Stripe will e-mail the school's Stripe account about the dispute. 
+        The amount disputed and a $15 fee will be deducted from the school's Stripe account. 
+        The $15 fee is charged regardless of the outcome of the dispute.
+    </p>
+
+    <p>
+        Read more about <a href="https://stripe.com/help/disputes">Stripe.com's Disputes/Chargebacks</a>.
+    </p>
+
+<h3>Family Billing: Surpluses and Deficits</h3>
+    <p>
+        If a parent has dependents with vary varying amounts of outstanding and surplus bills, it is recommended that the parent pay using "Other Balance" option.
+    </p>
+    <p>
+    "Current balance" sums all dependents balances. If one child owes $50 and another child has a $25 surplus, then the parent may see an intial $25 current balance.
+    However, once they click pay now they may see "Current Balance: $50". This is because they owe nothing on the surplus dependent, but still owe $50 on the other dependent.
+    Clicking "Other Balance" may make this clearer to the parent.
+    </p>
+    <p>
+     The school can attempt to manage this situation by balancing this surplus in "Fee Tracking" by applying a payment equal to the surplus to the deficit dependent, 
+     and applying an equal charge to the surplus dependent. The parent will then only see a $25 bill.
+    </p>
+     <p>
+     In the case where the total balance is $0 or a surplus(and at least one dependent owes), then the parent will be unable to make a payment. 
+     The school can attempt to manage this as in the above paragraph.
+    </p>
+    
+<h3>Deauthorize QuickSchools from Stripe</h3>
+    <p>
+        If the school wishes to deauthorize QuickSchools from Stripe, this is a two step process.
+    </p>
+    <ol>
+        <li>Go to "Fee Tracking" -> "Parent Payments". Click on "Disconnect Stripe Account". 
+        QuickSchools will no longer be able to sync online payments or accept payments for the school.
+        <li>Go to Stripe.com. Click "Your Account" -> "Account Settings". You may be prompted for your Stripe password.
+        Now navigate to "Applications". You will see "QuickSchools.com". Click on the "X" to deauthorize QuickSchools.
+        </li>
+    </ol>
+
+</div> <!-- End content -->
 
 </body>
 </html>
