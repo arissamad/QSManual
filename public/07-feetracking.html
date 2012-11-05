@@ -8,8 +8,39 @@
 <div class="content">
 <h1>Fee Tracking</h1>
 
+<h2>Online Payments</h2>
 
-<h2>Special Behaviors</h2>
+<h3>What appears on the parent's credit card?</h3>
+<p>The statement will show the payment as:</p>
+
+<p>[Statement descriptor given to Stripe] [Phone Number] [State]</p>
+
+<p>So, for example, if the statement descriptor in Stripe is set to "THE AMERICAN SCHOOL", and the phone number is "415-111-1111" and the state is "CA", the parent's credit-card statement will show:</p>
+
+<p>THE AMERICAN SCHOOL 4153093715 CA</p>
+
+<p>This allows parents to quickly identify what the payment is for. 
+If they have a question they can call the phone number listed instead of disputing the charge via
+their credit card company, which will result in chargeback fees for your school.
+</p>
+
+<h3>Giving parents refunds</h3>
+Any payment made by a parent can be refunded. This action is done within your school's Stripe account.
+
+<ol>
+    <li>First, you have to find the Stripe ID for the payment. Look for this in your QuickSchools account, 
+    under the Fee Tracking -> Parent Payments menu.</li>
+    <li>Once you've found the transaction, click on it to open up the transaction details. Copy the Stripe Payment ID.</li>
+    <li>Now log into your school's Stripe account.</li>
+    <li>Paste the Stripe Payment ID into the search box in the upper right, and press Enter.</li>
+    <li>The transaction should appear. Click on it.</li>
+    <li>Now click the Refund Payment button and follow Stripe's instructions.</li>
+    <li>Once you're done, go back to your QuickSchools account (the Parent Payments menu.)</li>
+    <li>Click Synchronize with Stripe button.</li>
+    <li>The refund will now be reflected in QuickSchools as well.</li>
+</ol>
+
+<h3>Special Behaviors</h3>
 
 <h3>Refunds</h3>
     <p>
