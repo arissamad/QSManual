@@ -25,11 +25,26 @@ contact and biographical information, uploading a photo, and inviting teachers t
 <li><a href="#accessingteachers">Accessing the Teachers Tab</a></li>
 <li><a href="#addingteachers">Adding Teacher Records Manually</a></li>
 <li><a href="#importingteachers">Importing Teacher Records from Excel</a></li>
+<li><a href="#displayingteachers">Displaying and Managing Teacher Records</a></li>
+<ul>
+<li><a href="#teacherreversealpha">Displaying Teachers in Reverse Alphabetical Order</a></li>
+<li><a href="#deletingteachers">Deleting Teachers</a></li>
+<li><a href="#searchingteachers">Using the Search Feature to Display a Subset of Teachers</a></li>
+<li><a href="#modifyingteachers">Modifying Page Display to Change Number of Rows Per Page</a></li>
+</ul>
 <li><a href="#invitingteachers">Inviting Teachers to QuickSchools</a></li>
+<li><a href="#editingteachers">Editing Teacher Records</a></li>
+<ul>
+<li><a href="#uploadteacherphoto">Uploading a Photo</a><//li>
+<li><a href="#teacherstatus">Changing Teacher Status</a></li>
+<li><a href="#editingteacherbio">Editing Biographical and Employee Data</a></li>
+<li><a href="#editingteachercontact">Editing Contact Information</a></li>
+<li><a href="#teacherdegree">Editing Degree and Certificate Information</a></li>
+</ul>
 </ul>
 
 <h2 id="accessingteachers">Accessing the Teachers Tab</h2>
-<p>To access the student information tab from your login page, click on the <b>Teachers</b> link in the green 
+<p>To access the teacher information tab from your login page, click on the <b>Teachers</b> link in the green 
 bar at the top of the screen, as shown:</p>
 
 <div class="center"><img src="images_ks_teachers/teachaccess.png" /></div>
@@ -56,7 +71,7 @@ that looks like this:</p>
 <div class="center"><img src="images_ks_teachers/addingteacher.png" /></div>
 
 <p>Now you can enter the teacher's full name and email in the corresponding fields in the box. If you would like to sort 
-the students by last name, be sure to enter them as [Last Name], [First Name] in the name field; otherwise they will be 
+the teachers by last name, be sure to enter them as [Last Name], [First Name] in the name field; otherwise they will be 
 alphabetized by first name. Teachers can be automatically invited to join QuickSchools by checking the <b>Invite via Email</b>
  box. Click the red <b>Add Teacher</b> button (<img class="inline" src="images_ks_teachers/redaddteacherbutton.png" />) to 
  complete the addition of the teacher record to the Teachers page.</p>
@@ -66,7 +81,7 @@ alphabetized by first name. Teachers can be automatically invited to join QuickS
 <p>An efficient way to add large numbers of teachers to your QuickSchools account is to use the <b>Import</b>
 feature. To do this you need to have your teacher data accessible in an Excel file, one with either an ".xls" or
 ".xlsx" extension. QuickSchools will automatically analyze your file and map commonly-named columns 
-to the fields in a QuickSchools student record.</p>
+to the fields in a QuickSchools teacher record.</p>
 
 <p>To proceed, click on the <b>Import</b> button (<img class="inline" src="images_ks_teachers/importteachbutton.png" />).
 This will bring up a file selection screen, as shown:</p>
@@ -93,12 +108,81 @@ that data set from being uploaded.</p>
 
 <p>Now click the red button 
 <b>Click here to import data</b> (<img class="inline" src="images_ks_teachers/redimportbutton.png" />) to initiate the
-import. Depending on the size of your file, the process may take a few minutes, during which time you may see either of the 
-following popup message boxes:</p>
+import. Depending on the size of your file, the process may take a few minutes, during which time you may see the 
+following popup message box:</p>
 
-<div class="center"><img src="images_ks_teachers/processing1.png" /> or <img src="images_ks_teachers/processing2.png" />  </div>
+<div class="center"><img src="images_ks_teachers/processing1.png" /></div>
 
 <p>After the import process is complete, your data will be added to your QuickSchools account!</p>
+
+<h2 id="displayingteachers">Displaying and Managing Teacher Records</h2>
+
+<p>Once you have entered or imported teacher record data into QuickSchools, your <b>Teachers</b> tab will 
+list those teachers on the main page, <b>in alphabetical order by the first letter in the Name field.</b> This 
+means that if you want them to be sorted by last name, you must enter the last name first, as shown here:</p>
+
+<div class="center"><img src="images_ks_teachers/teacherpage.png" /></div>
+
+<h3 id="teacherreversealpha">Displaying Teachers in Reverse Alphabetical Order</h3>
+
+<p>It is easy to display teachers in reverse alphabetical order; click once on the dark green border labeled 
+<b>Teacher</b> next to the white triangle and it will reverse to list them from "Z" to "A."</p>
+
+<h3 id="deletingteachers">Deleting Teachers</h3>
+
+<div class="left"><img src="images_ks_teachers/deletiondropdown.png" /></div>
+
+<p>The checkboxes on the left-hand side of the <b>Teachers</b> screen can be used to select records for deletion. Use the dropdown menu at the top of the column to globally select all records or deselect all records on the page, or 
+click manually on the ones you want, and then scroll down to <b>Delete</b> to delete the selected records. A confirmation 
+popup box will appear, indicating that the deletion of a teacher will also delete subjects assigned to that teacher, and 
+asking for permission to proceed:</p>
+
+<div class="center"><img src="images_ks_teachers/confirmdelete.png" /></div>
+
+<p>To confirm deletion, click on the red <b>Delete Teachers</b> button (<img class="inline" src="images_ks_teachers/deleteteachersbutton.png" />) 
+at the bottom of the popup box.</p>
+
+<h3 id="searchingteachers">Using the Search Feature to Display a Subset of Teachers</h3>
+
+<p>If you would like to locate a single teacher record or set of teacher records, you can use the search box at the top right 
+of the screen, as shown in this sample search for teachers with the name "Green":</p>
+
+<div class="center"><img src="images_ks_teachers/teacherssearchdemo.png" /></div>
+
+<p>To clear the search and return to the full list of teachers, click the <b>Clear Search</b> link directly below 
+the search box.</p>
+
+<p>The drop-down menu to the right of the search box can be used to retrieve deleted teachers and teachers who have resigned 
+in your search. To include these records, click the relevant boxes before running the search. Note that a search with these 
+boxes selected will only <i>add</i> deleted and resigned teachers to your search results, rather than returning <i>only</i> 
+those records marked as deleted or resigned.</p>
+
+<div class="center"><img src="images_ks_teachers/deletedresignedsearch.png" /></div>
+
+<p>Click the red <b>Search</b> button (<img class="inline" src="images_ks_teachers/redsearchbutton.png" />) to run the search and
+locate the records you wish to retrieve.</p>
+
+<h3 id="modifyingteachers">Modifying Page Display to Change Number of Rows Per Page</h3>
+
+<p>The number of teachers displayed on the screen may be set and/or customized by clicking on this icon 
+(<img class="inline" src="images_ks_teachers/tableviewicon.jpg" />) in the very last row 
+in the table. This reveals the following selection menu:</p>
+
+<div class="center"><img src="images_ks_teachers/tableviewmenu.jpg" /></div>
+
+<p>As indicated, the default setting is to display 10 rows on the screen; additional rows will then be shown 
+on subsequent screens. You may change this to enable viewing of 25, 50, or 100 column categories at a time. The number of rows can also be 
+customized by selecting the <b>Custom</b> selection, in which case you will be prompted to fill in the desired number of rows to be 
+made visible per page by the following popup box:</p>
+
+<div class="center"><img src="images_ks_teachers/customrows.jpg" /></div>
+
+<p>Enter the desired number of rows to display and click on the <b>OK</b> button (<img class="inline" src="images_ks_teachers/okbutton.jpg" />) 
+to save your preference.</p>
+
+<p>Finally, to restore the selection to the default, select <b>Clear Preferences</b> from the selection menu. This will erase any prior 
+selection you may have made and revert to the default view of the <b>Teachers</b> page.</p>
+
 
 <h2 id="invitingteachers">Inviting Teachers to QuickSchools</h2>
 
@@ -114,9 +198,90 @@ box will appear with the teacher’s name and email address and a red <b>Invite<
 
 <div class="center"><img src="images_ks_teachers/inviteteacherpopup.png" /></div>
 
-<p>Clicking <b>Invite</b> (<img class="inline" src="images_ks_teachers/invitenowbutton.png" />) will send an email to the 
-teacher with a password inviting them to log into QuickSchools, and change the <b>Invitation Status</b> on the main page 
-to <b>Invited.</b> After the teacher logs in for the first time, the status will change to <b>Active.</b></p>
+<p>Clicking <b>Invite</b> (<img class="inline" src="images_ks_teachers/redinvitebutton.png" />) will send an email to the 
+teacher with a link to the school's QuickSchools site, and a password inviting them to log in (as shown in the sample below):</p>
+
+<div class="center"><img src="images_ks_teachers/emailinvitetext.png" /></div>
+
+The teacher's <b>Invitation Status</b> on the main page will then automatically be changed to <b>Invited</b>, and after 
+he or she logs in for the first time, the status will change to <b>Active.</b></p>
+
+<h2 id="editingteachers">Editing Teacher Records</h2>
+
+<p>To view and edit an individual teacher record, click on the desired row on the main <b>Teachers</b> page. This 
+will bring up the long view of the record, as shown below:</p>
+
+<div class="center"><img src="images_ks_teachers/sampleteacherrecord.png" /></div>
+
+<p>Now you can <a href="#uploadteacherphoto"><b>add a photo</b></a>, delete or mark the teacher as resigned, re-invite the teacher 
+if not yet active, and edit fields containing biographical/employment information, contact information, and degree/certification information.</p>
+
+<h3 id="uploadteacherphoto">Uploading a Photo</h3>
+
+<div class="left"><img src="images_ks_teachers/uploadteacherphoto.png" /></div>
+<p>Adding a photo to a teacher record is easy! You can either drag and drop the image onto the photo box, or
+click on the <b>Upload Photo</b> button  (<img class="inline" src="images_ks_teachers/uploadphoto.png" />) and 
+select the image from your hard drive.</p>
+<p>Then click on the red <b>Save</b> button (<img class="inline" src="images_ks_teachers/savebutton.png" />) 
+to associate the image with the student record.</p>
+<div class="center"><img src="images_ks_teachers/samplephoto1.png" /></div>
+
+<p>The image should appear in the photo box, and also as a thumbnail on the centralized list of records on 
+the <b>Teachers</b> page.</p>
+
+<div class="center"><img src="images_ks_teachers/teacherthumbnail.png" /></div>
+
+<h3 id="teacherstatus">Changing Teacher Status</h3>
+
+<p>Whereas teacher records may be selected for deletion on the main Teachers page, many other modifications to a teacher's 
+status may be made from inside the record through the gray dropdown <b>Actions</b> menu.
+First, check the teacher's current status, which is listed at the top of the record in the upper box, to the left of the <b>Actions</b>
+ menu. Then scroll over the menu header to display your choices.</p>
+ 
+<div class="center"><img src="images_ks_teachers/teacheractionsmenu.png" /></div>
+
+<p>You may <b>delete the record</b>, mark the teacher as <b>having resigned</b>, <b>re-invite the teacher</b>, or <b>deactive the teacher's login</b>. 
+Once selected, this will change the status listed to the left of the <b>Actions</b> menu. Deleted teachers can also be 
+restored to active status through this menu.</p>
+
+<p>If you mark a teacher for resignation, a popup box will appear asking for the resignation date and a comment:</p>
+
+<div class="center"><img src="images_ks_teachers/teacherresignpopup.png" /></div>
+
+<p>Both fields are required to complete the status change to mark the teacher for resignation. Fill in the date and a comment, 
+and click on the red <b>Resign</b> button (<img class="inline" src="images_ks_teachers/resignbutton.png" />) to change 
+the teacher's status. You can reinstate resigned teachers using the <b>Actions</b> menu as well.</p>
+
+<p>The <b>Actions</b> menu can also be used to re-invite teachers who have not yet have logged into the QuickSchools account 
+for the first time, or to completely de-activate a teacher's login.</p>
+
+<h3 id="editingteacherbio">Editing Biographical and Employee Data</h3>
+
+<p>The upper box of the long view of the teacher record contains both biographical and employee data of use to school 
+administrators, including the teacher's preferred name, employee number, date of employment, and social security number:</p>
+
+<div class="center"><img src="images_ks_teachers/teacherbiodata.png" /></div>
+
+<p>This makes it easy to cross-reference teacher records with payroll and other employee records, enabling quick verification 
+of a teacher's identity and correct contact information, displayed in the second box of the teacher record.<p>
+
+<h3 id="editingteachercontact">Editing Contact Information</h3>
+
+<p>The second box of the teacher record contains basic information necessary to contact the teacher by mail, phone, or email:</p>
+
+<div class="center"><img src="images_ks_teachers/teachercontactinfo.png" /></div>
+
+
+<h3 id="teacherdegree">Editing Degree and Certificate Information</h3>
+
+<p>The last box of the teacher record provides space for recording the teacher's degree and certification, and a 
+field in which relevant experience can be noted:</p>
+
+<div class="center"><img src="images_ks_teachers/degreecertbox.png" /></div>
+
+<p>When all information has been entered and updated, don't forget to click the red <b>Save</b> button 
+(<img class="inline" src="images_ks_teachers/savebutton.png" />) to make the desired 
+changes permanent. Now you have successfully updated a teacher record!</p>
 
 
 </div>

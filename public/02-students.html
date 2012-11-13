@@ -38,6 +38,8 @@ sorting by different categories, managing medical data, uploading certificates, 
 <li><a href="#enteringinfo">Entering Contact Information</a></li>
 </ul>
 <li><a href="#importing">Importing Student Records from Excel</a></li>
+<li><a href="#importer">Importer</a></li>
+<li><a href="#importerbehaviors">Importer Behaviors</a></li>
 <li><a href="#managing">Displaying and Managing Student Records</a></li>
 <ul>
 <li><a href="#reversealpha">Displaying Students in Reverse Alphabetical Order</a></li>
@@ -68,6 +70,7 @@ sorting by different categories, managing medical data, uploading certificates, 
 <li><a href="#reports">Reports</a></li>
 <li><a href="#certificates">Certificates</a></li>
 <li><a href="#customfields">Custom Fields</a></li>
+
 </ul>
 
 <h2 id="accessingstudents">Accessing the Students Tab</h2>
@@ -145,6 +148,138 @@ following popup message boxes:</p>
 
 <p>After the import process is complete, your data will be added to your QuickSchools account!</p>
 
+<!-- This part was added by Aris. Feel free to clean up copy if necessary. -->
+
+<h2 id="importer">Importer</h2>
+<p>When uploading your spreadsheet with student information, QuickSchools will attempt to match your column header names with
+our fields. You can manually correct any mismatches, as described <a href="#importing">above</a>.</p>
+
+<p>Here's a list of column names which the importer will recognize easily:</p>
+
+<table class="data">
+<tr>
+<th>Column name</th><th>Required?</th><th>Comments</th>
+</tr>
+<tr class="d0"><td>Student Meta ID</td><td></td><td>Quickschools-specific ID</td></tr>
+<tr><td>Student Id</td><td></td><td>The Id of the student.</td></tr>
+<tr class="d0"><td>Student Name</td><td>Yes</td><td>The full name of the student.</td></tr>
+<tr><td>Preferred Name</td><td></td><td>The name that the student prefers to be called. Useful when the preferred name is not obvious.</td></tr>
+<tr class="d0"><td>Family Name</td><td></td><td>The family name (surname).</td></tr>
+<tr><td>Grade</td><td>Yes</td><td>The name of the grade that the student is currently enrolled in.</td></tr>
+<tr class="d0"><td>Homeroom Teacher Full Name</td><td>Yes</td><td>The name of the homeroom teacher for the student.</td></tr>
+<tr><td>Homeroom Name</td><td>Yes</td><td>The name of the homeroom for the student.</td></tr>
+<tr class="d0"><td>Classes</td><td></td><td>Classes taken by the student.</td></tr>
+<tr><td>Comma Separated Classes</td><td></td><td>A list of classes taken by the student. Each subject should be separated by comma.</td></tr>
+<tr class="d0"><td>Birth Date</td><td></td><td>The date of birth of the student.</td></tr>
+<tr><td>Gender</td><td></td><td>Gender column should be filled with either Male or Female.</td></tr>
+<tr class="d0"><td>New I/C Number</td><td></td><td>New Identity Card number, needed only for those countries that use it.</td></tr>
+<tr><td>Passport Number</td><td></td><td>Passport number, if required.</td></tr>
+<tr class="d0"><td>Matriculation Date</td><td></td><td>The date the student was first enrolled in classes at the school.</td></tr>
+<tr><td>Nationality</td><td></td><td>The country name where the student is from, such as Australia.</td></tr>
+<tr class="d0"><td>Race</td><td></td><td>Race information only if needed.</td></tr>
+<tr><td>Religion</td><td></td><td>Religion information only if needed.</td></tr>
+<tr class="d0"><td>Postcode</td><td></td><td>Postcode/Zipcode for the student's address.</td></tr>
+<tr><td>City</td><td></td><td>City for the student's address.</td></tr>
+<tr class="d0"><td>State</td><td></td><td>State for the student's address.</td></tr>
+<tr><td>Country</td><td></td><td>Country for the student's address.</td></tr>
+<tr class="d0"><td>Full Address</td><td></td><td>The student's full address in a single field.</td></tr>
+<tr><td>Phone</td><td></td><td>Phone number.</td></tr>
+<tr class="d0"><td>Cell Phone</td><td></td><td>Cellphone number.</td></tr>
+<tr><td>Email</td><td></td><td>Email address.</td></tr>
+<tr class="d0"><td>Fax</td><td></td><td>Fax number.</td></tr>
+<tr><td>Doctor Name</td><td></td><td></td></tr>
+<tr class="d0"><td>Other Medical Information</td><td></td><td></td></tr>
+<tr><td>Other Medical Information</td><td></td><td></td></tr>
+<tr class="d0"><td>Other Medical Information</td><td></td><td></td></tr>
+<tr><td>Parent0 Name</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent0 Relationship</td><td></td><td>Valid values: Father, Mother, Father/Mother, StepFather, StepMother, Relative, Agent, Others.</td></tr>
+<tr><td>Parent0 Drivers License</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent0 Occupation</td><td></td><td></td></tr>
+<tr><td>Parent0 Other Info</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent0 Address Line 1</td><td></td><td></td></tr>
+<tr><td>Parent0 Address Line 2</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent0 Address City</td><td></td><td></td></tr>
+<tr><td>Parent0 Address District</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent0 Address Post Code</td><td></td><td></td></tr>
+<tr><td>Parent0 Address State</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent0 Address Country</td><td></td><td></td></tr>
+<tr><td>Parent0 Email</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent0 Home Phone</td><td></td><td></td></tr>
+<tr><td>Parent0 Cell Phone</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent0 Business Phone</td><td></td><td></td></tr>
+<tr><td>Parent0 Is Authorized To Pick Up (Yes/No)</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent0 Is Emergency Contact (Yes/No)</td><td></td><td></td></tr>
+<tr><td>Parent1 Name</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent1 Relationship</td><td></td><td>Valid values: Father, Mother, Father/Mother, StepFather, StepMother, Relative, Agent, Others.</td></tr>
+<tr><td>Parent1 Drivers License</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent1 Occupation</td><td></td><td></td></tr>
+<tr><td>Parent1 Other Info</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent1 Address Line 1</td><td></td><td></td></tr>
+<tr><td>Parent1 Address Line 2</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent1 Address City</td><td></td><td></td></tr>
+<tr><td>Parent1 Address District</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent1 Address Post Code</td><td></td><td></td></tr>
+<tr><td>Parent1 Address State</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent1 Address Country</td><td></td><td></td></tr>
+<tr><td>Parent1 Email</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent1 Home Phone</td><td></td><td></td></tr>
+<tr><td>Parent1 Cell Phone</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent1 Business Phone</td><td></td><td></td></tr>
+<tr><td>Parent1 Is Authorized To Pick Up (Yes/No)</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent1 Is Emergency Contact (Yes/No)</td><td></td><td></td></tr>
+<tr><td>Parent2 Name</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent2 Relationship</td><td></td><td>Valid values: Father, Mother, Father/Mother, StepFather, StepMother, Relative, Agent, Others.</td></tr>
+<tr><td>Parent2 Drivers License</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent2 Occupation</td><td></td><td></td></tr>
+<tr><td>Parent2 Other Info</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent2 Address Line 1</td><td></td><td></td></tr>
+<tr><td>Parent2 Address Line 2</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent2 Address City</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent2 Address District</td><td></td><td></td></tr>
+<tr><td>Parent2 Address Post Code</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent2 Address State</td><td></td><td></td></tr>
+<tr><td>Parent2 Address Country</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent2 Email</td><td></td><td></td></tr>
+<tr><td>Parent2 Home Phone</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent2 Cell Phone</td><td></td><td></td></tr>
+<tr><td>Parent2 Business Phone</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent2 Is Authorized To Pick Up (Yes/No)</td><td></td><td></td></tr>
+<tr><td>Parent2 Is Emergency Contact (Yes/No)</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent3 Name</td><td></td><td></td></tr>
+<tr><td>Parent3 Relationship</td><td></td><td>Valid values: Father, Mother, Father/Mother, StepFather, StepMother, Relative, Agent, Others.</td></tr>
+<tr class="d0"><td>Parent3 Drivers License</td><td></td><td></td></tr>
+<tr><td>Parent3 Occupation</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent3 Other Info</td><td></td><td></td></tr>
+<tr><td>Parent3 Address Line 1</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent3 Address Line 2</td><td></td><td></td></tr>
+<tr><td>Parent3 Address City</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent3 Address District</td><td></td><td></td></tr>
+<tr><td>Parent3 Address Post Code</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent3 Address State</td><td></td><td></td></tr>
+<tr><td>Parent3 Address Country</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent3 Email</td><td></td><td></td></tr>
+<tr><td>Parent3 Home Phone</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent3 Cell Phone</td><td></td><td></td></tr>
+<tr><td>Parent3 Business Phone</td><td></td><td></td></tr>
+<tr class="d0"><td>Parent3 Is Authorized To Pick Up (Yes/No)</td><td></td><td></td></tr>
+<tr><td>Parent3 Is Emergency Contact (Yes/No)</td><td></td><td></td></tr>
+<tr class="d0"><td>Parents Business Address Line 1</td><td></td><td></td></tr>
+<tr><td>Parents Business Address Line 2</td><td></td><td></td></tr>
+<tr class="d0"><td>Parents Business Address Line 3</td><td></td><td></td></tr>
+<tr><td>Parents Business Address City</td><td></td><td></td></tr>
+<tr class="d0"><td>Parents Business Address Postcode</td><td></td><td></td></tr>
+<tr><td>Parents Business Address State</td><td></td><td></td></tr>
+</table>
+
+<h2 id="importerbehaviors">Importer Behaviors</h2>
+When importing students, there are some special behaviors to be aware of.
+
+<ul>
+<li><b>Re-importing a student who has been deleted:</b> This will create a new student record, leaving the deleted record untouched.</li>
+<li><b>Re-importing a student who has been marked as graduated or expelled:</b> This will update the existing student record. It will remain marked as graduated or expelled.</li>
+</ul>
+
+
 <h2 id="managing">Displaying and Managing Student Records</h2>
 
 <p>Once you have entered or imported student record data into QuickSchools, your <b>Students</b> tab will 
@@ -211,7 +346,7 @@ in the table. This reveals the following selection menu:</p>
 
 <p>As indicated, the default setting is to display 10 rows on the screen; additional rows will then be shown 
 on subsequent screens. You may change this to enable viewing of 25, 50, or 100 column categories at a time. The number of rows can also be 
-customized by selecting the <b>Custom</b> selection, in which case you will be prompted to sfill in the desired number of rows to be 
+customized by selecting the <b>Custom</b> selection, in which case you will be prompted to fill in the desired number of rows to be 
 made visible per page by the following popup box:</p>
 
 <div class="center"><img src="images_ks_students/customrows.jpg" /></div>
@@ -245,10 +380,12 @@ click on the <b>Upload Photo</b> button  (<img class="inline" src="images_ks_stu
 select the image from your hard drive.</p>
 <p>Then click on the red <b>Save</b> button (<img class="inline" src="images_ks_students/savebutton.png" />) 
 to associate the image with the student record.</p>
+<p>To delete the image, simply mouseover the bottom right corner of the photo box and click on the "X" that appears there.</p>
+
 <div class="center"><img src="images_ks_students/samplephoto1.png" /></div>
 
 <p>The image should appear in the photo box, and also as a thumbnail on the centralized list of records on 
-the <b>Students</b> page.</p>
+the <b>Students</b> page, as shown below:</p>
 
 <div class="center"><img src="images_ks_students/thumbnail.png" /></div>
 
@@ -432,7 +569,22 @@ on relevant fields in the record:</p>
 record.</p>
 
 
-<h2 id="reportsk">Reports</h2>
+<h2 id="reports">Reports</h2>
+
+<p>The <b>Reports</b> tab displays the list of available report cards for each student. You may change the order of the list
+by clicking on the appropriate dark green border of the column by which you want to sort.</p>  
+
+<div class="center"><img src="images_ks_students/reportstab.png" /></div>
+
+
+<p>Don't forget to save your changes by clicking onthe red <b>Save</b> button 
+(<img class="inline" src="images_ks_students/savebutton.png" />) at the bottom of the page when finished.</p>
+
+<p>The downloadable report cards will become available after the end of the term, and display attendance records and comments
+as well as final grades in all subjects:</p>
+
+<div class="center"><img src="images_ks_students/reportcard.png" /></div>
+
 <h2 id="certificates">Certificates</h2>
 
 <p> The <b>Certificates</b> tab may be used to upload an existing certificate document to keep with the student record.</p>
@@ -452,7 +604,8 @@ with the words "Field name change this."</p>
 
 <div class="center"><img src="images_ks_students/fieldname.png" /></div>
 
-<p>Mouseover these words and add your own to customize the field. To delet the line, click on the red "X" to the left of the line.</p>
+<p>Mouseover these words and add your own to customize the field. To delete the line, click on the red "X" to the left of the line.</p>
+
 
 </div>
 

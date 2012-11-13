@@ -651,7 +651,37 @@ img.inline {
 #printIframe{
     display:none;
 }
-	
+
+/* [aris 2012-11] Andy will need to beautify this */
+table.data th {
+    border: 1px solid #d0ebf3;
+    padding: 2px 5px;
+    background: #2daad3;
+    color:#fff;
+}
+
+table.data td {
+    border: 1px solid #d0ebf3;
+    padding: 2px 5px;
+    background: #edf7f8;
+    color: #177a9d;
+}
+
+tr.d0 td {
+    background-color: #fbfdfe; color: #177a9d;
+}
+
+table.data tr:hover td{
+    background: #d0ebf3;
+    color: #115a74;
+}
+
+table.data tr:hover .d0 td{
+    background: #d0ebf3;
+    color: #115a74;
+}
+
+
 /***********************************************************************************************************************
  EXTRA STYLES ADDED FOR MOUSEOVER / ACTIVE EVENTS
 ************************************************************************************************************************/
