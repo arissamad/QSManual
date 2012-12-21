@@ -6,8 +6,451 @@
 <body>
 
 <div class="content">
-<h1>Admissions Module</h1>
+<h1>Admissions</h1>
+
+<!--Admissions Summary-->
+<div class="summary">
+  <p>
+  The Admissions Module is a simple, and convenient way to record and track potential students
+  from their first inquiry to enrollment.  Admission information can be recorded according to default parameters or customized to reflect 
+  different admissions status.  In addition, Semester Management, is controlled in this module.  The Admissions Module main page has the following options:
+  </p>
+  
+  <br>
+  <div class="center">
+  <img src="images_admissions/admission-overview.png" width ="780" height="487" />
+  </div>
+  <br><br>
+
+<p>
+This chapter offers detailed information about configuring and using all aspects of the  Admissions Module. Features described include adding 
+inquiries, school applications, setting up status codes, and semester management.
+</p>
+
+<ul>
+    <li><a href="#config-adms">Configure Admissions Module</a></li>
+    <li><a href="#inquiries-adms">Student Inquiries</a></li>
+        <ul>
+            <li><a href="#addsi-adms">Add New Inquiry</a></li>
+            <li><a href="#editsi-adms">Edit/Update Inquiry</a></li>
+        </ul>
+	<li><a href="#apps-adms">Student Applications</a></li>
+        <ul>
+            <li><a href="#convert-adms">Convert Inquiry to Application</a></li>
+            <li><a href="#newapp-adms">New Application without Inquiry</a></li>
+            <li><a href="#completeapp-adms">Complete Application</a></li>
+        </ul>
+	<li><a href="#inqcdes-adms">Inquiry Code Set-up</a></li>
+         <ul>
+            <li><a href="#addicde-adms">Add Inquiry Codes</a></li>
+            <li><a href="#editicde-adms">Edit/Delete Inquiry Codes</a></li>
+        </ul>
+	<li><a href="#appcdes-adms">Application Code Set-up</a></li>
+        <ul>
+            <li><a href="#addapcde-adms">Add Application Codes</a></li>
+            <li><a href="#editapcde-adms">Edit/Delete Application Codes</a></li>
+        </ul>
+    <li><a href="#search-adms">Search Admissions</a></li>
+         <ul>
+            <li><a href="#searchinq-adms">Search Inquiries</a></li>
+            <li><a href="#searchapp-adms">Search Applications</a></li>
+        </ul>   
+	<li><a href="#semester-adms">Semester Management</a></li>
+</ul>
+
+</div>
+<!--end Admissions Summary-->
+<br><br>
+
+
+<!--Configure Admissions-->
+<h2 id="config-adms">Configure Admissions Module</h2>
+<p>
+An Administrator must configure the Admission Module before it can be used. Configure the Admissions Module by choosing the <i>Features</i> 
+option in the menu at top of page. Then check the box next to Admissions option and click on the "Configure" link as seen below.
+</p>
+
+<br>
+<div class="center">
+<img src="images_admissions/config-adms.png" width="493" height="581" />
+</div>
+<br>
+
+<p>
+This pops up a window which allows administrators to list personnel who will manage admissions and run admission reports.  
+As show below, a user selected to manage admissions will be managing <i> all inquiries and student applications</i>. 
+The second box allows the administrator to list authorized personnel to run admission reports.  Click red "Save" button.
+</p>
+
+<br>
+<div class="center">
+<img src="images_admissions/admin-adms.png" width="590" height="300"/>
+</div>
+<!--end Configure Admissions-->
+<br><br>
+
+
+<!--Student Inquiries-->
+<h2 id="inquiries-adms">Student Inquiries</h2>
+<p>
+Student Inquiries is an effective way to record and track potential students from first contact to application. 
+Each new Student Inquiry is assigned an inquiry ID starting with E(Enquiry) and numbered in sequential order. 
+Shown below is an overview of the Inquiry Page.
+</p>
+
+<br>
+<div class="center">
+<img src="images_admissions/std-adms.png" width="700" height="280" />
+</div>
+<br>
+
+<h3 id="addsi-adms"><b>Add New Inquiry</b></h3>
+<p>Adding a new Student Inquiry is accessed by choosing "Admission" option in menu at top of page, followed by choosing the 
+"Inquiries" tab.  Then:
+</p>
+
+<br>
+<div class="center">
+<img src="images_admissions/addbtn-adms.png" width="400" height="109" />
+</div>
+<br>
+
+<p>
+This brings up the "Add Student Inquiry" Screen  which allows for the recording of all pertinent 
+information relating to both the individual inquiring about the school and the potential student. 
+To ensure consistency throughout all the modules:
+<span class="warning">Student and Inquirer's Name should be entered as LAST NAME, FIRST NAME.</span>
+
+</p>
+<br>
+
+<div class="center">
+<img src="images_admissions/addinq-adms.png" width="680" height="575" />
+<span class="caption">Add Inquiry Screen with information completed</span>
+</div>
+<br>
+
+<p>
+"Inquiry Status" is a KEY element in tracking students through the admission process and in admission reports.
+</p>
+<br>
+<br>
+
+<h3 id="editsi-adms"><b>Edit/Update Inquiry</b></h3>
+<p>
+Student Inquiry status may be updated, comments added, status remarks included, or changes to student's information at any time. 
+To update or edit Student Inquiry information click on the Inquiries tab in the Admissions Feature and choose the Student's name . 
+All of the Student's information will be displayed. 
+Any changes or updates may be recorded including Inquiry 
+Remarks, Comments and Inquiry Status. Click red "Save" button when done.
+</p>
+
+<br>
+<div class="center">
+<img src="images_admissions/editstdnt-adms.png" width="685" height="520" />
+</div>
+<!--end Student Inuiry-->
+<br><br>
+
+<!--Student Applications-->
+<h2 id="apps-adms">Student Applications</h2>
+<p>
+Applications allows for comprehensive recording of students' personal, residential, and medical information.  As with Student Inquiries, Applications 
+track and update students' Application Status. An application may be generated from either an Inquiry or from with the Application page.
+The Applications Page contains the following information:
+</p>
+
+<br>
+<div class="center">
+<img src="images_admissions/apppage-adms.png" width="700" height="380"/>
+<span class="caption">Applications are shown in order by most recent Modified Date</span>
+</div>
+<br>
+
+<h3 id="convert-adms"><b>Convert Inquiry to Application</b></h3>
+<p>
+For consistency and to avoid duplicate records a Student Inquiry must be converted to an application. This is 
+accomplished by choosing Inquiry Status in the Student Inquiry record and clicking on "Converted to Application".  
+An Application record will automatically generate issuing a new Student Application Number.
+</p>
+
+<br>
+<div class="center">
+<img src="images_admissions/appconv-adms.png" width="377" height="74" />
+</div>
+<br>
+<p>
+Below is an overview of the Student Application. Please note when converting an Inquiry to an Application the 
+Student ID changes from an E(Enquiry) to A(Application) and is numbered in sequential order.
+</p>
+<br>
+
+<div class="center">
+<img src="images_admissions/stdntapp-adms.png" width="533" height="824"/>
+</div>
+<br>
+
+
+
+<h3 id="newapp-adms"><b>New Application without Inquiry</b></h3>
+<p>
+A standalone application may be generated when no Inquiry was recorded by choosing "Applications" tab in Admissions Module then clicking on green 
+"Add New Application" button.
+</p>
+<br>
+
+<h3 id="completeapp-adms"><b>Completing Student Application</b></h3>
+<p>
+Student and administrative information are contained within the first section of the Application.  When "Grade" is chosen, it will also appear
+at top of application.  "Application Status" is contained within a drop down box.  Below highlights fields of interest.
+</p>
+
+<br>
+<div class="center">
+<img src="images_admissions/stdntinfo-adms.png" width="650" height="369"/>
+</div>
+<br>
+
+<p>
+To add a Custom Field of information click on the green "Add New Field" button. Enter new field Title. See image below.
+</p>
+
+<br>
+<div class="center">
+<img src="images_admissions/addfields-adms.png" width="650" height="88"/>
+</div>
+<br>
+
+<p>
+The second section of the application consists of Residential and Contact information.  No additional fields may be added.
+</p>
+<br><br>
+
+<p>
+The third and final section of the application contains Medical Information for the student such as medical 
+needs, food/medication allergies, and dietary needs. See image below for details.
+</p>
+
+<br>
+<div class="center">
+<img src="images_admissions/stdntmed-adms.png" width="700" height="420"/>
+</div>
+<br>
+
+<p>
+When Application is complete click red "Save" button.
+</p>
+
+<!--end Student Application-->
+<br><br>
+
+
+<!--Inquiry Status Codes-->
+<h2 id="inqcdes-adms">Inquiry Status Codes</h2>
+<p>
+Inquiry Status Codes denote the state of Student Inquiries providing the ability
+to see at a glance where each Inquiry is in the process.  There are several built-in codes
+and the ability to customize Status Codes as needed. These codes are used both in 
+the Student Inquiries and the related reports. Below is an overview of the Inquiry Status Codes
+page.
+</p>
+
+<br>
+<div class="center">
+<img src="images_admissions/inqstatcde-adms.png" width="720" height="380"/>
+<span class="caption">Inquiry Status Codes with "School Visit" as a customized code.</span>   
+</div>
+<br>
+
+<p>
+Access the "Inquiry Status Codes" page from the Admissions feature then choose the "Inquiry Status Codes" tab as shown above.
+The built-in codes are default status codes and cannot be modified or deleted, only moved up or down for display purposes.    
+</p>
+<br>
+
+<h3 id="addicde-adms"><b>Add Inquiry Status Code</b></h3>
+<p>
+    An inquiry status code may be added by accessing the "Inquiry Status Codes" page. Then:
+</p>
+    <ol>
+        <li>Click <img class="inline" src="images_admissions/addstatcde-adms.png" wdith="106" height="20" /></li>
+        <li>Enter new Status Code name.</li>
+        <li>Click "Save"</li>
+    </ol>
+<div class="center">
+    <img src="images_admissions/custicde.png" width="420" height="165" />
+</div>
+<br>
+<p>The new inquiry status code will display as an option on the Inquiry Page, on the Student Inquiry Page, and in the
+    Admissions Reports.
+</p>
+<br><br>
+
+<h3 id="editicde-adms"><b>Edit/Delete Inquiry Status Codes</b></h3>
+<p>
+    A customized status code may be edited or deleted, but a built-in status code cannot.  To edit a
+    status code access the Inquiry Status Page.  Then:
+</p>
+    <ol>
+        <li>Click on the status code to be edited.</li>
+        <li>Rename status code.</li>
+        <li>Click "Save"</li>
+    </ol>
+<div class="center">
+    <img src="images_admissions/editicde-adms.png" width="420" height="165" />
+</div>
+<br>
+
+<p>
+    To delete a status code access the Inquiry Status Page.  Then:
+</p>
+    <ol>
+        <li>Click on the status code to be deleted.</li>
+        <li>Click Delete button as highlighted in image above.</li>
+    </ol>
+<p>The status code will be deleted as an option on the Inquiry Page, on the Student Inquiry, and in the
+    Admissions Reports.</p>
+<!--end Inquiry Status Codes-->
+<br><br>
+
+
+<!--Application Status Codes-->
+<h2 id="appcdes-adms">Application Status Codes</h2>
+<p>
+Application Status Codes denote the state of Student Applications providing the ability
+to see at a glance where each application is in the process.  There are several built-in codes
+and the ability to customize Status Codes as needed. These codes are used both in 
+the Student Applications and the related reports. Below is an overview of the Application Status Codes
+page.
+</p>
+
+<br>
+<div class="center">
+<img src="images_admissions/appstatcde-adms.png" width="600" height="420"/>
+<span class="caption">Application Status Codes with "Waitlisted" as a customized code.</span>   
+</div>
+<br>
+<p>
+Access the "Application Status Codes" page from the Admissions feature then choose the "Application Status Codes" tab as shown above.
+The built-in codes are default status codes and cannot be modified or deleted, only moved up or down for display purposes.    
+</p>
+<br>
+<br>
+<h3 id="addapcde-adms"><b>Add Application Status Code</b></h3>
+<p>
+    An application status code may be added by accessing the ""Application Status Code" page. Then:
+</p>
+    <ol>
+        <li>Click <img class="inline" src="images_admissions/addstatcde-adms.png" wdith="106" height="20" /></li>
+        <li>Enter new Status Code name.</li>
+        <li>Click "Save"</li>
+    </ol>
+<div class="center">
+    <img src="images_admissions/addacde-adms.png" width="418" height="165" />
+</div>
+<br>
+<p>The new application status code will display as an option on the Application Page, on the Student Application, and in the
+    Admissions Reports.
+</p>
+<br><br>
+
+<h3 id="editapcde-adms"><b>Edit/Delete Inquiry Status Codes</b></h3>
+<p>
+    A customized status code may be edited or deleted, but a built-in status code cannot.  To edit a
+    status code access the Application Status Codes page.  Then:
+</p>
+    <ol>
+        <li>Click on the status code to be edited.</li>
+        <li>Rename status code.</li>
+        <li>Click "OK"</li>
+    </ol>
+<div class="center">
+    <img src="images_admissions/editapcde-adms.png" width="420" height="195" />
+</div>
+<br>
+
+<p>
+    To delete a status code access the Inquiry Status Codes page.  Then:
+</p>
+    <ol>
+        <li>Click on the status code to be deleted.</li>
+        <li>Click "Delete Status Code" as highlighted in image above.</li>
+    </ol>
+<p>The status code will be deleted as an option on the Application Page, on the Student Application, and in the
+    Admissions Reports.</p>
+<!--end Application Status Codes-->
+<br><br>
+
+
+<!--Search Admissions-->
+<h2 id="search-adms">Search Admissions</h2>
+<p>
+    The Admissions feature allows for comprehensive searching of all Inquiries and Applications.  Searches may
+    be made by status codes, names, or other criteria listed in each summary record.
+</p>
+<br>
+<h3 id="searchinq-adms"><b>Search Inquiries</b></h3>
+<p>
+    To search Inquiries by Status Code:
+</p>
+    <ol>
+        <li>Choose "Inquiries" tab from Admissions feature.</li>
+        <li>Click arrow in search box.</li>
+        <li>Check box next to Inquiry Code to view (multiple boxes may be checked).</li>
+        <li>Click <img class="inline" src="images_admissions/search-adms.png" width="55" height="15" /> to view records.</li>
+    </ol>
+<br>
+<div class="center">
+    <img src="images_admissions/inqsearch-adms.png" width="710" height="420"/>
+</div>
+<br>
+
+<p>
+    To search Inquiries by other criteria:
+</p>
+    <ol>
+        <li>Choose "Inquiries" tab from Admissions feature.</li>
+        <li>Enter Search criteria (see image above for search information).</li>
+        <li>Click <img class="inline" src="images_admissions/search-adms.png" width="55" height="15" /> to view records.</li>
+    </ol>
+<br>
+
+<h3 id="searchapp-adms"><b>Search Applications</b></h3>
+<p>
+    To search Applications by Status Code:
+</p>
+    <ol>
+        <li>Choose "Applications" tab from Admissions feature.</li>
+        <li>Click arrow in search box.</li>
+        <li>Check box next to Application Code to view (multiple boxes may be checked).</li>
+        <li>Click <img class="inline" src="images_admissions/search-adms.png" width="55" height="15" /> to view records.</li>
+    </ol>
+<br>
+<div class="center">
+    <img src="images_admissions/appsearch-adms.png" width="710" height="420"/>
+</div>
+<br>
+
+<p>
+    To search Applications by other criteria:
+</p>
+    <ol>
+        <li>Choose "Applications" tab from Admissions feature.</li>
+        <li>Enter Search criteria (see image above for search information).</li>
+        <li>Click <img class="inline" src="images_admissions/search-adms.png" width="55" height="15" /> to view records.</li>
+    </ol>
+<!--end Search Admissions-->
+<br>
+<br>
+
+<!--Semester-->
+<h2 id="semester-adms">Manage Semesters</h2>
+
+<br>
+<div class="center">
+    <img src="images_admissions/semester-adms.png" width="695" height="305"/>
 </div>
 
+</div>
 </body>
 </html>
