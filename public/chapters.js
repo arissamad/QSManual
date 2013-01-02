@@ -13,3 +13,4 @@ chapters[chapters.length] = "10-parentportal.html";
 chapters[chapters.length] = "11-parentmessaging.html";
 chapters[chapters.length] = "12-discipline.html";
 chapters[chapters.length] = "13-studentportal.html";
+chapters[chapters.length] = "14-scheduling.html";
