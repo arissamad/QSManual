@@ -129,6 +129,15 @@ function ready2() {
 
 </script>
 
+<!--Start of Zopim Live Chat Script-->
+<script type="text/javascript">
+window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
+$.src='//cdn.zopim.com/?CZWSCPCJYXBWq33TrxEjtD0U3pXDT3wH';z.t=+new Date;$.
+type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
+</script>
+<!--End of Zopim Live Chat Script-->
 
 
 </head>
@@ -149,7 +158,7 @@ function ready2() {
         </div>
         
         <div class="post-load">
-            <div class="top">Online Manual Version:
+            <div class="top" style="display:none">Online Manual Version:
                 <a href="#top" class="selected">Teachers</a>
                 <a href="#top">Administrators</a>
                 <a href="#top">Parents</a>
@@ -209,24 +218,68 @@ Loading...</div>
 </section>
 </div>
 
+<div class="feedback">
+    <div class="close">X</div>
+    <span>How can we make this manual better for you?</span>
+    
+        
+    <form id="form46" name="form46" class="wufoo topLabel page" autocomplete="off" enctype="multipart/form-data" method="post" novalidate
+    action="https://quickschools.wufoo.com/forms/r7p8p5/#public">
+    
+        	<textarea id="Field1" name="Field1" spellcheck="true" cols="50" onkeyup="" placeholder="Your suggestions will go a long way towards helping us."></textarea>
+        
+            <div style="display:none">
+            	<input id="Field3" name="Field3" type="text" class="field text medium" value="" maxlength="255" tabindex="2" onkeyup="" />
+            	
+            	<input id="Field4" name="Field4" type="text" class="field text medium" value="" maxlength="255" tabindex="3" onkeyup="" />
+            	
+            	
+            	
+            	<textarea name="comment" id="comment" rows="1" cols="1"></textarea>
+            	<input type="hidden" id="idstamp" name="idstamp" value="mZUXNXF442x03bEZRp+OWjLsu08ynLXj3GzFpdljjyo=" />
+            </div>
+            <div></div>
+            <input id="saveForm" name="saveForm" class="btTxt submit" type="submit" value="Submit" style="display:none;"/>
+            <script>
+                var textArea = $("#Field1");
+                var input = $("#saveForm");
+                
+                textArea.focus(function() {
+                   input.show();
+                   textArea.animate({height: "200px"}, 300);
+                });
+                textArea.blur(function() {
+                    //input.hide();
+                    textArea.animate({height: "20px"}, 300); 
+                });
+                
+                $(".close").click(function() {
+                   $(".feedback").hide(); 
+                });
+            </script>
+    </form> 
+    
+    
+</div>
+
 <div id="content-div" class="post-load">
 
 <section>
     
     <h1><span class="header-text">Introduction</span><span class="header-num">00</span>
-    <a class="print-icon has-tip" href="#">
-    <div id="tip-sml">
-    <span></span>
-    Click the icon to print this section only.
-    </div>
-</a>
-<a class="comment-icon has-tip" href="#">
-	<div id="tip-sml">
-    <span></span>
-    Click the icon to view or add a comment for this section.
-    </div>
-</a>
-</h1>
+        <a class="print-icon has-tip" href="#">
+            <div id="tip-sml">
+            <span></span>
+            Click the icon to print this section only.
+            </div>
+        </a>
+        <a class="comment-icon has-tip" href="#">
+        	<div id="tip-sml">
+            <span></span>
+            Click the icon to view or add a comment for this section.
+            </div>
+        </a>
+    </h1>
     <h2><span class='header-text'>This is an H2 heading</span><span class='header-num'>8.3</span></h2>
     	       
     <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. 
