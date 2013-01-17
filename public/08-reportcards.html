@@ -6,7 +6,7 @@
 <body>
 
 <div class="content">
-<h1>Report Cards</h1>
+<h1 id="reportCards">Report Cards</h1>
 
 <p>The <b>Report Cards</b> tab offers school administrators and teachers a convenient, centralized way to activate report 
 cards and make them available to students and their families in .pdf format. Report cards can be organized according 
@@ -55,6 +55,19 @@ and how to edit and lock report cycles.</p>
 <li><a href="#togglesubject">Toggling On Subject-Specific Critera Setup</a></li>
 </ul>
 <li><a href="#setupsubjectspecific">Setup Subject-Specific Criteria</a></li>
+<ul><li><a href="creatingtemplate">Creating a New Subject Template</a></li>
+<ul>
+<li><a href="#addfield">Add Field to Subject Template</a></li>
+<li><a href="#adddropdown">Add Drop-Down to Subject Template</a></li>
+<li><a href="#addcomment">Add Comment to Subject Template</a></li>
+<li><a href="#addlikert">Add Likert Scale to Subject Template</a></li>
+</ul>
+<li><a href="#edittemplate">Viewing and Editing Templates in the Template Name Table</a></li>
+<ul><li><a href="#modifyingtabledisplay">Modifying Table Display to Change Number of Rows Shown</a></li></ul>
+
+<li><a href="#assigntemplate">Assigning Subject Templates to Actual Courses</a></li>
+<li><a href="#gradetemplate">Grading Courses Using Subject-Specific Criteria</a></li>
+</ul>
 </ul>
 
 <h2 id="rcardfeatures">Activating and Configuring Report Cards Feature</h2>
@@ -69,30 +82,30 @@ and how to edit and lock report cycles.</p>
     your school's plan and account page with available features. You must be enrolled in either the Apollo or Athena plan 
     to have access to the Report Card feature.</p>
 
-<div class="center"><img src="images_ks_reportcards/features.png" /></div>
+<div class="center"><img src="images_ks_reportcards/features.png" width="842" height="104"/></div>
 
 <p>Make sure that there is a check in the <b>Report Cards/Gradebook</b> row under your plan. This toggles the feature on so
 you can work on Report Cards. Then click on the <b>Configure</b> link next to the box to set up Report Card privileges for 
 your school:</p>
 
-<div class="center"><img src="images_ks_reportcards/rcardsfeatures.png" /></div>
+<div class="center"><img src="images_ks_reportcards/rcardfeatures.png" width="714" height="598"/></div>
 
 <p>This will bring up a <b>Report Cards/Gradebook</b> popup box in which privileges can be set for personnel in your school.
     You can designate who in your school may configure report cards, submit grades on behalf of others, and print report cards.
     To do so, click in the relevant box and select individual teachers from the drop-down menu, or select <b>All Teachers</b> 
     if you want everyone to be able to access the privilege, as shown:</p>
 
-<div class="center"><img src="images_ks_reportcards/configurercards.png" /></div> 
+<div class="center"><img src="images_ks_reportcards/configurercards.png" width="816" height="679" /></div> 
 
 <p>After you have added the personnel you want to have access to these tools, scroll to the bottom of the popup box and 
-    click on the red <b>Save</b> button (<img class="inline" src="images_ks_reportcards/save.png" />) to register your 
+    click on the red <b>Save</b> button (<img class="inline" src="images_ks_reportcards/save.png" width="78" height="30"/>) to register your 
     changes in the system. Now you are ready to access and edit report cards!</p>
 
 <h2 id="accessingreportcards">Accessing Report Cards Tab</h2>
-<p>To access the Report Cards section of QuickSchools from your login page, click on the <b>Report Cards</b> link in the green 
+<p>To access the Report Cards section of QuickSchools from your login page, click on the <b>Report Cards</b> link in the gray 
 bar at the top of the screen, as shown:</p>
 
-<div class="center"><img src="images_ks_reportcards/rcardsaccess.png" /></div>
+<div class="center"><img src="images_ks_reportcards/rcardsaccess.png" width="843" height="130"/></div>
 
 <p>This will bring up the main Report Cards page, on which you will see up to four different menu tabs:</p>
 <ul>
@@ -102,7 +115,7 @@ bar at the top of the screen, as shown:</p>
 <li><b>Setup Subject-Specific Criteria</b> (as shown below)</li>
 </ul>
 
-<div class="center"><img src="images_ks_reportcards/mainrcardpage.png" /></div>
+<div class="center"><img src="images_ks_reportcards/mainrcardpage.png" width="857" height="667"/></div>
 
 <p>The Report Cards tab contains a list of all students in the school. From this page, you can view end-of-year report cards associated with an 
 individual student for different terms, download report cards, and activate and deactivate report cards to connect them to student records.</p>
@@ -112,32 +125,32 @@ individual student for different terms, download report cards, and activate and 
 <p>First, check to see which type of report card (here <b>End-of-Term Report Card</b>) and for which term (here <b>2012/2013, 
 Current Semester</b>) the report cards are being listed. This information is located directly below the large red <b>Report Cards</b> 
 header on the left side of the page, and may be changed by clicking on the <b>Change</b> link 
-(<img class="inline" src="images_ks_reportcards/changelink.png" />) that appears directly to the 
+(<img class="inline" src="images_ks_reportcards/changelink.png" width="60" height="29"/>) that appears directly to the 
 right of the report card type.</p>
 
-<div class="center"><img src="images_ks_reportcards/rcardstatus1.png" /></div>
+<div class="center"><img src="images_ks_reportcards/rcardstatus1.png" width="541" height="274"/></div>
 
 <p>The status line indicating whether or not report cards are locked and read-only appears directly below the bolded 
 type of report card listed at the top of the page. <i>If the status is not indicated, the report cards are editable.</i>
 This status may only be changed by users with privileges enabling them  to have access to managing report cards 
 through the <a href="#setuprcards">Setup Report Cards</a> tab on this page, as described later in this chapter.</p>
 
-<p>Clicking on the <b>Change</b> link (<img class="inline" src="images_ks_reportcards/changelink.png" />) will bring up a <b>Select Report Session</b> popup box containing a list of all 
+<p>Clicking on the <b>Change</b> link (<img class="inline" src="images_ks_reportcards/changelink.png" width="60" height="29"/>) will bring up a <b>Select Report Session</b> popup box containing a list of all 
     archived course terms, organized chronologically by date of creation:</p>
 
-<div class="center"><img src="images_ks_reportcards/rcardsessionselect.png" /></div>
+<div class="center"><img src="images_ks_reportcards/rcardsessionselect.png" width="759" height="433"/></div>
 
 <p>The session currently selected is indicated by the presence of the italicized phrase <i>(Currently viewing this
 session)</i> in the <b>Report Session Name</b> column of the popup box. To change this to a different report session, 
 just click anywhere on the desired row. The italicized phrase will now move to the selected row automatically.</p>
 
 <p>If your school has many different sessions associated with its account, then repaginating using the table view icon 
-(<img class="inline" src="images_ks_reportcards/tableviewicon.jpg" />) may be desirable. For detailed instructions on how
+(<img class="inline" src="images_ks_reportcards/tableviewicon.png" width="37" height="26"/>) may be desirable. For detailed instructions on how
 to do this, see the <a href="#modifyingrcards">Modifying Page Display to Change Number of Rows Per Page</a> section of this chapter.
     You may also use the <b>Search</b> feature to locate the session you wish to select.</p>
 
 <p>When you have changed the current session to the one you wish to work on, you may exit the popup box by clicking on 
-    the red <b>Cancel</b> button (<img class="inline" src="images_ks_reportcards/cancelbutton.png" />).
+    the red <b>Cancel</b> button (<img class="inline" src="images_ks_reportcards/cancelbutton.png" width="90" height="30"/>).
 </p>
 
 <h2 id="displayingrcards">Displaying and Managing Student Records</h2>
@@ -153,32 +166,33 @@ or <a href="#displayingrcards">repaginated to include more records</a> on the pa
 see report cards. You may search using the name of the student, or by grade level by entering the numerical grade in the 
 search box, as shown in the example below:</p>
 
-<div class="center"><img src="images_ks_reportcards/firstgradesearch.png" /></div>
+<div class="center"><img src="images_ks_reportcards/firstgradesearch.png" width="713" height="588"/></div>
 
 <p>To clear the search and return to the comprehensive list of students, click on the <b>Clear Search</b> link under the 
 search box.</p>
 
 <h3 id="reversealpharcards">Displaying Student Records in Reverse Alphabetical Order</h3>
 
-<p>It is easy to display student records in reverse alphabetical order; click once on the dark green border labeled 
+<p>It is easy to display student records in reverse alphabetical order; click once on the blue border labeled 
 <b>Student</b> next to the white triangle and it will reverse to list them from "Z" to "A."</p>
 
 <h3 id="modifyingrcards">Modifying Page Display to Change Number of Rows Per Page</h3>
 
 <p>The number of records displayed on the screen may be set and/or customized by clicking on this icon 
-(<img class="inline" src="images_ks_reportcards/tableviewicon.jpg" />) in the very last row 
+(<img class="inline" src="images_ks_reportcards/tableviewicon.png" width="37" height="26"/>) in the very last row 
 in the table. This reveals the following selection menu:</p>
 
-<div class="center"><img src="images_ks_reportcards/tableviewmenu.jpg" /></div>
+<div class="center"><img src="images_ks_reportcards/tableviewmenu.png" width="116" height="228"/></div>
 
 <p>As indicated, the default setting is to display 10 rows on the screen; additional rows will then be shown 
 on subsequent screens. You may change this to enable viewing of 25, 50, or 100 column categories at a time. The number of rows can also be 
 customized to select all records by selecting the <b>Custom</b> selection, in which case you will be prompted 
 to fill in the desired number of rows to be made visible per page by the following popup box:</p>
 
-<div class="center"><img src="images_ks_reportcards/customrows.jpg" /></div>
+<div class="center"><img src="images_ks_reportcards/customrows.png" width="547" height="222"/></div>
 
-<p>Enter the desired number of rows to display and click on the <b>OK</b> button (<img class="inline" src="images_ks_reportcards/okbutton.jpg" />) 
+<p>Enter the desired number of rows to display and click on the <b>Ok</b> button 
+(<img class="inline" src="images_ks_reportcards/okbutton.png" width="47" height="30"/>) 
 to save your preference.</p>
 
 <p>Finally, to restore the selection to the default, select <b>Clear Preferences</b> from the selection menu. This will erase any prior 
@@ -194,18 +208,18 @@ download report cards for all of them simultaneously using the drop-down menu ab
 
 <p>To view a single student record, simply click on the row containing the student name of the record you would like to see.</p>
 
-<div class="center"><img src="images_ks_reportcards/singlercard.png" /></div>
+<div class="center"><img src="images_ks_reportcards/singlercard.png" width="856" height="352"/></div>
 
 <p>This will bring up the report card for the designated student, as shown:</p>
     
-    <div class="center"><img src="images_ks_reportcards/onercard.png" /></div>
+    <div class="center"><img src="images_ks_reportcards/onercard.png" width="710" height="700"/></div>
     
 <p>If the status of the report cards for that term is not set to locked and read-only, you may edit the attendance, marks, 
     grade, and comment fields. If you just want to view the report card as a .pdf onscreen, or download it to your hard drive, 
    click on the appropriate link at the top right of the screen.</p>
    
- <p>When you have made all the changes necessary to the record, click on the red <b>Save</b> (<img class="inline" src="images_ks_reportcards/savebutton.png" />) 
- or <b>Save & Close</b> (<img class="inline" src="images_ks_reportcards/saveclose.png" />) 
+ <p>When you have made all the changes necessary to the record, click on the red <b>Save</b> (<img class="inline" src="images_ks_reportcards/savebutton.png" width="97" height="30"/>) 
+ or <b>Save & Close</b> (<img class="inline" src="images_ks_reportcards/saveclose.png" width="101" height="30"/>) 
  button at the top or bottom of the screen. If you save and close, you will be returned to the main Report Cards screen.
  Alternatively, you can also return to the main screen by clicking on the link <b>Return to List</b> at the top 
  left of the record.
@@ -216,7 +230,7 @@ download report cards for all of them simultaneously using the drop-down menu ab
 <p>From the main Report Cards screen, it is possible to download multiple report card records by using the checkboxes 
 on the left side of the page, as shown here:</p>
 
- <div class="center"><img src="images_ks_reportcards/rcardcheckboxes.png" /></div>
+ <div class="center"><img src="images_ks_reportcards/rcardcheckboxes.png" width="481" height="652"/></div>
 
 <p>Simply select the records you want to include by checking the relevant boxes, and then select <b>Download</b>
  from the drop-down menu. The report cards from the selected records will be compliled 
@@ -237,7 +251,7 @@ report card. If deactivated, a reminder message appears to say that the report c
     record.
 </p>
 
- <div class="center"><img src="images_ks_reportcards/rcardactivation.png" /></div>
+ <div class="center"><img src="images_ks_reportcards/rcardactivation.png" width="854" height="456"/></div>
 
 <p>On the far right of that column is a link to toggle the record to <b>Activate</b> or <b>Deactivate</b>. This enables 
     teachers and administrators to review and edit report cards before activating and making them available to students in the 
@@ -249,7 +263,7 @@ report card. If deactivated, a reminder message appears to say that the report c
 or teachers to review, edit, and enter grades by subject. This is especially useful for subjects in which there were 
 no Gradebook entries or when final grades could not be automatically assessed using conventional Gradebook formulas.</p>
 
- <div class="center"><img src="images_ks_reportcards/rcardssubject.png" /></div>
+ <div class="center"><img src="images_ks_reportcards/rcardssubject.png" width="712" height="697"/></div>
 
 <h3 id="rcardtype">Selecting Report Card Type and Term</h3>
 
@@ -258,29 +272,29 @@ Current Semester</b>) the report cards are being listed. This information is loc
 header on the left side of the page, and may be changed by clicking on the <b>Change</b> link that appears directly to the 
 right of the report card type.</p>
 
-<div class="center"><img src="images_ks_reportcards/rcardstatus2.png" /></div>
+<div class="center"><img src="images_ks_reportcards/rcardstatus.png" width="474" height="364"/></div>
 
 <p>The status line indicating whether or not report cards are locked and read-only appears directly below the bolded 
 type of report card listed at the top of the page. <i>If the status is not indicated, the report cards are editable.</i>
 This status may only be changed by users with privileges enabling them to have access to managing report cards 
 through the <a href="#setuprcards">Setup Report Cards</a> tab on this page, as described later in this chapter.</p>
 
-<p>Clicking on the <b>Change</b> link (<img class="inline" src="images_ks_reportcards/changelink.png" />) will bring up a <b>Select Report Session</b> popup box containing a list of all 
+<p>Clicking on the <b>Change</b> link (<img class="inline" src="images_ks_reportcards/changelink.png" width="60" height="29"/>) will bring up a <b>Select Report Session</b> popup box containing a list of all 
     archived course terms, organized chronologically by date of creation:</p>
 
-<div class="center"><img src="images_ks_reportcards/rcardsessionselect.png" /></div>
+<div class="center"><img src="images_ks_reportcards/rcardsessionselect.png" width="759" height="433"/></div>
 
 <p>The session currently selected is indicated by the presence of the italicized phrase <i>(Currently viewing this
 session)</i> in the <b>Report Session Name</b> column of the popup box. To change this to a different report session, 
 just click anywhere on the desired row. The italicized phrase will now move to the selected row automatically.</p>
 
 <p>If your school has many different sessions associated with its account, then repaginating using the table view icon 
-(<img class="inline" src="images_ks_reportcards/tableviewicon.jpg" />) may be desirable. For detailed instructions on how
+(<img class="inline" src="images_ks_reportcards/tableviewicon.png" width="37" height="26"/>) may be desirable. For detailed instructions on how
 to do this, see the <a href="#modifyingrcards">Modifying Page Display to Change Number of Rows Per Page</a> section of this chapter.
     You may also use the <b>Search</b> feature to locate the session you wish to select.</p>
 
 <p>When you have changed the current session to the one you wish to work on, you may exit the popup box by clicking on 
-    the red <b>Cancel</b> button (<img class="inline" src="images_ks_reportcards/cancelbutton.png" />).
+    the red <b>Cancel</b> button (<img class="inline" src="images_ks_reportcards/cancelbutton.png" width="90" height="30" />).
 </p>
 
 <h3 id="rcardteacher">Selecting Teacher and Subject</h3>
@@ -290,7 +304,7 @@ to do this, see the <a href="#modifyingrcards">Modifying Page Display to Change 
     selecting the name of the teacher on whose behalf you will be grading from the drop-down menu in the gray box at 
     the top of the screen.</p>
     
- <div class="center"><img src="images_ks_reportcards/rcardsubjectselect.png" /></div>   
+ <div class="center"><img src="images_ks_reportcards/rcardsubjectselect.png" width="414" height="440" /></div>   
 
 <p>Selecting the teacher will modify the choices of courses available to be selected in the <b>Subject</b> menu, so 
     that only the courses assigned to that teacher will appear. In this way, an administrator or teacher may 
@@ -301,23 +315,23 @@ to do this, see the <a href="#modifyingrcards">Modifying Page Display to Change 
 <p>Now that you have selected a teacher and subject, the resulting list of students enrolled in that course will be 
     listed on the main screen of the <b>Subject-Based Grading</b> tab. Note that it is possible to change the display 
     to maximize the <b>Subject-Based Grading</b> window on your screen by clicking on the Maximize icon 
-(<img class="inline" src="images_ks_reportcards/maximizebutton.jpg" />), which appears between the red <b>Save</b> 
-button (<img class="inline" src="images_ks_reportcards/savebutton.png" />) and the search box at the top 
+(<img class="inline" src="images_ks_reportcards/maximizebutton.png" width="38" height="30" />), which appears between the red <b>Save</b> 
+button (<img class="inline" src="images_ks_reportcards/savebutton.png" width="97" height="30" />) and the search box at the top 
 right-hand corner of the page.</p>
 
-<div class="center"><img src="images_ks_reportcards/rcardsubjectgrading.png" /></div>
+<div class="center"><img src="images_ks_reportcards/rcardsubjectgrading.png" width="705" height="653" /></div>
 
 <p>Existing marks and grades will automatically appear for any student whose grades have been entered into the Gradebook for the 
     course. It is easy to make changes to the <b>Marks</b>, <b>Grade</b>, and <b>Comments</b> fields by simply clicking 
     on the relevant cell you wish to change, as shown in this sample:
 </p>
 
-<div class="center"><img src="images_ks_reportcards/samplesubjectgrading.png" /></div>
+<div class="center"><img src="images_ks_reportcards/samplesubjectgrading.png" width="742" height="534"/></div>
 
 <p>The record will automatically indicate a manual change to a student's grade with a red dashed line appearing in the 
 <b>Grade</b> box under the new grade. Best practice is to include a comment of explanation as to why the change to the
 final grade has been made. When you have finished editing the grade records for the course, remember to click on the 
-    red <b>Save</b> button (<img class="inline" src="images_ks_reportcards/savebutton.png" />) to permanently record your changes.
+    red <b>Save</b> button (<img class="inline" src="images_ks_reportcards/savebutton.png" width="97" height"30" />) to permanently record your changes.
 </p>
 
 <h2 id="setuprcards">Setup Report Cards</h2>
@@ -327,48 +341,48 @@ create a new report cycle, manage report cards to set as editable or locked, and
 cards using a template system.
 </p>
 
-<div class="center"><img src="images_ks_reportcards/setupscreen.png" /></div>
+<div class="center"><img src="images_ks_reportcards/setupscreen.png" width="728" height="620" /></div>
 
 <h3 id="changingsession">Changing Report Card Session</h3>
 
-<p>Clicking on the <b>Change</b> link (<img class="inline" src="images_ks_reportcards/changelink.png" />) will bring up a <b>Select Report Session</b> popup box containing a list of all 
+<p>Clicking on the <b>Change</b> link (<img class="inline" src="images_ks_reportcards/changelink.png" width="60" height="29"/>) will bring up a <b>Select Report Session</b> popup box containing a list of all 
     archived course terms, organized chronologically by date of creation:</p>
 
-<div class="center"><img src="images_ks_reportcards/rcardsessionselect.png" /></div>
+<div class="center"><img src="images_ks_reportcards/rcardsessionselect.png" width="759" height="433"/></div>
 
 <p>The session currently selected is indicated by the presence of the italicized phrase <i>(Currently viewing this
 session)</i> in the <b>Report Session Name</b> column of the popup box. To change this to a different report session, 
 just click anywhere on the desired row. The italicized phrase will now move to the selected row automatically.</p>
 
 <p>If your school has many different sessions associated with its account, then repaginating using the table view icon 
-(<img class="inline" src="images_ks_reportcards/tableviewicon.jpg" />) may be desirable. For detailed instructions on how
+(<img class="inline" src="images_ks_reportcards/tableviewicon.png" width="37" height="26"/>) may be desirable. For detailed instructions on how
 to do this, see the <a href="#modifyingrcards">Modifying Page Display to Change Number of Rows Per Page</a> section of this chapter.
     You may also use the <b>Search</b> feature to locate the session you wish to select.</p>
 
 <p>When you have changed the current session to the one you wish to work on, you may exit the popup box by clicking on 
-    the red <b>Cancel</b> button (<img class="inline" src="images_ks_reportcards/cancelbutton.png" />).
+    the red <b>Cancel</b> button (<img class="inline" src="images_ks_reportcards/cancelbutton.png" width="90" height="30" />).
 </p>
 <h3 id="creatingsession">Creating New Report Card Session</h3>
 
-<p>To add a new report card cycle, simply click on the <b>Create New</b> link (<img class="inline" src="images_ks_reportcards/createnewlink.png" />)
+<p>To add a new report card cycle, simply click on the <b>Create New</b> link (<img class="inline" src="images_ks_reportcards/createnewlink.png" width="76" height="28"/>)
 at the top of the <b>Setup Report Card</b> page. This will bring up a <b>New Report Cycle</b> popup box that looks like this:</p>
 
-<div class="center"><img src="images_ks_reportcards/newreportcycle.png" /></div>
+<div class="center"><img src="images_ks_reportcards/newreportcycle.png" width="651" height="424"/></div>
 
-<p>Fill in a new name for the report card cycle and press the red OK button (<img class="inline" src="images_ks_reportcards/okbutton.jpg" />). This 
+<p>Fill in a new name for the report card cycle and press the red OK button (<img class="inline" src="images_ks_reportcards/okbutton.png" width="47" height="30" />). This 
     will save your selection and return you to the main <b>Setup Report Cards</b> tab with the new report card
     cycle as the active open one.</p>
 
-<div class="center"><img src="images_ks_reportcards/setuphomepage.png" /></div>
+<div class="center"><img src="images_ks_reportcards/setuphomepage.png" width="853" height="607"/></div>
 
 <p>The default template is <b>Super Basic</b>; however, it is easy to change or customize this by simply clicking 
-    on the <b>Change Template</b> (<img class="inline" src="images_ks_reportcards/changetemplatelink.png" />) or 
-    <b>Customize Template</b> (<img class="inline" src="images_ks_reportcards/customizetemplatelink.png" />) link, as shown above. 
+    on the <b>Change Template</b> (<img class="inline" src="images_ks_reportcards/changetemplatelink.png" width="126" height="30" />) or 
+    <b>Customize Template</b> (<img class="inline" src="images_ks_reportcards/customizetemplatelink.png" width="148" height="30" />) link, as shown above. 
     </p>
 
 <h3 id="changetemplate">Changing Template</h3>
 
-<p>Clicking on <b>Change Template</b> (<img class="inline" src="images_ks_reportcards/changetemplatelink.png" />) brings 
+<p>Clicking on <b>Change Template</b> (<img class="inline" src="images_ks_reportcards/changetemplatelink.png" width="126" height="30"/>) brings 
     you to the <b>Select Template</b> screen, where you will see 15 different template choices displayed. You may 
     preview or select from these choices by clicking the appropriate link directly below each template option. Previewing 
     a template option will open a pdf popup box of the template for easy viewing. Please note that some templates 
@@ -378,7 +392,7 @@ at the top of the <b>Setup Report Card</b> page. This will bring up a <b>New Rep
         by simply utilizing the checkboxes that appear to the right of the chosen template, as shown in this example of
         the Hot Safari template:</i></b></p>
         
-<div class="center"><img src="images_ks_reportcards/selecttemplatefeatures.png" /></div>
+<div class="center"><img src="images_ks_reportcards/selecttemplatefeatures.png" width="736" height="680" /></div>
 
 <p>Checkbox categories are as follows:</p>
     <ul>
@@ -398,26 +412,26 @@ at the top of the <b>Setup Report Card</b> page. This will bring up a <b>New Rep
     </ul>    
  
  <p>Once you have selected the features you want to appear on your report card, click on the red <b>Save Configuration</b>
-button (<img class="inline" src="images_ks_reportcards/saveconfigurebutton.png" />) located at the bottom of the 
+button (<img class="inline" src="images_ks_reportcards/saveconfigurebutton.png" width="133" height="30" />) located at the bottom of the 
 page just following the entire list of categories to register those changes in the system.</p>    
 
 <h3 id="customizetemplate">Customizing Template</h3>
 
-<p>Clicking on <b>Customize Template</b> (<img class="inline" src="images_ks_reportcards/customizetemplatelink.png" />)
+<p>Clicking on <b>Customize Template</b> (<img class="inline" src="images_ks_reportcards/customizetemplatelink.png" width="148" height="30" />)
 will bring you to the <b>Edit Report Card Template</b> screen, where you will be able to modify and customize your report 
 card template according to which fields you have enabled for editing using the checkboxes on the main <b>Setup Report Card</b>
 tab, as described above.</p>
 
 <p>To make changes to the template on this screen, simply click on the are of the template you wish to modify and type into 
-    the template. Then save your changes by clicking on the red <b>Save</b> button (<img class="inline" src="images_ks_reportcards/save.png" />) 
-    or the red <b>Save & Close</b> button (<img class="inline" src="images_ks_reportcards/saveclose.png" />) at the top of the screen.
+    the template. Then save your changes by clicking on the red <b>Save</b> button (<img class="inline" src="images_ks_reportcards/save.png" width="78" height="30" />) 
+    or the red <b>Save & Close</b> button (<img class="inline" src="images_ks_reportcards/saveclose.png" width="101" height="30" />) at the top of the screen.
 </p>
 
 <h3 id="addtemplate">Adding Templates for Multiple Grade Levels</h3>
 
 <p>If you require different templates for different grade levels in your school, this is easy to set up by clicking on the 
     <b>Add Another Template for Different Grade Levels</b> button 
-    (<img class="inline" src="images_ks_reportcards/addtemplatebutton.png" />) at the bottom of the
+    (<img class="inline" src="images_ks_reportcards/addtemplatebutton.png" width="265" height="30" />) at the bottom of the
     <b>Setup Report Card</b> tab. 
 </p>
 <p> This will bring you back to the <b>Select Template</b> screen, where you will see 15 different template choices displayed. You may 
@@ -428,7 +442,7 @@ tab, as described above.</p>
 <div class="center"><img src="images_ks_reportcards/gradetemplate.png" width="404" height="454" /></div>
 
 <p>When you have complete selection of the grade levels to be associated with the template, don't forget to click the red
-<b>Save Configuration</b> button (<img class="inline" src="images_ks_reportcards/saveconfigurebutton.png" />) to registure those changes in the system.</p>
+<b>Save Configuration</b> button (<img class="inline" src="images_ks_reportcards/saveconfigurebutton.png" width="133" height="30" />) to registure those changes in the system.</p>
  
 <h3 id="togglesubject">Toggling On Subject-Specific Criteria Setup</h3>
 
@@ -447,24 +461,209 @@ tab, as described above.</p>
         is enabled and appears on your <b>Report Card</b> module. If it does not, you must toggle it on at the bottom of 
         the <b>Setup Report Cards</b> tab, as described above in <a href="#togglesubject">Toggling On Subject-Specific Criteria Setup</a>.
 </p>
-<div class="center"><img src="images_ks_reportcards/subjectcriteriatab.png" /></div>
+<div class="center"><img src="images_ks_reportcards/subjectcriteriatab.png" width="819" height="172" /></div>
 
 <p>To begin setting up subject-specific criteria to customize your report card templates, first click on the <b>Setup Subject-Specific 
     Criteria</b> tab at the top of the screen, as shown above. This will bring you to the main setup page, which looks like this:</p>
 
-<div class="center"><img src="images_ks_reportcards/subjectspecpage.png" /></div>
+<div class="center"><img src="images_ks_reportcards/subjectspecpage.png" width="831" height="609" /></div>
 
 <p>From this page, you can create subject-specific grading criteria, which can be added to report cards using subject templates. 
 Available subject templates will be listed under the first blue header <b>Template Name</b>. <i>Note that the first time you 
 enter this page, that list will be empty, as shown above</i>.</p>
 
-<p>To create a subject template, first click on the green <b>Add Subject Template</b> button (<img class="inline" src="images_ks_reportcards/addsubjecttemplate.png" />)
+<h3 id="creatingtemplate">Creating a New Subject Template</h3>
+
+<p>To create a subject template, first click on the green <b>Add Subject Template</b> button (<img class="inline" src="images_ks_reportcards/addsubjecttemplate.png" width="164" height="30" />)
 at the top of the screen.
 </p>
 
 <p>This will bring up an <b>Add Subject Template</b> popup box that looks like this:</p>
 
-<div class="center"><img src="images_ks_reportcards/addsubjecttemplatepopup.png" /></div>
+<div class="center"><img src="images_ks_reportcards/addsubjecttemplatepopup.png" width="842" height="445" /></div>
+
+<h4 id="addfield">Add Field to Subject Template</h4>
+
+<div class="center"><img src="images_ks_reportcards/addfield1.png" width="855" height="214" /></div>
+
+
+<p>Clicking on <b>Add Field</b> results in the addition of a Subject-Specific row in the template box, which can be renamed 
+    with a category relevant to the subject for which you are creating a customized report card (in this case the subject is "Art"
+    so we might add the subject-specific criterion "Drawing," as shown below:
+</p>
+
+<div class="center"><img src="images_ks_reportcards/addfield2.png" width="810" height="447" /></div>
+
+ <p>Added fields may be modified to appear in different order, or deleted, by utilizing the V X menu buttons, which appear to the 
+     left of the row you wish to modify when you place the cursor on that line. To reorder subject-specific 
+     criteria, select "V" and to delete a line entirely, select "X".
+ </p>
+    
+<p>Once you have added and named the fields you wish to have in your Subject Template, click on the red <b>OK</b> button 
+(<img class="inline" src="images_ks_reportcards/redokbutton.png" width="46" height="30" />) to save 
+    your selections to the template.</p>
+    
+<h4 id="adddropdown">Add Drop Down to Subject Template</h4>
+
+<p>Clicking on <b>Add Drop Down</b> results in the addition of a Subject-Specific row in the template box, which can be renamed 
+    with a category relevant to the subject for which you would like to include a drop-down grading menu on your 
+    customized report card (in this case the subject is "Art" so we might add the subject-specific criterion 
+    "Painting," using the <b>Add Drop Down</b> button, as shown below:
+</p>
+
+<div class="center"><img src="images_ks_reportcards/adddropdown1.png" width="740" height="206" /></div>
+
+<p>Now select categories to appear in the drop-down menu associated with that field by first clicking on the
+    column directly following the added category (in this case Painting). This will cause the following popup
+    box to be displayed:
+</p>
+
+<div class="center"><img src="images_ks_reportcards/adddropdown2.png" width="623" height="296" /></div>
+
+<p>You can then select from the existing menu choices (here A,B,C,D,F or Excellent, Fair, Poor or EE,S,NI,U), or
+it is also possible to add new options to the drop-down menu by selecting <b>ADD NEW OPTIONS</b>, which brings up 
+another popup box:</p>
+
+<div class="center"><img src="images_ks_reportcards/adddropdown3.png" width="518" height="468" /></div>
+
+<p>The letter options in this box may be replaced with any grading options you wish to associate with this category. If 
+    you want to modify an existing set of drop-down menu options, you may do this by first selecting that option set 
+    from the main popup box, and then clicking on the <b>Edit</b> link shown at the right side of the box:</p>
+
+<div class="center"><img src="images_ks_reportcards/adddropdown4.png" width="643" height="333" /></div>
+
+<p>This allows you to edit the existing options by changing them, adding options, or deleting options. In the example 
+    below, we have modified the set of options Excellent, Fair, Poor to include a fourth category "Good," making the 
+        new set of options Excellent, Good, Fair, Poor.</p>
+ 
+ <div class="center"><img src="images_ks_reportcards/adddropdown5.png" width="484" height="393" /></div>
+
+These options will now appear in the main Edit Subject Template box, and can be saved by clicking on the red <b>Ok</b> 
+button (<img class="inline" src="images_ks_reportcards/redokbutton.png" width="46" height="30" />).
+
+<h4 id="addcomment">Add Comment to Subject Template</h4>
+<p>Clicking on <b>Add Comment</b> results in the addition of a comment row in the template box, 
+which in this case appears at the very bottom and will contain text that appears on all report cards.:</p>
+
+ <div class="center"><img src="images_ks_reportcards/addcomment1.png" width="726" height="260" /></div>
+
+<p>Clicking on the comment box enables you to replace the text with a message you wish to appear on report cards 
+using this template, as shown here: </p>
+
+ <div class="center"><img src="images_ks_reportcards/addcomment2.png" width="663" height="282" /></div>
+
+<h4 id="addlikert">Add Likert Scale to Subject Template</h4>
+<p>Clicking on <b>Add Likert</b> results in the addition of a Subject-Specific row in the template box, 
+which in this case appears directly below the green <b>Criteria</b> line and can again be renamed 
+    with a category relevant to the subject for which you are creating a customized report card (here the subject is "Art"
+    so we might add the subject-specific criterion "Assemblage," as shown below:
+</p>
+
+<div class="center"><img src="images_ks_reportcards/addlikert1.png" width="619" height="258" /></div>
+
+To set up the Likert scale for Assemblage and other criteria using the Likert grading scale, click on the grade
+box in the green <b>Criteria</b> row. This will open a popup that looks like this:
+
+<div class="center"><img src="images_ks_reportcards/addlikert2.png" width="472" height="258" /></div>
+
+<p>You can then select from the existing menu choices (here A,B,C,D,F or Excellent,Good,Fair,Poor or EE,S,NI,U), or
+it is also possible to add new options to the drop-down menu by selecting <b>ADD NEW OPTIONS</b>, which brings up 
+another popup box:</p>
+
+<div class="center"><img src="images_ks_reportcards/adddropdown3.png" width="518" height="468" /></div>
+
+<p>The letter options in this box may be replaced with any grading options you wish to associate with the Likert Scale. If 
+    you want to modify an existing set of drop-down menu options, you may do this by first selecting that option set 
+    from the main popup box, and then clicking on the <b>Edit</b> link shown at the right side of the box:</p>
+
+<div class="center"><img src="images_ks_reportcards/adddropdown4.png" width="643" height="333" /></div>
+
+<p>This allows you to edit the existing options by changing them, adding options, or deleting options. 
+ In the example shown here, we have modified the set of options Excellent, Fair, Poor to include a fourth category "Good," making the 
+        new set of options Excellent, Good, Fair, Poor.</p>
+ 
+ <div class="center"><img src="images_ks_reportcards/adddropdown5.png" width="484" height="393" /></div>
+
+These options will now appear in the main Edit Subject Template box, and can be saved by clicking on the red <b>Ok</b> 
+button (<img class="inline" src="images_ks_reportcards/redokbutton.png" width="46" height="30" />).
+
+<h3 id="edittemplate">Viewing and Editing Templates in the Template Name Table</h3>
+ <div class="center"><img src="images_ks_reportcards/viewtemplate.png" width="748" height="495" /></div>
+ 
+  Added templates will appear listed at the top of the 
+    <b>Setup Subject-Specific Criteria</b> page in a table under the heading "Template Name." They can be listed in reverse 
+    order by clicking on the triangle at the far upper right of the blue table border, or searched using the <b>Search</b> 
+    function box just above the table.
+</p>
+
+<p>To view and edit a template listed in the <b>Template Name</b> table, just click anywhere on the row corresponding to that subject template, 
+    and an <b>Edit Subject Template</b> popup box will be displayed, which looks like this:</p>
+    
+ <div class="center"><img src="images_ks_reportcards/editsubjecttemplate.png" width="679" height="426" /></div>
+
+<p>You can make modifications to any aspect of the grading criteria for this subject using the four add features described above
+(<a href="#addfield">Add Field</a>, <a href="#adddropdown">Add Drop Down</a>, <a href="#addcomment">Add Comment</a>, and 
+<a href="#addlikert">Add Likert Scale</a>). Changes to the template may also be made <a href="#addfield"></a>using the V X menu</a>
+to the left of each line in the table, which appears on mouseover of the line in question. When finished editing, don't forget 
+to click on the red Ok button (<img class="inline" src="images_ks_reportcards/redokbutton.png" width="46" height="30" />) to save your changes.
+</p>
+
+<h4 id="modifyingtabledisplay">Modifying Table Display to Change Number of Rows Shown</h4>
+
+<p>The number of subject templates displayed on the screen may be set and/or customized by clicking on this icon 
+(<img class="inline" src="images_ks_reportcards/tableviewicon.png" width="37" height="26"/>) found in the very last row 
+in the table. This reveals the following selection menu:</p>
+
+<div class="center"><img src="images_ks_reportcards/tableviewmenu.png" width="116" height="228" /></div>
+
+<p>As indicated, the default setting is to display 10 rows on the screen; additional rows will then be shown 
+on subsequent screens. You may change this to enable viewing of 25, 50, or 100 column categories at a time. The number of rows can also be 
+customized by selecting the <b>Custom</b> selection, in which case you will be prompted to fill in the desired number of rows to be 
+made visible per page by the following popup box:</p>
+
+<div class="center"><img src="images_ks_reportcards/customrows.png" width="547" height="222" /></div>
+
+<p>Enter the desired number of rows to display and click on the <b>OK</b> button (<img class="inline" src="images_ks_reportcards/redokbutton.png" width="46" height="30" />) 
+to save your preference.</p>
+
+<p>Finally, to restore the selection to the default, select <b>Clear Preferences</b> from the selection menu. This will erase any prior 
+selection you may have made and revert to the default view of the table.</p>
+
+
+    
+<h3 id="assigntemplate">Assigning Subject Templates to Actual Courses</h3>
+
+ <div class="center"><img src="images_ks_reportcards/assigntemplate1.png" width="748" height="211" /></div>
+
+<p>When you have set up the subject templates you need for subject-specific criteria, the next step is to assign them to 
+    the courses for which you wish to use customized report cards. This is easy to do from the main <b>Setup Subject-Specific 
+        Criteria</b> page; simply scroll down to the section on the lower half of the page titled <b>Assign Templates to Subjects</b>
+ and you will find a comprehensive list of subjects offered in the semester or term you have active. (See the section on 
+ <a href="#selectingreportcards">Selecting Report Cards</a> for information on how to change terms if desired)</p>
+ 
+ <p>Locate the course to which you want a subject template assigned by either using the <b>Search</b> function or by scrolling
+     down through the subjects listed. Then place your cursor on the desired row in the <b>Assigned Template</b> column and 
+     click to activate the drop-down menu of available subject templates from the list in the <b>Template Name</b>
+box on the upper half of the page, as shown here: </p>
+ 
+ <div class="center"><img src="images_ks_reportcards/assigntemplate2.png" width="848" height="524" /></div>
+
+<p>Select the template you wish to associate with the subject and click on it to assign it. The template will now be displayed 
+    in the <b>Assigned Template</b> column and its subject-specific criteria will appear on the related report card for the course.
+</p>
+
+<h3 id="gradetemplate">Grading Courses Using Subject-Specific Criteria</h3>
+
+<p>Once a course has been associated with a subject template (and therefore some type of subject-specific grading criteria), 
+    the report card will automatically reflect those changes, requiring teachers to fill in the added grade fields using either 
+    conventional numeric or letter grades, selections from the designated drop-down menus, or selection from the designated 
+    Likert scale, as shown in this example:</p>
+    
+ <div class="center"><img src="images_ks_reportcards/samplegrading.png" width="816" height="691"/></div>
+    
+<p>Access to Report Card grading is discussed further in the section on <a href="#subjectbased">Subject-Based Grading</a> in 
+the Report Cards module of this manual above.</p>
+
 </div>
 </body>
 </html> 

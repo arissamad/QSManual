@@ -752,3 +752,36 @@ table.data tr:hover .d0 td{
   font-weight: normal;
   font-style: normal;
 }
+
+.feedback {
+    position: fixed;
+    bottom: 0px;
+    z-index: 1;
+    margin-left: 240px;
+    padding: 10px 20px 10px 20px;
+    background: #ddd;
+    border: 1px solid #bbb;
+}
+
+.feedback textarea {
+    padding: 5px;
+    height: 20px;
+}
+
+.feedback .close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background: white;
+    border: 1px solid grey;
+    padding: 0px 3px;
+    border-radius: 3px;
+    color: grey;
+    cursor: pointer;
+}
+
+.feedback .close:hover {
+    color: black;
+    background: #ddf;
+    color: 1px solid black;
+}
