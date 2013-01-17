@@ -8,149 +8,1475 @@
 <div class="content">
 <h1>Fee Tracking</h1>
 
-<h2>Online Payments</h2>
+<p>The Fee Tracking and Student Billing feature enables you to manage student fees and payments. With Fee Tracking, you can keep an up-to-date record for all fees and charges that students owe. You can make personalized lists of common and standard charges, so adding charges to a student's account is done quickly. For a more streamlined billing system, family billing can be enabled so that all students within a family can be viewed together and charged at the same time.</p>
 
-<h3>What appears on the parent's credit card?</h3>
-<p>The statement will show the payment as:</p>
+<p>Payments are also easy to manage and collect. Generate PDF invoices to keep parents informed of outstanding fees, payments, and refunds. To make payments easy and convenient for parents, enable online payments so parents can pay their fees online.</p> 
 
-<p>[Statement descriptor given to Stripe] [Phone Number] [State]</p>
+<p>This chapter offers detailed information on managing charges, generating invoices, recording payments, issuing refunds, making personalized lists of charges, working with family billing, and setting up online payments.</p>
 
-<p>So, for example, if the statement descriptor in Stripe is set to "THE AMERICAN SCHOOL", and the phone number is "415-111-1111" and the state is "CA", the parent's credit-card statement will show:</p>
+<ul>
+    <li><a href="#introfeetrcking">Introduction to Fee Tracking</a></li>
+    <li><a href="#enabledisablefeetracking">Enabling and Disabling the Fee Tracking Feature</a></li>
+    <li><a href="#accessingfeetracking">Accessing the Fee Tracking Page</a></li>
+    <li><a href="#movingaroundstudentbilling">Moving around the Student Billing Table</a></li>
+    <ul>
+        <li><a href="#addingcharges">Adding a Charge</a></li>
+        <li><a href="#deletingcharges">Deleting a Charge</a></li>
+        <li><a href="#addingfeecategories">Adding a Fee Category</a></li>
+        <li><a href="#generatinginvoices">Generating an Invoice</a></li>
+        <li><a href="#viewingprintinginvoices">Viewing and Printing an Invoice</li>
+        <li><a href="#cancelinginvoices">Canceling an Invoice</a></li>
+        <li><a href="#recordingpayments">Recording a Payment</a></li>
+        <li><a href="#deletingpayments">Deleting a Payment</a></li>
+        <li><a href="#issuingrefunds">Issuing a Refund</a></li>
+        <li><a href="#sortingstudentbillingaccounts">Sorting Student Billing Accounts</a></li>
+        <li><a href="#searchingstudentbillingaccounts">Searching Student Billing Accounts</a></li>
+        <li><a href="#studentbillingpreferences">Setting Student Billing Table Preferences</a></li>
+        <li><a href="#settinggeneralfeetrackingpreferences">Setting General Fee Tracking Preferences</a></li>
+    </ul>
+    <li><a href="#introfeecategories">Introduction to Fee Categories</a></li>
+    <li><a href="#enabledisablefeecategories">Enabling and Disabling Fee Categories</a></li>
+    <li><a href="#accessfeecategories">Accessing the Fee Categories Page</a></li>
+    <li><a href="#movingaroundfeecategories">Moving around the Fee Categories Table</a></li>
+    <ul>
+        <li><a href="#addingfeecategories">Adding a Fee Category</a></li>
+        <li><a href="#editingfeecategories">Editing a Fee Category</a></li>
+        <li><a href="#searchingfeecategories">Searching for a Fee Category</a></li>
+        <li><a href="#feecategorypreferences">Setting Fee Categories Table Preferences</a></li>
+    </ul>
+    <li><a href="#introstandardcharges">Introduction to Standard Charges</a></li>
+    <li><a href="#accessingstandardchargestable">Accessing the Standard Charges Table</a></li>
+    <li><a href="#movingaroundstandardcharges">Moving around the Standard Charges Table</a></li>
+    <ul>
+        <li><a href="#addingstandardcharges">Adding a Standard Charge</a></li>
+        <li><a href="#applyingstandardcharges">Applying a Standard Charge</a></li>
+        <li><a href="#editingstandardcharges">Editing a Standard Charge</a></li>
+        <li><a href="#deletingstandardcharges">Deleting a Standard Charge</a></li>
+        <li><a href="#sortingstandardcharges">Sorting Standard Charges</a></li>
+        <li><a href="#searchingstandardcharges">Searching for a Standard Charge</a></li>
+        <li><a href="#settingstandardchargetablepreferences">Setting Standard Charge Table Preferences</a></li>
+    </ul>
+    <li><a href="#introonlinepayments">Introduction to Online Payments</a></li>
+    <li><a href="#enabledisableonlinepayments">Enabling Online Payments</a></li>
+    <li><a href="#movingaroundparentpayments">Moving around the Parent Payments Table</a></li>
+    <li><a href="#usingonlinepayments">Using Online Payments</a></li>
+<li><a href="#accessonlinepayments">Accessing an Online Payment Record</a>
 
-<p>THE AMERICAN SCHOOL 4153093715 CA</p>
+    <ul>
+        <li><a href="#settingupstripe">Setting up a Stripe Account</a></li>
+        <li><a href="#viewingonlinepayments">Viewing an Online Payment</a></li>
+        <li><a href="#syncstripe">Synchronizing Stripe Payment Records with QuickSchools</a></li>
+        <li><a href="#deauthorizetripe">Deauthorizing a Stripe Account</a></li>
+          <li><a href="#sortingonlinepayments">Sorting Parent Payments</a></li>
+        <li><a href="#searchingonlinepayments">Searching for a Parent Payment</a></li>
+        <li><a href="#settingparentpaymentstablepreferences">Setting Parent Payments Table Preferences</a></li>
+        
+    </ul>
+    <li><a href="#introfamilybilling">Introduction to Family Billing</a></li>
+    <li><a href="#enabledisablefamilybilling">Enabling and Disabling Family Billing</a></li>
+    <li><a href="#movingaroundfamilybilling">Moving around the Family Billing Table</a></li>
+    <ul>
+        <li><a href="#viewingfamilyacct">Viewing a Family Account</a></li>
+        <li><a href="#viewingfamilyindividualacct">Viewing an Individual Student Account from a Family Account</a></li>
+        <li><a href="#settingprimarypayer">Setting the Primary Payer</a></li>
+        <li><a href="#addingstudentstofamily">Adding a Student to a Family</a></li>
+        <li><a href="#editingfamilies">Moving or Deleting a Student from a Family</a></li>
+        <li><a href="#addingchargesfamilybilling">Adding a Charge to a Family Account</a></li>
+        <li><a href="#deletingchargesfamilybilling">Deleting a Charge from a Family Account</a></li>
+    </ul>
+</ul>
 
-<p>This allows parents to quickly identify what the payment is for. 
-If they have a question they can call the phone number listed instead of disputing the charge via
-their credit card company, which will result in chargeback fees for your school.
-</p>
 
-<h3>Giving parents refunds</h3>
-Any payment made by a parent can be refunded. This action is done within your school's Stripe account.
+
+<h2 id="introfeetracking">Introduction to Fee Tracking</h2>
+<p>Fee Tracking begins with the Student Billing table. The Student Billing table shows you a summary of students and account balances. Clicking on a student in the Student Billing table enables you to add, view, and delete charges, generate PDF invoices, and issue refunds.</p>
+
+
+<h2 id="enabledisablefeetracking">Enabling and Disabling the Fee Tracking Feature</h2>
+<p>By default the Fee Tracking feature comes enabled. If your school does not need to use the Fee Tracking feature, you may turn the feature off. When disabled, the Fee Tracking option is removed from the top menu bar giving you a customized look and feel. Likewise, if the Fee Tracking option is not visible in the top menu bar, it is easily enabled for immediate use.</p>
 
 <ol>
-    <li>First, you have to find the Stripe ID for the payment. Look for this in your QuickSchools account, 
-    under the Fee Tracking -> Parent Payments menu.</li>
-    <li>Once you've found the transaction, click on it to open up the transaction details. Copy the Stripe Payment ID.</li>
-    <li>Now log into your school's Stripe account.</li>
-    <li>Paste the Stripe Payment ID into the search box in the upper right, and press Enter.</li>
-    <li>The transaction should appear. Click on it.</li>
-    <li>Now click the Refund Payment button and follow Stripe's instructions.</li>
-    <li>Once you're done, go back to your QuickSchools account (the Parent Payments menu.)</li>
-    <li>Click Synchronize with Stripe button.</li>
-    <li>The refund will now be reflected in QuickSchools as well.</li>
+    <li>Click <b>Features</b> at the top of the page.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/features.png"/>
+    </div>
+</p>
+<ol>
+    <p>The Features page opens.</p>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/featuresfeetrackingenable.png"/>
+    </div>
+</p>
+<ol start="2">
+    <li>Go to the row that says School Fees Tracking.</li>
+    <li>To disable the Fee Tracking feature, uncheck the checkbox in the School Fees Tracking row. To enable the Fee Tracking feature, check the checkbox in the School Fees Tracking row.</li>
+    <p>The menu bar refreshes. If the Fee Tracking feature is disabled, then the Fee Tracking option will no longer be available in the top menu bar. If the Fee Tracking feature is enabled, then the Fee Tracking option will be available in the top menu bar.</p>
+    <li>Click an item from the menu bar to continue. To configure the Fee Tracking feature, see <a href="#settinggeneralfeetrackingpreferences">Setting General Fee Tracking Preferences</a>.</li>
 </ol>
 
-<h3>Special Behaviors</h3>
 
-<h3>Refunds</h3>
-    <p>
-        If a parent's payment should be refunded, this needs to be handled directly within the school's Stripe account.
-    </p>
-    <p>
-        Schools will then have go back to their QS account and sync that payment (either directly or with "Synchonrize with Stripe" 
-    if the refund occured in the last 30 days).
-    </p>
-    <p>
-        Once synched, all bill items associated with this online payment should become zero in "Fee Tracking". 
-    In the Parents Payment screen, the originally charged amount will still appear, but updated with a red "Refunded" status. 
-    </p>
-    <p>
-        The parent will recieve the full amount back, but the school will still be charged the fees as Stripe does not refund fees.
-        (For example, say a parent initially paid $1. The school would recieve $0.65 cents as there are $0.35 in fees. If the school 
-        chooses to refund this payment, the parent will recieve his or her $1.00 back and the school will lose $1.00 resulting in a net 
-        loss of $0.35 for the school).
-    </p>
-    <p>
-        Read more about <a href="https://stripe.com/us/help/pricing">Stripe.com's Pricing</a>.
-    </p>
+<h2 id="accessingfeetracking">Accessing the Fee Tracking Page</h2>
+<p>To access the Fee Tracking page, click <b>Fee Tracking</b> at the top of the page. If there is no Fee Tracking option at the top of the page, see <a href="#enabledisablefeetracking">Enabling and Disabling the Fee Tracking Feature</a>.</p>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/accessfeetracking.png"/>
+    </div>
+</p>
+<p>The Fee Tracking page opens and the Student Billing table is displayed. The Student Billing table shows a list of students and their outstanding balances.</p>
 
-<h3>Partial Refunds</h3>
-    <p>
-        If a parent's payment should be partially refunded, this needs to be handled directly within the school's Stripe account.
-    </p>
-    <p>
-         Schools will then have go back to their QS account and sync that payment (either directly or with "Synchonrize with Stripe" 
-    if the refund occured in the last 30 days).
-    </p>
-    <p>
-        Once synched, all bill items associated with this online payment should become proportional to the amount refunded. 
-    In the Parents Payment screen, the originally charged amount will still appear, but updated with a red "PartiallyRefunded" status. 
-    </p>
-    <p>
-        The parent will recieve the full partial refund amount back, but the school may be charged the fees as Stripe does not refund fees.
-        (For example, say a parent initially paid $1. The school would recieve $0.65 cents as there are $0.35 in fees. If the school 
-        chooses to partially refund this payment at $0.50, the parent will recieve $0.50 back and the school will lose $0.50 resulting 
-        in a $0.15 net total for the school).
-    </p>
-    <p>
-        Read more about <a href="https://stripe.com/us/help/pricing">Stripe.com's Pricing</a>.
-    </p>
 
-<h3>Payment Failure</h3>
-    <p>
-        If a parent's payment should fail, this payment may need to be synced with QuickSchools.
-    </p>
+<h2 id="movingaroundstudentbilling">Moving around the Student Billing Table</h2>
+<p>By default, 10 students are displayed on each page of the Student Billing table. When more than 10 students are added, a new page in the Student Billing table is added. Use the navigation controls at the bottom of the Student Billing table to scroll through the pages. To change the number of students shown on each page, see <a href="#studentbillingpreferences">Setting Student Billing Table Preferences</a>.</p>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/pagenavigationstudentbilling.png" width="" height=""/>
+    </div>
+</p>
+<p>You can also change how charges are viewed. Select one of the following views:</p>
+    <table class="data">
+        <tr class="d0"><td>Uninvoiced Charges</td><td>Only shows charges that have not been included in an invoice. Any charges that have been included in an invoice will not be shown in this view.</td></tr>
+        <tr><td>All Charges</td><td>Shows all invoiced and uninvoiced charges.</td></tr>
+        <tr class="d0"><td>Charges by Invoice</td><td>Shows charges by invoice number and amount.</td></tr>
+    </table>
+</p>
 
-    <p>
-        If in the school's Stripe account a payment is marked failed, but is marked otherwise on the school's QS account, the school should sync that payment. 
-        (Some payments will fail automatically and not require synchronization.)
-    </p>
-    <p>
-        Once synched, all bill items associated with this online payment should become $0.00 in "Fee Tracking". 
-    In the Parents Payment screen, the originally charged amount will still appear, but updated with a red "Failed" status. 
-    The parent will see an online payment of $0.00.
-    </p>
-    <p>
-       No fees are charged when a payment has failed.
-    </p>
-    <p>
-        Read more about <a href="https://stripe.com/us/help/pricing">Stripe.com's Pricing</a>.
-    </p>
 
-<h3>Disputed</h3>
-    <p>
-        If a parent's payment should be disputed, this needs to be handled directly within the school's Stripe account.
-    </p>
+<h3 id="addingcharges">Adding a Charge</h3> 
+<ol>
+    <li>From the Student Billing table, click on the name of the student whose account you want to add a charge to. The student's billing account opens.</li>
+     <li>Click <b>Add Charge</b>.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/feetrackingaddchargebutton.png"/>
+    </div>
+</p>
+<ol>
+    <p>The Add Charge dialog box opens.</p>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/feetrackingaddcharge.png"/>
+    </div>
+</p>
+<ol start="3">
+    <li>To change the date of the charge, click the Charge Date field. An interactive calendar opens.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/feetrackingaddchargecalendar.png"/>
+    </div>
+</p>
+<ol start="4">
+    <li>Use the calendar to select the billing date. There are two ways to change the date:</li>
+        <ul>
+            <li>Click the arrowheads on either side of the month and year at the top of the calendar. Clicking the left arrow moves the months backwards. Clicking the right arrow moves the months forward. The years move backward or forwards when you reach January.</li>
+            <li>Click the arrow next to the month or year. A drop-down menu opens. Click the month or year you want from the drop-down menu. The month and year display on the calendar.</li>
+        </ul> 
+    <li>Click the number of the day that the charge occurred. The calendar closes.</li>
+    <p><b>Note:</b> You can only select a date that occurs after your last generated invoice.</p>
+    <li>In the Category field, click one or more fee categories from the drop-down list. The rest of Add Charge dialog box automatically updates with the category details. You may edit the displayed information if necessary.</li>
+    <p><b>Note:</b> If the Category field is not shown, or if you need more information about categories, see <a href="#introfeecategories">Introduction to Fee Categories</a>.</p>
+    <li>In the Description field, add what the charge is for.</li>
+    <li>In the Amount field enter how much the charge is for. You do not need to add a currency symbol.</li>
+    <p><b>Note:</b> Enter a negative number for refunds. For more information about refunds, see <a href="#issuingrefunds">Issuing a Refund</a>.</p>
+    <li>Click <b>OK</b> to add the charge to the student's account or <b>Cancel</b> to leave the account unchanged.</li>
+</ol>
 
-    <p>
-        Stripe will e-mail the school's Stripe account about the dispute. 
-        The amount disputed and a $15 fee will be deducted from the school's Stripe account. 
-        The $15 fee is charged regardless of the outcome of the dispute.
-    </p>
 
-    <p>
-        Read more about <a href="https://stripe.com/help/disputes">Stripe.com's Disputes/Chargebacks</a>.
-    </p>
+<h3 id="deletingcharges">Deleting a Charge</h3>
+<p>Charges can be deleted from a student account until an invoice is generated. Once an invoice is generated, charges no longer can be deleted. To reverse a charge after an invoice has been generated, you can cancel the invoice or issue a refund. For more information about invoices and refunds, see <a href="#generatinginvoices">Generating Invoices</a>, <a href="#cancelinginvoices">Canceling Invoices</a>, and <a href="#issuingrefunds">Issuing Refunds</a>.</p>
+<ol>
+    <li>From the Student Billing table, click on the name of the student whose account you want to add a charge to. The student's billing account opens.</li>
+    <li>Find the charge you want to delete.</ul>
+    <li>Click <b>Delete</b> at the end of the row to delete the charge. If there is no delete option available, the charge has already been invoiced and can no 
+    longer be deleted. To reverse an invoiced charge, you can cancel the invoice or issue a refund. See <a href="#cancelinginvoices">Canceling Invoices</a> or <a href="#issuingrefunds">Issuing Refunds</a> for more information.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/feetrackingdeletecharge.png"/>
+    </div>
+</p>
 
-<h3>Family Billing: Surpluses and Deficits</h3>
-    <p>
-        If a parent has dependents with vary varying amounts of outstanding and surplus bills, it is recommended that the parent pay using "Other Balance" option.
-    </p>
-    <p>
-    "Current balance" sums all dependents balances. If one child owes $50 and another child has a $25 surplus, then the parent may see an intial $25 current balance.
-    However, once they click pay now they may see "Current Balance: $50". This is because they owe nothing on the surplus dependent, but still owe $50 on the other dependent.
-    Clicking "Other Balance" may make this clearer to the parent.
-    </p>
-    <p>
-     The school can attempt to manage this situation by balancing this surplus in "Fee Tracking" by applying a payment equal to the surplus to the deficit dependent, 
-     and applying an equal charge to the surplus dependent. The parent will then only see a $25 bill.
-    </p>
-     <p>
-     In the case where the total balance is $0 or a surplus(and at least one dependent owes), then the parent will be unable to make a payment. 
-     The school can attempt to manage this as in the above paragraph.
-    </p>
+<h3 id="generatinginvoices">Generating an Invoice</h3>
+<p>You can generate a PDF invoice from a student's account. Once the invoice is generated, you can save the file to your computer to be emailed, or you can print a copy to mail. In order to view your PDF invoice, you need to have Adobe Reader installed on your computer. Go to <a href="http://www.adobe.com">Adobe.com</a> for the latest Adobe Reader software.</p>
+
+<p>When you create an invoice, the invoice includes all charges, payments, and refunds displayed in the Uninvoiced Charges view.</p>
+
+
+<ol>
+    <li>From the Student Billing table, click on the name of the student whose account you want to generate an invoice for. The student's billing account opens.</li>
+    <li>Click <b>Uninvoiced Charges</b>.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/studentbillinguninvoicedcharges.png"/>
+    </div>
+</p>
+<ol start="2">
+    <li>Click <b>Generate Invoice for Uninvoiced Charges</b>.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/studentbillinggenerateinvoice.png"/>
+    </div>
+</p>
+<ol start="3">
+    <p>The Confirm Invoice dialog box displays</p>
+    <li>Click <b>Yes, Create Invoice</b>. The invoice generates and the Uninvoiced Charges table clears. No charges will be visible in this view until new charges, payments, or refunds are added.</li>
+</ol>
+
+<h3 id="viewingprintinginvoices">Viewing and Printing Invoices</h3>
+<p>In order to view your PDF invoice, you need to have Adobe Reader installed on your computer. Go to <a href="http://www.adobe.com">Adobe.com</a> for the latest Adobe Reader software.</p>
+<ol>
+    <li>From the Student Billing table, click on the name of the student whose account you want to view. The student's billing account opens.</li>
+    <li>Click <b>Charges by Invoice</b>.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/studentbillingchargesbyinvoice.png"/>
+    </div>
+</p>
+<ol>
+    <li>Click <b>Show Invoice Items</b> to see all charges, payments, and refunds on the selected invoice. A list of the charges, payments, and refunds on the invoice displays.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/studentbillingshowinvoiceitems.png"/>
+    </div>
+</p>
+<ol start="2">
+    <li>Click <b>Hide Invoice Items</b> to hide the invoice charges.</li>
+    <li>To view, print, or save a copy of the invoice, click <b>Download PDF</b>. The Opening Invoice dialog box opens.
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/studentbillingdownloadpdf.png"/>
+    </div>
+</p>    
+<ol start="4">
+    <li>Click <b>Open</b> to view the invoice in Adobe Reader. From Adobe Reader you can print or save the invoice. Refer to the Adobe Reader documentation for more information about using Adobe Reader.</li>
+    <li>Click <b>Save File</b> to save a copy of the invoice on your computer.</li>
+</ol>
+
+
+
+<h3 id="cancelinginvoices">Canceling an Invoice</h3>
+<p>You can cancel the last invoice that you have generated. Items from the canceled invoice are returned to the uninvoiced items list and a notation in the Charges by Invoice table shows that the invoice was canceled.</p>
+
+<p>To remove previous charges that have already been invoiced, you can issue a refund. For more information, see <a href="#issuingrefunds">Issuing a Refund</a>.</p>
+
+<ol>
+    <li>From the Student Billing table, click on the name of the student whose account you want to view. The student's billing account opens.</li>
+    <li>Click <b>Charges by Invoice</b>.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/studentbillingchargesbyinvoice.png"/>
+    </div>
+</p>
+<ol start="3">
+    <li>Click <b>Cancel Invoice</b> to remove the invoice from the Charges by Invoice table. A confirmation dialog box opens</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/feetrackingcancelinvoice.png"/>
+    </div>
+</p>
+<ol start="4">
+    <li>Click <b>Yes, cancel invoice</b> to cancel the invoice or <b>Cancel</b> to leave the invoice unchanged.</li>
+    <p>The Charges by Invoice table displays a note indicating that the invoice was canceled and the items from the invoice are moved to the Uninvoiced Charges table.</p>
+    <li>Click <b>Uninvoiced Charges</b> to view the items in the Uninvoiced Charges table.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/studentbillinguninvoicedcharges.png"/>
+    </div>
+</p>
+
+
+
+<h3 id="recordingpayments">Recording a Payment</h3>
+<ol>
+    <li>Click <b>Add Payment</b>. The Add Payment dialog box opens.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/feetrackingaddpayment.png"/>
+    </div>
+</p>
+<ol start="2">
+    <li>To change the date of the payment, click the Payment Date field. An interactive calendar opens.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/feetrackingaddpaymentcalendar.png"/>
+    </div>
+</p>
+<ol start="3">
+    <li>Use the calendar to select the payment date. There are two ways to change the date:</li>
+        <ul>
+        <li>Click the arrowheads on either side of the month and year at the top of the calendar. Clicking the left arrow moves the months backwards. Clicking the right arrow moves the months forward. The years move backward or forwards when you reach January.</li>
+        <li>Click the arrow next to the month or year. A drop-down menu opens. Click the month or year you want from the drop-down menu. The month and year display on the calendar.</li>
+        </ul>
+    <li>Click the number of the day that the payment occurred. The calendar closes.</li>
+    <li>In the Description field, add what the payment is for.</li>
+    <li>In the Amount field enter how much the payment is for. You do not need to add a currency symbol.</li>
+    <li>Click <b>OK</b> to add the payment to the student's account or <b>Cancel</b> to leave the account unchanged. The payment will show as a negative number in the Amount column and be subtracted from the outstanding balance due.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/feetrackingrecordedpayment.png"/>
+    </div>
+</p>
+
+
+<h3 id="deletingpayments">Deleting a Payment</h3>
+<p>Payments can be deleted from a student account until an invoice is generated. Once an invoice is generated, payments no longer can be deleted. To reverse a payment after an invoice has been generated, you can cancel the invoice or add a new charge. For more information about invoices and adding charges, see <a href="#generatinginvoices">Generating Invoices</a>, <a href="#cancelinginvoices">Canceling Invoices</a>, and <a href="#addingcharges">Adding Charges</a>.</p>
+<ol>
+    <li>From the Student Billing table, click on the name of the student whose account you want to remove a payment from. The student's billing account opens.</li>
+    <li>Find the payment you want to delete.</li>
+    <li>Click <b>Delete</b> at the end of the row to remove the payment. If there is no delete option available, the payment has already been invoiced and can no longer be deleted. To reverse an invoiced payment, you can cancel the invoice or add a new charge. See <a href="#cancelinginvoices">Canceling Invoices</a> or <a href="#addingcharges">Adding a Charge</a> for more information.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/feetrackingdeletepayment.png"/>
+    </div>
+</p>
+
+
+
+
+<h3 id="issuingrefunds">Issuing a Refund</h3>
+<ol>
+    <li>From the Student Billing table, click on the name of the student whose account you want to credit. The student's billing account opens.</li>
+    <li>Click <b>Add Charge</b>.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/feetrackingaddchargebutton.png"/>
+    </div>
+</p>
+<ol>
+<p>The Add Charge dialog box opens.</p>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/feetrackingaddcharge.png"/>
+    </div>
+</p>
+<ol start="3">
+    <li>To change the date of the refund, click the Charge Date field. An interactive calendar opens.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/feetrackingaddchargecalendar.png"/>
+    </div>
+</p>
+<ol start="4">
+    <li>Use the calendar to select the refund date. There are two ways to change the date:</li>
+    <ul>
+        <li>Click the arrowheads on either side of the month and year at the top of the calendar. Clicking the left arrow moves the months backwards. Clicking the right arrow moves the months forward. The years move backward or forwards when you reach January.</li>
+        <li>Click the arrow next to the month or year. A drop-down menu opens. Click the month or year you want from the drop-down menu. The month and year display on the calendar.</li>
+    </ul> 
+    <li>Click the number of the day that the refund occurred. The calendar closes.</li>
+    <li>In the Description field, add what the refund is for.</li>
+    <li>In the Amount field enter the refund amount as a negative number. For example, if you want to refund $20.00, enter <b>-20.00</b>. You do not need to add a currency symbol.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/feetrackingissuingrefund.png"/>
+    </div>
+</p>
+<ol start="8">
+    <li>Click <b>OK</b> to credit the refund to the student's account or <b>Cancel</b> to leave the account unchanged. The payment will show as a negative number in the Amount column and be subtracted from the outstanding balance due.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/feetrackingrecordedrefund.png"/>
+    </div>
+</p>
+
+
+
+<h3 id="sortingstudentbillingaccounts">Sorting Student Billing Accounts</h3>
+<p>To find information faster, you can sort table columns by ascending or descending order.</p>
+<ol>
+    <li>Click on the column that you want to sort. The table sorts information by the selected column in ascending order.</li>
+    <li>Click on the column again to sort by descending order.</li>
+</ol>
+<p>An arrowhead displays in the column that the table is being sorted by. An arrowhead pointing up indicates the table is sorted in ascending order. An arrowhead pointing down indicates the table is sorted in descending order.</p>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/feetrackingsortindicator.png" width="" height=""/>
+    </div>
+</p>
+<p>In this example, the table is sorted by student name in ascending order.</p>
+
+
+
+
+
+
+<h3 id="searchingstudentbillingaccounts">Searching Student Billing Accounts</h3>
+<p>The search feature enables you to search for students, outstanding balances, or both.</p>
+<ol>
+    <li>Place your cursor in the Search field.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/studentbillingsearch.png" width="" height=""/>
+    </div>
+</p>
+<ol start="2">
+    <li>Type in the word or value for which you are searching. </li>
+    <li>You can begin your search two ways:</li>
+    <ul>
+        <li>Press <b>Enter</b> on your keyboard.</li>
+        <li>Click the magnifying glass icon at the end of the search field.</li>
+    </ul>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/studentbillingmagnifyicon.png" width="" height=""/>
+    </div>
+</p>
+<ol start="4">
+    <p>The results of your search display in the Student Billing table.</p>
+    <li>To return to the main Student Billing table, click <b>Clear Search</b> below the Search field.</li>
+</ol>
+<p>
+    <div class="center">
+        <img src="images_ks_fee_tracking/studentbillingclearsearch.png" width="" height=""/>
+    </div>
+</p>
+
+
+
+<h3 id="studentbillingpreferences">Setting Student Billing Table Preferences</h3>
+<p>You can set how many rows you want the Student Billing table to display on each page. By default, 10 rows are displayed on each page.</p>
+<ol>
+    <li>Click the preferences icon at the bottom left of the Student Billing table. A pop-up menu opens.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/studentbillingpreferencesicon.png" width="" height=""/>
+    </div>
+</p>
+<ol start="2">
+    <li>Select the number of rows you want to display on each page from the pop-up menu. The table automatically updates.</li>
+    <li>To set a number of rows that is different than the preset options, select <b>Custom</b>. The Number of Rows to Display dialog box opens.</li>
+    <li>In the text field, type the number of rows you want to display. The number must be between 1 and 1000.</li>
+    <li>Click <b>OK</b> to set the number of rows or <b>Cancel</b> to leave the number of rows unchanged.</li>
+</ol>
+
+<h3 id="settinggeneralfeetrackingpreferences">Setting General Fee Tracking Preferences</h3>
+<p>Fee Tracking preferences give you control over who can manage charges and payments, create fee categories, and who can run reports. From Fee Tracking preferences you can also enable and disable online payments and family billing.</p>
+<ol>
+    <li>From the top of the page, click <b>Features</b>.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/features.png" width="" height=""/>
+    </div>
+</p>
+<ol start="2">
+    <p>The Features page opens.</p>
+    <li>Go to the row that says School Fees Tracking.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/featuresfeetrackingenable.png" width="" height=""/>
+    </div>
+</p>
+<ol start="3">
+    <li>Click <b>Configure</b>. The School Fees Tracking dialog box opens.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/configurationfeetrackingblank.png" width="" height=""/>
+    </div>
+</p>
+<ol start="4">
+    <li>Set the following options:</li>
+     <table class="data">
+        <tr class="d0"><td>Select Users who will Manage Bills and Collections </td><td>Select the names of faculty members from the interactive list who can add new charges, 
+        record payments, and generate invoices. </td></tr>
+        <tr><td>Enable Each Charge/Payment to be Associated with a Category</td><td> Check this item to enable charge and payment categories. From the interactive list, select the names of faculty members who can add new categories. For more information about categories, see <a href="#introfeecategories">Introduction to Fee Categories.</td></tr>
+        <tr class="d0"><td>Turn On Family Billing </td><td> Check this option to enable family billing. For more information about family billing, see <a href="#introfamilybilling">Introduction to Family Billing</a>.</td></tr>
+        <tr><td>Turn On Online Payments in the Parent Portal </td> <td>Check this item to enable online payments. From the interactive list, select the names of faculty members who can manage and view online payments. For more information about online payments, see <a href="#introonlinepayments">Introduction to Online Payments</a>. 
+            
+        </td></tr>
+        <tr class="d0"><td>Select Users Who Can Run Reports </td><td>Select the names of faculty members from the interactive list who can run charge and payment reports. 
+            
+        </td></tr>
+        <tr><td>Currency Symbol </td> <td> Enter the currency symbol you want to use for your records. The currency symbol you enter here is automatically added to all table 
+        columns displaying currency and in generated invoices and reports.</td></tr>
+    </table>    
+
+    <li>Click <b>Save</b> to save your changes. Click <b>Cancel</b> to go back to the Features page without saving your changes.</li>
+</ol>
+
+
+
+
+
+
+
+<h2 id="introfeecategories">Introduction to Fee Categories</h2>
+<p>Fee Categories are an easy way for you to manage a charge that is used frequently. Categories are templates that enable you to setup and define a fee one time. The categories you define are available in the Add Charge form and can be applied to a student account in one click. When adding new fees to a student's account, you can select several categories at one time, reducing the time it takes to add multiple fees to students' accounts.</p>
+
+<p>Fee Categories are different from Standard Charges in the way they are applied. Fee Categories are applied to a student through the Add Charge dialog box. On the other hand, students are applied to a Standard Charge enabling you to charge one fee to multiple students or the whole school at the same time. For more information about Standard Charges, see <a href="#introstandardcharges">Introduction to Standard Charges</a>.</p>
+
+
+
+
+
+
+
+
+
+
+<h2 id="enabledisablefeecategories">Enabling and Disabling Fee Categories</h2>
+<p>By default the Fee Categories feature comes disabled. After enabling the Fee Category feature, the Category Setup menu bar option becomes available on the Student Billing page.</p>
+<ol>
+    <li>From the top of the page, click <b>Features</b>.</li>
+</ol>
+<p>
+    <div class="center">
+        <img src="images_ks_fee_tracking/features.png" width="" height=""/>
+    </div>
+</p>
+<ol start="2">
+    <p>The Features page opens.</p>
+    <li>Go to the row that says School Fees Tracking.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/featuresfeetrackingenable.png" width="" height=""/>
+    </div>
+</p>
+<ol start="3">
+    <li>Click <b>Configure</b>. The School Fees Tracking dialog box opens.</li>
+</ol>
+<p>
+    <div class="center">
+        <img src="images_ks_fee_tracking/configurationfeetrackingblank.png" width="" height=""/>
+    </div>
+</p>
+<ol start="4">
+    <li>Check <b>Enable Each Charge/Payment to be Associated with a Category</b>.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/feetrackingenablefeecategories.png" width="" height=""/>
+    </div>
+</p>
+<ol start="5">
+    <li>Click the Select Users Who Can Configure Categories text box. A list of faculty members opens.</li>
+    <li>From the faculty member list, select who can add, define, edit, and delete fee categories.</li>
+    <p><b>Note:</b> If you leave this box blank, nobody will be able to create or manage fee categories.</p>
+    <li>Click <b>Save</b> to save your changes. Click <b>Cancel</b> to leave your preferences unchanged.</li>
+</ol>
+
+
+<h2 id="accessfeecategories">Accessing the Fee Categories Page</h2>
+<ol>
+    <li>To access the Fee Categories page, click <b>Fee Tracking</b> at the top of the page. The Student Billing page opens.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/accessfeetracking.png"/>
+    </div>
+</p>
+<ol start="2">
+    <li>On the right of the Student Billing page, click <b>Category Setup</b>. The Fee Category page opens.</li>
+    <p><b>Note:</b> If there is no Fee Tracking option at the top of the page, see <a href="#enabledisablefeecategories">Enabling and Disabling Fee Categories</a>.</p>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/studentbillingcategorysetup.png"/>
+    </div>
+</p>
+
+
+
+<h2 id="movingaroundfeecategories">Moving around the Fee Categories Table</h2>
+<p>By default, 10 categories are displayed on each page of the Fee Categories table. When more than 10 categories are added, a new page in the Fee Categories table is added. Use the navigation controls at the bottom of the Fee Categories table to scroll through the pages. To change the number of categories shown on each page, see <a href="#feetrackingpreferences">Setting Fee Category Table Preferences</a>.</p>
+<p>
+<div class="center">
+    <img src="images_ks_fee_tracking/pagenavigationfeecategories.png" width="" height=""/>
+</div>
+</p>
+
+
+
+<h3 id="addingfeecategories">Adding a Fee Category</a></li>
+<p>Set up your charge templates here. The Default Category Description and Default Fee Amount fields are optional and can be added or edited when a category is applied to a student's account. For more information about adding a fee category to a student's account, see <a href="#addingcharges">Adding a Charge</a>.</p>
+
+<p>Once a category is added, it can be edited, but not deleted. For more information about editing a fee category, see <a href="#editingfeecategories">Editing a Fee Category</a>.</p>
+<ol>
+    <li>From the Student Billing table, click <b>Category Setup</b>.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/studentbillingcategorysetup.png"/>
+    </div>
+</p>
+<ol start="2">
+    <p>The Fee Categories page opens.</p>
+    <li>Click <b>Add Category</b>. The Add Category dialog box opens.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/feecategoriesaddcategory.png"/>
+    </div>
+</p>
+<ol start="3">
+    <li>In the Category Name field, enter the name of the fee.</li>
+    <li>In the Default Fee Description field, enter a description of the fee. This field is optional.</li> 
+    <li>In the Default Fee Amount field, enter how much the charge costs. You do not need to enter a currency symbol. This field is optional.</li>
+    <li>Click <b>Add</b> to save the new category, or <b>Cancel</b> to discard your changes.</li>
+</ol>
+
+
+
+
+
+<h3 id="editingfeecategories">Editing a Fee Category</h3>
+<ol>
+    <li>From the Student Billing table, click <b>Category Setup</b>.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/studentbillingcategorysetup.png"/>
+    </div>
+</p>
+<ol start="2">
+    <p>The Fee Categories page opens.</p>
+    <li>Click the category you want to edit. The Add Category dialog box opens.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/feecategoriesaddcategory.png"/>
+    </div>
+</p>
+<ol start="3">
+    <li>Edit the fields as necessary.</li>
+    <p><b>Note:</b> Only the Category Name field is required.</p>
+    <li>Click <b>Add</b> to save the updated category, or <b>Cancel</b> to discard your changes.</li>
+</ol>
+
+
+<h3 id="searchingfeecategories">Searching for a Fee Category</h3>
+<p>The search feature enables you to search for specific fee categories by category, description, amount, or any combination of the three.</p>
+<ol>
+    <li>Place your cursor in the Search field.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/feecategoriessearch.png" width="" height=""/>
+    </div>
+</p>
+<ol start="2">
+    <li>Type in the word or value for which you are searching. </li>
+    <li>You can begin your search two ways:</li>
+    <ul>
+        <li>Press <b>Enter</b> on your keyboard.</li>
+        <li>Click the magnifying glass icon at the end of the search field.</li>
+    </ul>
+</ol>
+<p>
+        <div class="center">
+        <img src="images_ks_fee_tracking/feecategoriesmagnifyicon.png" width="" height=""/>
+        </div>
+</p>
+<ol start="4">
+    <p>The results of your search display in the Fee Categories table.</p>
+    <li>To return to the main Student Billing table, click <b>Clear Search</b> below the Search field.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/feecategoriesclearsearch.png" width="" height=""/>
+    </div>
+</p>
+
+
+
+
+<h3 id="feecategorypreferences">Setting Fee Categories Table Preferences</h3>
+<p>You can set how many rows you want the Fee Categories table to display on each page. By default, 10 rows are displayed on each page.</p>
+<ol>
+    <li>Click the preferences icon at the bottom left of the Fee categories table. A pop-up menu opens.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/feecategoriespreferencesicon.png" width="" height=""/>
+    </div>
+</p>
+<ol start="2">
+    <li>Select the number of rows you want to display on each page from the pop-up menu. The table automatically updates.</li>
+    <li>To set a number of rows that is different than the preset options, select <b>Custom</b>. The Number of Rows to Display dialog box opens.</li>
+    <li>In the text field, type the number of rows you want to display. The number must be between 1 and 1000.</li>
+    <li>Click <b>OK</b> to set the number of rows or <b>Cancel</b> to leave the number of rows unchanged.</li>
+</ol>
+
+
+
+<h2 id="introstandardcharges">Introduction to Standard Charges </h2>
+<p>Standard charges are an easy way for you to group, manage and apply frequently used fees to large groups of students quickly. A Standard Charge is a collection or set of one or more related fees that share a common student base, such as all 1st grade students. After setting up a Standard Charge, simply open the charge you have created and then add students to the charge. You can add students individually, by homerooms, specific grades, or add the entire school with one click. After applying students to the Standard Charge, you can then customize the charge by individual student, if necessary.</p>
+
+<p>For example, all incoming first graders are required to purchase an art kit which includes crayons, clay, and paper. Instead of using the Student Billing table to find and click on each first grade student in the school and then charging each of those students three times for art supplies, a Standard Charge is created called First Grade Art Kit that includes the three art supplies. After the First Grade Art Kit Standard Charge is defined, simply click on the charge to open it, then click All First Graders to add the charge to all first grade students.</p>
+
+<p>Standard Charges are different from Fee Categories in the way they are applied. Students are applied to a Standard Charge enabling you to charge large groups of students at the same time. Fee Categories are applied to a single student through the Add Charge dialog box. For more information about Fee Categories, see <a href="#introfeecategories">Introduction to Fee Categories</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="accessingstandardchargestable">Accessing the Standard Charges Table</h2>
+<ol>
+    <li>To access the Fee Categories page, click <b>Fee Tracking</b> at the top of the page. The Student Billing page opens.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/accessfeetracking.png"/>
+    </div>
+</p>
+<ol start="2">
+    <li>On the right of the Student Billing page, click <b>Standard Charges</b>. The Standard Charges page opens.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/studentbillingstandardcharges.png"/>
+    </div>
+</p>
+
+
+
+
+<h2 id="movingaroundstandardcharges">Moving around Standard Charges</h2>
+<p>By default, 10 categories are displayed on each page of the Standard Charges table. When more than 10 charges are added, a new page in the Standard Charges table is added. Use the navigation controls at the bottom of the Standard Charges table to scroll through the pages. To change the number of categories shown on each page, see <a href="#settingstandardchargetablepreferences">Setting Standard Charges Table Preferences</a>.</p>
+<p>
+<div class="center">
+    <img src="images_ks_fee_tracking/pagenavigationstandardcharges.png" width="" height=""/>
+</div>
+</p>
+
+
+<h3 id="addingstandardcharges">Adding a Standard Charge</h3>
+<p>A Standard Charge is a template consists of one or more related fees. Fees and descriptions can be modified on a student-by-student basis if necessary.</p>
+<ol>
+    <li>From the Student Billing table, click <b>Standard Charges</b>. The Standard Charges page opens.</li>
+     <li>Click <b>Add Standard Charge</b>.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/standardchargesaddcharge.png"/>
+    </div>
+</p>
+<ol>
+     <p>The Standard Charge dialog box opens.</p>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/standardchargeaddcharge.png"/>
+    </div>
+</p>
+<ol start="3">
+     <li>Place your cursor in the Standard Charge field and enter the name of the charge.</li>
+     <li>Place your cursor in the Description field and enter a description of the charge. This field is optional.</li>
+     <li>Click <b>Add Item</b> to add the first fee to your Standard Charge template. A new row is added to the Fees table.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/standardchargeadditemnewrow.png"/>
+    </div>
+</p>
+<ol start="6">
+    <li>In the Item column, enter the name of the fee.</li>
+    <li>In the Total Price column, enter the amount of the fee. You do not need to add a currency symbol. You can do this two ways:</li>
+    <ul>
+        <li>In the text box, enter a fee amount that will apply to all student accounts that are associated with the standard charge.
+          <li>Click <b>Or Set Price By Grade</b> to enter different fee amounts by grade level. When you click this option, the Customize Item Fees by Grade dialog box opens.</li>
+     </ul>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/standardchargescustomizeitemfees.png"/>
+    </div>
+</p>
+    <ol start="8">
+     <li>Enter the fee amount for each grade level. You can always return the charge to a single school-wide fee by clicking <b>Switch Back to Standard Total Price for All Grades</b>.</li>
+     <li>Click <b>OK</b> when you are finished.</li>
+     <li>Click <b>Save Standard Charge</b> to save the fee to the standard charge, or <b>Cancel</b> to leave the standard charge unchanged.
+</ol>
+
+
+<h3 id="applyingstandardcharges"> Applying a Standard Charge</h3>
+<p>Now that your standard charge is defined, you can apply students to the charge. This enables you to apply a single standard charge to many or all students at one time.</p>
+<ol>
+     <li>From the Standard Charges table, find the standard charge you want to use.</li>
+     <li>Click <b>Apply</b>. The Charge Students dialog box opens.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/standardchargeschargestudents.png"/>
+    </div>
+</p>
+<ol start="8">
+    <li>Click the Select Students text box. A list of students displays.</li>
+    <li>Select who you want to charge the fees to. You can select individual students, whole homeroom classes, entire grade levels, or the entire school.</li>
+<li>Click <b>Preview & Customize</b> to view all students who the charge will be applied or to modify the fee amounts for individual students. The Customize by Student dialog box opens.</li>
+<li>To change the fee amount for a student, click <b>Customize</b> next to their name.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/standardchargescustomizestudent.png"/>
+    </div>
+</p>
+<ol>
+<p>The Customize Student Bill dialog box opens.</p>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/standardchargescustomizebill.png"/>
+    </div>
+</p>
+<ol start="12">
+<li>Click <b>Add Item</b> to add a new charge to that student’s account.</li>
+<li>Click <b>Delete</b> to remove a charge from that student’s account.</li>
+<li>To modify an existing charge, click <b>Delete</b> to remove the charge you want to change, then <b>Add Item</b> to reenter the item with the new charge.</li>
+<li>Click <b>Save</b> to save the changes or <b>Cancel</b> to leave the student account unchanged.</li>
+<li>Click <b>OK</b> to close the Customize by Student dialog box.</li>
+<li>Click one of the following options to close the Standard Charge dialog box:</li>
+
+    <table class="data">
+        <tr class="d0"><td>Charge Students</td><td>to apply the standard charge to student accounts.</td></tr>
+        <tr><td>Save Only</td><td>to save the students who have been added to the standard charge without adding the charge to student accounts. Apply charges to student 
+        accounts at a later time by, clicking <b>Apply</b> next to the standard charge you want to apply, then click <b>Charge Students</b> to apply the standard charge to 
+        student accounts.</td></tr>
+        <tr class="d0"><td>Cancel</td><td>to leave the standard charge unchanged.</td></tr>
+    </table>
     
-<h3>Deauthorize QuickSchools from Stripe</h3>
-    <p>
-        If the school wishes to deauthorize QuickSchools from Stripe, this is a two step process.
-    </p>
-    <ol>
-        <li>Go to "Fee Tracking" -> "Parent Payments". Click on "Disconnect Stripe Account". 
-        QuickSchools will no longer be able to sync online payments or accept payments for the school.
-        <li>Go to Stripe.com. Click "Your Account" -> "Account Settings". You may be prompted for your Stripe password.
-        Now navigate to "Applications". You will see "QuickSchools.com". Click on the "X" to deauthorize QuickSchools.
-        </li>
-    </ol>
+</ol>
+
+
+
+
+
+<h3 id="editingstandardcharges">Editing a Standard Charge</h3>
+<ol>
+    <li>From the Student Billing table, click <b>Standard Charges</b>. The Standard Charges page opens.</li>
+     <li>Click on the standard charge you want to edit. The Standard Charge dialog box opens.</li>
+     <li>Enter your changes as necessary.</li>
+     <li>Click <b>Save Standard Charge</b> to save your changes or click <b>Cancel</b> to leave the standard charge unchanged.</li>
+</ol>
+
+
+<h3 id="deletingstandardcharges">Deleting a Standard Charge</h3>
+<p>When deleting a standard charge, you can delete the whole charge or individual fees within the charge.</p>
+<ol>
+    <li>From the Student Billing table, click <b>Standard Charges</b>. The Standard Charges page opens.</li>
+    <li>Click on the standard charge you want to delete. The Standard Charge dialog box opens.</li>
+<li>Choose one of the following options below: Deleting a Standard Charge or Deleting a Fee within a Standard Charge.</li>
+</ol>
+
+
+<h4>Deleting a Standard Charge</h4>
+<ol>
+<li>To delete the entire standard charge, click <b>Delete</b> .</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/standardchargesdeleteall.png"/>
+    </div>
+</p>
+<ol start="2">
+    <p>A confirmation dialog box opens.</p>
+    <li>Click <b>Delete</b> to delete the entire standard charge, or <b>Cancel</b> to leave the standard charge unchanged.
+</ol>
+
+
+
+<h4>Deleting a Fee within a Standard Charge</h4>
+<ol>
+    <li>To delete a fee within the standard charge, click <b>Delete</b> next to fee you want to remove. The fee is deleted.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/standardchargesdeleteitem.png"/>
+    </div>
+</p>
+<ol start="2">
+<li>Click <b>Save Standard Charge</b> or <b>Cancel</b> to close the Standard Charge dialog box.</li>
+</ol>
+
+
+
+<h3 id="sortingstandardcharges">Sorting Standard Charges</h3>
+<p>To find information faster, you can sort table columns by ascending or descending order.</p>
+<ol>
+    <li>Click on the column that you want to sort. The table sorts information by the selected column in ascending order.</li>
+    <li>Click on the column again to sort by descending order.</li>
+</ol>
+<p>An arrowhead displays in the column that the table is being sorted by. An arrowhead pointing up indicates the table is sorted in ascending order. An arrowhead pointing down indicates the table is sorted in descending order.</p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/standardchargessortindicator.png" width="" height=""/>
+    </div>
+<p>In this example, the table is sorted by Standard Charge name in ascending order.</p>
+<ol start="3">
+<li>Click <b>OK</b> to set the number of rows or <b>Cancel</b> to leave the number of rows unchanged.</li>
+</ol>
+
+
+
+
+<h3 id="searchingstandardcharges">Searching for a Standard Charge</h3>
+<p>The search feature enables you to search by date, standard charge, description, details, or any combination of these parameters.</p>
+<ol>
+    <li>Place your cursor in the Search field.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/standardchargessearch.png" width="" height=""/>
+    </div>
+</p>
+<ol start="2">
+    <li>Type in the word or value for which you are searching. </li>
+    <li>You can begin your search two ways:</li>
+    <ul>
+        <li>Press <b>Enter</b> on your keyboard.</li>
+        <li>Click the magnifying glass icon at the end of the search field.</li>
+     </ul>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/standardchargesmagnifyicon.png" width="" height=""/>
+    </div>
+</p>
+<ol start="4">
+    <p>The results of your search display in the Standard Charges table.</p>
+    <li>To return to the main Standard Charges table, click <b>Clear Search</b> below the Search field.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/standardchargesclearsearch.png" width="" height=""/>
+    </div>
+</p>
+
+
+
+<h3 id="settingstandardchargetablepreferences">Setting Standard Charge Table Preferences</h3>
+<p>You can set how many rows you want the Standard Charges table to display on each page. By default, 10 rows are displayed on each page.</p>
+<ol>
+    <li>Click the preferences icon at the bottom left of the Standard Charges table. A pop-up menu opens.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/standardchargespreferencesicon.png" width="" height=""/>
+    </div>
+</p>
+<ol start="2">
+    <li>Select the number of rows you want to display on each page from the pop-up menu. The table automatically updates.</li>
+    <li>To set a number of rows that is different than the preset options, select <b>Custom</b>. The Number of Rows to Display dialog box opens.</li>
+    <li>In the text field, type the number of rows you want to display. The number must be between 1 and 1000. </li>
+    <li>Click <b>OK</b> to set the number of rows or <b>Cancel</b> to leave the number of rows unchanged.</li>
+</ol>
+
+
+
+<h2 id="introonlinepayments">Introduction to Online Payments</h2>
+<p>Online payments provide a quick and convenient way for parents to submit a credit card payment. Online payments are managed through the Parent Payments page which is accessed through the Student Billing feature. Parents can make credit card payments to your school and view their transactions through their Parent Portal.</p>
+
+<p>QuickSchools uses the online payment service Stripe to manage all online payments to QuickSchools. To receive online payments, you need to setup a Stripe account. Likewise, parents need to set up a Stripe account in order to send online payments. Stripe and QuickSchools both charge a fee for using the online payment feature.</p>
+
+
+
+<h2 id="enabledisableonlinepayments">Enabling and Disabling Online Payments</h2>
+<p>By default the Online Payments feature comes disabled. After enabling Online Payments, the Parent Payments menu bar option becomes available on the Student Billing page.</p>
+<ol>
+    <li>From the top of the page, click <b>Features</b>.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/features.png" width="" height=""/>
+    </div>
+</p>
+<ol start="2">
+    <p>The Features page opens.</p>
+    <li>Go to the row that says School Fees Tracking.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/featuresfeetrackingconfigure.png" width="" height=""/>
+    </div>
+</p>
+<ol start="3">
+    <li>Click <b>Configure</b>. The School Fees Tracking dialog box opens.</li>
+</ol>
+<p>
+    <div class="center">
+        <img src="images_ks_fee_tracking/configurationfeetrackingblank.png" width="" height=""/>
+    </div>
+</p>
+<ol start="4">
+    <li>Check <b>Turn on Online Payments in the Parent Portal</b>.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/onlinepaymentsenable.png" width="" height=""/>
+    </div>
+</p>
+<ol start="5">
+    <li>Click the Select Users who will be able to Manage & View Payments by Parents text box. A list of faculty members opens.</li>
+    <li>From the faculty member list, select who can view and manage online payments.</li>
+    <p><b>Note:</b> If you leave this box blank, nobody will be able to view or manage online payments.</p>
+    <li>Click <b>Save</b> to save your changes. Click <b>Cancel</b> to leave your preferences unchanged.</li>
+</ol>
+
+
+    <h3 id="movingaroundparentpayments">Moving around the Parent Payments Table</h3>
+<p>By default, 10 categories are displayed on each page of the Parent Payments table. When more than 10 transactions are added, a new page in the Parent Payments table is added. Use the navigation controls at the bottom of the Parent Payments table to scroll through the pages. To change the number of categories shown on each page, see <a href="#settingparentpaymentstablepreferences">Setting Parent Payments Table Preferences</a>.</p>
+<p>
+<div class="center">
+    <img src="images_ks_fee_tracking/pagenavigationparentpayments.png" width="" height=""/>
+</div>
+</p>
+
+
+
+
+<h2 id="usingonlinepayments">Using Online Payments</h2>
+<p>Online Payments are made through Stripe so there is no need for your school to handle or process credit card payments. Generally, online payments are posted to your school bank account by Stripe 7 days after the payment is made. Online payments are posted to the Parent Payments page and to student’s individual accounts when parents make their payments from the QuickSchools Parent Portal.</p> 
+
+<p>Stripe and QuickSchools both charge a fee for using the online payment service. For more information about using Stripe services and their fees, visit <a href="http://www.stripe.com">Stripe.com</a>.  QuickSchools charges a 2% fee for each online payment.</p>
+
+
+
+<h2 id="accessonlinepayments">Accessing an Online Payment Record</h2>
+<p> To access a record of online payments that parents have made, go to the Parent Payments page.</p>
+<ol>
+    <li> Click <b>Fee Tracking</b> at the top of the page. The Student Billing page opens.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/accessfeetracking.png"/>
+    </div>
+</p>
+<ol start="2">
+    <li>On the right of the Student Billing page, click <b>Parent Payments</b>. The Parent Payments page opens.</li>
+    <p><b>Note:</b> If there is no Parent Payments option at the top of the page, see <a href="#enabledisableonlinepayments">Enabling and Disabling Online Payments</a>.</p>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/onlinepaymentsparentpayments.png"/>
+    </div>
+</p>
+
+
+
+<h3 id="settingupstripe">Setting up a Stripe Account</h3>
+<p>To use Stripe both the school and parents need to set up a Stripe account. A link to Stripe is available within QuickSchools on the Parent Payments page. Parents can access Stripe through the QuickSchools Parent Portal.</p>
+<ol>
+    <li>From the Student Billing table, click <b>Parent Payments</b>. The Parent Payments page opens.</li>
+    <li>Click <b>Connect with Stripe</b>.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/onlinepaymentsconnectstripe.png"/>
+    </div>
+</p>
+<ol>
+     <p>You are now at the Stripe Website. The Stripe Account Setup page opens.</p>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/stripeaccountsetup.png"/>
+    </div>
+</p>
+<ol start="3">
+<li>Complete the Stripe Account Setup form with your school information.</li>
+<li>Click <b>Authorize Access to this Stripe Account</b> when you are finished. Your account is setup and you will return to QuickSchools. You may need to log back in to your QuickSchools account.</li>
+<li>To access, use, or manage your Stripe account, visit Stripe’s Website at <a href="http://www.stripe.com">Stripe.com</a>.</li>
+</ol>
+
+
+<h3 id="syncstripe">Synchronizing Stripe Payment Records with QuickSchools</h3> 
+<p>Stripe automatically updates your QuickSchools account when online payments are made from the Parent Portal or refunds are issued by your school. These updates usually occur quickly and require no action on your part. However, if a payment or refund is made through the Parent Portal, but your records are not updated immediately, you can synchronize your records with Stripe. This updates your QuickSchools records with the latest payment and refund information that Stripe has recorded.</p>
+
+<p>You can synchronize your QuickSchools account 2 ways:</p>
+<ul>
+<li>Click <b>Synchronize with Strip</b> from the Parent Payments page.</li>
+</ul>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/parentpaymentssyncstripe.png"/>
+    </div>
+</p>
+<ul>
+<li>Click <b>Sync with Stripe</b> from the Online Payment Details dialog box.</li>
+</ul>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/parentpaymentsonlinedetailssync.png"/>
+    </div>
+</p>
+
+
+
+<h3 id="viewingonlinepayments">Viewing an Online Payment</h3>
+<p>All online payments made from the Parent Portal page using Stripe are automatically recorded in your QuickSchools account. To view general online payment information, go to the student’s account. To view detailed online payment information, go to the Parent Payments page.</p>
+
+<h4>Viewing General Online Payment Information</h4>
+<ol>
+<li>From the Student Billing page, click on the Primary Payer or a student name whose account you want to view. The family account or student account opens.</li>
+<li>Click <b>OK</b> when you are finished viewing the account information.</li>
+</ol>
+
+
+<h4>Viewing Detailed Online Payment Information</h4>
+<ol>
+<li>From the Parent Payments page, click on the transaction you want to view. The Online Payment Details dialog box opens.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/parentpaymentspaymentdetails.png"/>
+    </div>
+</p>
+<ol start="3">
+<li>Click <b>OK</b> when you are done viewing the information.</li>
+</ol>
+
+
+
+
+
+<h3 id="deauthorizetripe">Deauthorizing a Stripe Account</h3>
+<p>If you no longer want to receive online payments from parents through Stripe, you can deauthorize  Stripe from accepting payments on your school’s behalf. Deauthorizing Stripe from your QuickSchools account does not close your Stripe account. To close your Stripe account, go to <a href="http://www.stripe.com">Stripe.com</a>.</p>
+
+<ol>
+<li>From the Parent Payments page, click <b>Disconnect Stripe Account</b>. A confirmation dialog box opens.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/parentpaymentsdisconnectstripe.png"/>
+    </div>
+</p>
+<ol start="2">
+<li>Click <b>Yes</b> to deauthorize Stripe from receiving payments from parents on your school’s behalf or <b>Cancel</b> to leave your Stripe account unchanged.</li>
+</ol>
+
+
+
+<h3 id="sortingonlinepayments">Sorting Parent Payments</h3>
+<p>To find information faster, you can sort table columns by ascending or descending order.</p>
+<ol>
+    <li>Click on the column that you want to sort. The table sorts information by the selected column in ascending order.</li>
+    <li>Click on the column again to sort by descending order.</li>
+</ol>
+<p>An arrowhead displays in the column that the table is being sorted by. An arrowhead pointing up indicates the table is sorted in ascending order. An arrowhead pointing down indicates the table is sorted in descending order.</p>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/standardchargessortindicator.png" width="" height=""/>
+    </div>
+</p>
+<p>In this example, the table is sorted by Standard Charge name in ascending order.</p>
+<ol start="3">
+<li>Click <b>OK</b> to set the number of rows or <b>Cancel</b> to leave the number of rows unchanged.</li>
+</ol>
+
+
+
+
+<h3 id="searchingonlinepayments">Searching for a Parent Payment</h3>
+<p>The search feature enables you to search by date, primary payer, credit card, amount, status or any combination of these parameters.</p>
+<ol>
+    <li>Place your cursor in the Search field.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/parentpaymentssearch.png" width="" height=""/>
+    </div>
+</p>
+<ol start="2">
+    <li>Type in the word or value for which you are searching. </li>
+    <li>You can begin your search two ways:</li>
+    <ul>
+        <li>Press <b>Enter</b> on your keyboard.</li>
+        <li>Click the magnifying glass icon at the end of the search field.</li>
+    </ul>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/parentpaymentsmagnifyicon.png" width="" height=""/>
+    </div>
+</p>
+<ol start="4">
+    <p>The results of your search display in the Standard Charges table.</p>
+    <li>To return to the main Standard Charges table, click <b>Clear Search</b> below the Search field.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/parentpaymentsclearsearch.png" width="" height=""/>
+    </div>
+</p>
+
+
+
+<h3 id="settingparentpaymentstablepreferences">Setting Parent Payments Table Preferences</h3>
+<p>You can set how many rows you want the Parent Payments table to display on each page. By default, 10 rows are displayed on each page.</p>
+<ol>
+    <li>Click the preferences icon at the bottom left of the Parent Payments table. A pop-up menu opens.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/parentpaymentspreferencesicon.png" width="" height=""/>
+    </div>
+</p>
+<ol start="2">
+    <li>Select the number of rows you want to display on each page from the pop-up menu. The table automatically updates.</li>
+    <li>To set a number of rows that is different than the preset options, select <b>Custom</b>. The Number of Rows to Display dialog box opens.</li>
+    <li>In the text field, type the number of rows you want to display. The number must be between 1 and 1000. </li>
+    <li>Click <b>OK</b> to set the number of rows or <b>Cancel</b> to leave the number of rows unchanged.</li>
+</ol>
+
+
+
+
+
+<h2 id="introfamilybilling">Introduction to Family Billing</h2>
+<p>The Family Billing feature is a way to group students from the same family into one account for easy viewing, management, and billing. Student accounts can still billed individually or as a family, and parents are presented with a one invoice that show all of the family charges and fees.</p>
+
+
+
+
+<h2 id="enabledisablefamilybilling">Enabling and Disabling Family Billing</h2>
+<p>By default the Family Billing feature comes disabled. After enabling the Family Billing feature, the Student Billing table is sorted by family which is determined by primary payer. If no primary payer has been set for your students, the table will be blank. See <a href="#settingprimarypayer"> Setting the Primary Payer</a> for more information.</p>
+<ol>
+    <li>From the top of the page, click <b>Features</b>.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/features.png" width="" height=""/>
+    </div>
+</p>
+<ol start="2">
+    <p>The Features page opens.</p>
+    <li>Go to the row that says School Fees Tracking.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/featuresfeetrackingenable.png" width="" height=""/>
+    </div>
+</p>
+<ol start="3">
+    <li>Click <b>Configure</b>. The School Fees Tracking dialog box opens.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/configurationfeetrackingblank.png" width="" height=""/>
+    </div>
+</p>
+<ol start="4">
+    <li>Check <b>Turn on Family Billing</b>.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/familybillingenable.png" width="" height=""/>
+    </div>
+</p>
+<ol start="5">
+    <li>Click <b>Save</b> to save your changes. Click <b>Cancel</b> to leave your preferences unchanged.</li>
+</ol>
+
+
+
+
+<h2 id="movingaroundfamilybilling">Moving around the Family Billing Table</h2>
+<p>When the Family Billing feature is enabled, students are grouped by primary payer in the Student Billing table. You can view accounts by family or by individual student.</p>
+
+
+
+
+<h3 id="viewingfamilyacct">Viewing a Family Account</h3>
+<p>From the Student Billing table, click the Primary Payer of the family you want to view.</p>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/studentbillingprimarypayercolumn.png" width="" height=""/>
+    </div>
+</p>
+<p>The family account opens showing all students associated with the primary payer and each fee charged to each student.</p>
+<p>
+<div class="center">
+    <img src="images_ks_fee_tracking/familybillingfamilyaccount.png" width="" height=""/>
+</div>
+</p>
+
+
+
+
+<h3 id="viewingfamilyindividualacct">Viewing an Individual Student Account from a Family Account</h3>
+<p>From the Student Billing table, click the name of the student whose account you want to view from the Dependents column.</p>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/studentbillingdependentscolumn.png" width="" height=""/>
+    </div>
+</p>
+<p>The student’s account opens showing each fee charged to that student.</p>
+
+<p>When viewing a Family Billing account, there are two types of fees displayed in the Description column: individual student fees and fees that include two or more students in a family. Fees that have only been charged to one student will be listed under the description column by the student’s name and a description of the fee. Fees that have been charged to more than one student in the family will be listed as a single entry with the total amount for all charges followed by a link that says Show Items. Click <b>Show Items</b> to display how the charge has been allocated among family members. Click <b>Hide Items</b> to hide the student charges.</p>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/familybillingshowitems.png" width="" height=""/>
+    </div>
+</p>
+<p>For more information about basic Student Billing table navigation and procedures, see <a href="#introfeetracking">Introduction to Fee Tracking</a> and <a href="#movingaroundstudentbilling">Moving around the Student Billing Table</a>.</p>
+
+
+
+<h3 id="settingprimarypayer">Setting the Primary Payer</h3>
+<p>Setting the primary payer for students is done from the Students page. Students who do not have a primary payer set will not be visible in the Student Billing table when the Family Billing feature is enabled. When using Family Billing, QuickSchools identifies those students who do not have a primary payer. Click <b> Students have no Primary Payer Set</b> link at the top of the Student Billing table to see a list of students who need to have a primary payer set.</p>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/studentbillingnoprimarypayer.png" width="" height=""/>
+    </div>
+</p>
+
+<ol>
+<li>To set the primary payer for a student, go to the Students page by clicking <b>Students</b> at the top menu bar.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/accessstudentspage.png" width="" height=""/>
+    </div>
+</p>
+<ol start="2">
+    <p>The Students page opens.</p>
+    <li>Click the name of the student who you want to assign a primary payer. The student’s profile opens.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/studentprofileprimarypayer.png" width="" height=""/>
+    </div>
+</p>
+<ol start="3">
+    <li>Click the Primary Payer text box to display a drop-down menu of parent names.</li>
+    <li>From the list, select the name of the parent who is responsible for paying the student’s outstanding charges.</li>
+    <li>Click <b>Save</b>. The student is now listed in the Student Billing table.</li>
+</ol>
+
+
+<h3 id="addingstudentstofamily">Adding a Student to a Family</h3>
+<p>To add a student to a family, simply give the new student the same primary payer as the other members of the family. See see <a href="#settingprimarypayer">Setting the Primary Payer</a> for more information.</p>
+
+
+
+<h3 id="editingfamilies">Moving or Deleting a Student from a Family Account</h3>
+<p>It is easy to move a student from one family account to another. All you need to do is change the primary payer. Once the student’s primary payer is changed, the student’s name displays in that payer’s family account. For more information, see <a href="#settingprimarypayer">Setting the Primary Payer</a>.</p>
+
+<p>To delete or unassign a student from a family account, you need to change the primary payer. You can change the primary payer so that the student displays in a different family account, or use the Not Selected option, which indicates that no parent or guardian has been identified as being responsible for the student’s school fees. If the Not Selected option is used, then the student will not be visible on the Student Billing page. </p>
+
+<p><b>Tip:</b>To keep students on the Student Billing page even if they don’t have a primary payer, you may want to create an empty or test student account with as many “parents” as you need named “no primary payer,” “scholarship,” “state funded,” or any other appropriate category. You may then assign these categories as a primary payer to students who have special financial arrangements. For more information about adding students, see <a href="#addingstudents">Adding Student Records Manually</a>.</p>
+
+
+
+<h3 id="addingchargesfamilybilling">Adding Charges to a Family Account</h3>
+<ol>
+    <li>From the Student Billing table, click the Primary Payer of the account you want to charge. The primary payer’s family account opens.</li>
+    <li>Click <b>Add Charge</b>.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/familybillingaddcharge.png" width="" height=""/>
+    </div>
+</p>
+<ol>
+    <p>The Add Family Charge dialog box opens.</p>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/familybillingaddfamilycharge.png" width="" height=""/>
+    </div>
+</p>
+<ol start="3">
+    <li>To change the date of the charge, click the Charge Date field. An interactive calendar opens.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/familybillingaddchargecalendar.png"/>
+    </div>
+</p>
+<ol start="4">
+    <li>Use the calendar to select the billing date. There are two ways to change the date:</li>
+        <ul>
+        <li>Click the arrowheads on either side of the month and year at the top of the calendar. Clicking the left arrow moves the
+            months backwards. Clicking the right arrow moves the months forward. The years move backward or forwards when you reach January.</li>
+        <li>Click the arrow next to the month or year. A drop-down menu opens. Click the month or year you want from the drop-down menu. The month and year display on the calendar.</li>
+        </ul> 
+    <li>Click the number of the day that the charge occurred. The calendar closes.</li>
+    <p><b>Note:</b> You can only select a date that occurs after your last generated invoice.</p>
+    <li>From the Category drop-down menu, select a Fee Category. The Description and Amount fields automatically update with the preset information. You may edit this information if necessary. This field is optional.</li>
+    <p><b>Note:</b> For more information about Fee Categories, see <a href="#introfeecategories">Introduction to Fee Categories</a>. </p>
+    <li>In the Description text box, enter more detail about what the fee is for or edit the default Fee Category information. This field is required.</li>
+    <li>In the amount text box, enter the total amount being charged to the family. For example, if 4 students in a family are each buying a $10 book, then enter <b>40.00</b>.</li>
+    <li>Once you have entered the family total, allocate it among the members of the family in one of these ways:</li>
+<table class="data">
+        <tr class="d0"><td>Allocate Equally</td><td>Divides the charge equally among all members of the family. In our book example, each of the 4 students is charged $10.</td></tr>
+        <tr><td>Allocate All</td><td>Applies the entire charge to a single family member. Use this option to charge one student in a family a fee that applies only to them. For example, the first-grade art kit only needs to be applied to the family’s first grader, not to the third- and sixth-grade students in the family.</td></tr>
+        <tr class="d0"><td>Custom Entry</td><td>You can manually enter unequal charges to students in a family. For example, a family might owe $100 in total for their 3 students’ pictures. But first-grade, third-grade, and sixth-grade student packages are different prices. You can charge the first-grader $20, the third-grader $35, and the sixth-grader  $45.</td></tr>
+    </table>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/familybillingchargeallocate.png"/>
+    </div>
+</p>
+<ol>
+<p><b>Note:</b> Make sure that the charges you have allocated to the family equal the amount you entered in the Total Amount field. You will not be able to save the charge if the allocation of fees does not equal the Total Amount.</p>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/familybillingallocatetotal.png"/>
+    </div>
+</p>
+<ol start="10">
+<li>Click <b>Save</b> to save the charges to the family or <b>Cancel</b> to leave the account unchanged.</li>
+</ol>
+
+
+
+
+<h3 id="deletingchargesfamilybilling">Deleting a Charge from a Family Account</h3>
+<p>You can delete a charge from a family account until an invoice is generated for the family. To remove a charge after an invoice has been generated, you will need to issue a refund. For more information about generating invoices and issuing refunds, see <a href="#generatinginvoices">Generating an Invoice</a> and <a href="#issuingrefunds">Issuing a Refund</a>.</p>
+<ol>
+    <li>From the Student Billing table, click the Primary Payer of the account you want to edit. The primary payer’s family account opens.</li>
+    <li>Click <b>Delete</b> next to the charge you want to remove. </li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/familybillingdeletecharge.png" width="" height=""/>
+    </div>
+</p>
+<ol start="3">
+<li>A confirmation dialog box displays.</li>
+<li>Click <b>Yes, Delete Family Charge</b> to delete the charge, or <b>Cancel</b> to leave the account unchanged.</li>
+</ol>
+
+
+
+
+
 
 </div> <!-- End content -->
 
