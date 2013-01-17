@@ -10,10 +10,11 @@ function loadedPage() {
 
 		loadHtml(chapter, function(chapter, i) {
 			return function(data) {
-				console.log("Loaded chapter:", chapter);
-				chapterData[i] = data;
-				numLoaded++;
-
+                numLoaded++;
+                chapterData[i] = data;
+                
+				console.log("Loaded chapter:", chapter, numLoaded + "/" + chapters.length);
+				
 				if(numLoaded == chapters.length) {
 					console.log("Loaded all html files.");
 					renderChapters();
@@ -85,7 +86,7 @@ function processHeaders(h1Id, section, i, newToc) {
     newH1.find(".header-text").text(headerText);
     newH1.find(".header-num").text(getChapNum(i));
     
-    newH1.find(".header-comments-link").click(function() {
+    newH1.find(".comment-icon").click(function() {
         window.open("./comments/" + h1Id + "/", "_blank");
     });
     
