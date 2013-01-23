@@ -1473,11 +1473,22 @@
 <li>Click <b>Yes, Delete Family Charge</b> to delete the charge, or <b>Cancel</b> to leave the account unchanged.</li>
 </ol>
 
+<h2 class="system-admin">Refunds</h2>
 
-
-
-
-
+<p> 
+   Stripe fees are refunded as well. There are two cases: 
+</p>
+<ul>
+    <li>Partial Refunded: New Stripe fee is calculated as usual on the new charge amount (ie Previous Amount - Refuned Amount). 
+    The fee amount refunded is the old fee - new fee amount.</li>
+    <li>Full Refunded: Entire Stripe fee is refunded. (ie 0.00)</li>
+</ul>
+<p>
+    QuickSchools fees are never refunded. The original amount is kept.
+</p>
+<p>
+    Right now there is a possible one cent discrepency in the Stripe fee refund amount between what is mentioned in QuickSchools and what is actually refunded.
+</p>
 </div> <!-- End content -->
 
 </body>

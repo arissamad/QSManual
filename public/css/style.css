@@ -785,3 +785,13 @@ table.data tr:hover .d0 td{
     background: #ddf;
     color: 1px solid black;
 }
+
+
+
+
+/*
+ * For QuickSchools Admin Staff
+ */
+.system-admin {
+    display: none;
+}
