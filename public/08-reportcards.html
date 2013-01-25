@@ -664,6 +664,23 @@ box on the upper half of the page, as shown here: </p>
 <p>Access to Report Card grading is discussed further in the section on <a href="#subjectbased">Subject-Based Grading</a> in 
 the Report Cards module of this manual above.</p>
 
+
+<div class="system-admin">
+    Clear Locked Values
+    
+    <p> 
+       When locking a report card, it takes a snap shot of the Gradebook. To refresh report card with latest gradebook values, you need to enable the 
+       SMS:AdminClearZeusLocks Access Rights. Here are the steps:
+    </p>
+    <ul>
+        <li>Go to "School Settings" and create a custom role. Role name MUST start with the name "Custom"</li>
+        <li>Assign the user to the role</li>
+        <li>Log into Control, and go to the "Access Rights" menu, and load the access rights for the school</li>
+        <li>Then Edit the permissions, and add the "SMS:AdminClearZeusLocks" access rights</li>
+        <li>Re-login as the user and test</li>
+    </ul>
 </div>
+
+</div> <!-- End content -->
 </body>
 </html> 

@@ -794,4 +794,5 @@ table.data tr:hover .d0 td{
  */
 .system-admin {
     display: none;
+    background: #ccf;
 }

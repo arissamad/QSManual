@@ -150,6 +150,14 @@ function finalSteps() {
         }
     });
     
+    console.log("Href: " + window.location.href);
+    if(window.location.href.indexOf("qsadmin") >= 0) {
+        console.log("Found qsadmin");
+        debugger;
+        turnOnSection("system-admin");
+    } else {
+        console.log("No qsadmin");
+    }
 }
 
 function filterPath(string) {
@@ -257,4 +265,9 @@ function getChapNum(index) {
 
 function getSubNum(index1, index2) {
     return (index1+1) +"." + (index2+1);
+}
+
+// To turn on specific manual sections
+function turnOnSection(sectionId) {
+    $("." + sectionId).show();
 }
