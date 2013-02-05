@@ -50,6 +50,12 @@ and how to run and retrieve reports utilizing different types of attendance data
 </ul>
 
 <li><a href="#attendsettings">Attendance Settings</a></li>
+<ul>
+<li><a href="#setdaily">Setting Daily Attendance</a></li>    
+<li><a href="#setperiod">Setting Period-Based Attendance</a></li>
+<li><a href="#setsubject">Setting Subject Attendance</a></li>
+</ul>
+
 </ul>
 
 <h2 id="attendfeatures">Activating and Configuring Attendance Feature and Privileges</h2>
@@ -397,11 +403,42 @@ students recently enrolled in the class who are not yet appearing on the attenda
 <h2 id="attendsettings">Attendance Settings</h2>
 
 <p>On the Attendance Settings page, you can configure the type of attendance for each grade in the school; it can be taken daily, 
-by period, or by subject.</p>
+by period, or by subject. Note that <i>daily</i> attendance is also called <i>homeroom</i> attendance, and <i>period</i> attendance 
+is attendance taken multiple times per day in the homeroom class.
+</p>
 
 <div class="center"><img src="images_ks_attendance/attendscreen.png" width="828" height="667"/></div>
 
+<h3 id="setdaily">Setting Daily Attendance</h3>
 
+<p>Selecting Daily Attendance for a grade will leave the default setting in place, enabling the homeroom
+teacher for that class to take attendance once per day through the <a href="#homeroomattend"><b>Homeroom Attendance</b></a> tab.
+</p>
+
+<h3 id="setperiod">Setting Period-Based Attendance</h3>
+
+<p>Selecting Period-Based Attendance for a grade will open a series of boxes in the settings grid, so that you
+can designate how many times per day attendance should be taken by the homeroom teacher. 
+</p>
+
+<div class="center"><img src="images_ks_attendance/periodattend.png" width="640" height="333"/></div>
+
+<p>You must enter the number "1" or a greater in the box for each day, regardless of whether or not it is a school day.
+Attempting to enter a value of zero or leaving a box blank will result in the following error message:</p>
+
+<div class="center"><img src="images_ks_attendance/oopsvalue.png" width="320" height="134"/></div>
+
+<p>For weekend days and other non-school days, put "1" in the box and simply do not take attendance. Entering a number greater than one will result in the 
+appearance of multiple tabs on the <a href="#homeroomattend"><b>Homeroom Attendance</b></a> page, corresponding to the number of periods entered for that day.
+In the above example, the settings indicate that attendance will be taken three times daily on Monday, Wednesday, and Friday, but
+just once a day on Tuesdays and Thursdays.
+</p>
+
+<p>Taking attendance on Friday, then, results in the appearance of three period tabs on the <b>Homeroom Attendance</b> page, as shown:</p>
+
+<div class="center"><img src="images_ks_attendance/homeroomperiodattend.png" width="600" height="431"/></div>
+
+<p>This is useful when you wish to document partial day absences, or track attendance specifically in one period of the day.</p>
 
 </div>
 </body>
