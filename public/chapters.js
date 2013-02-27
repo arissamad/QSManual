@@ -8,6 +8,7 @@ chapters[chapters.length] = "05-attendance.html";
 chapters[chapters.length] = "063-ksgradebook.html";
 chapters[chapters.length] = "07-feetracking.html";
 chapters[chapters.length] = "08-reportcards.html";
+chapters[chapters.length] = "081-transcripts.html";
 chapters[chapters.length] = "09-homework.html";
 chapters[chapters.length] = "10-parentportal.html";
 chapters[chapters.length] = "11-parentmessaging.html";
