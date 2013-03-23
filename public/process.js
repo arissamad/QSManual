@@ -1,3 +1,6 @@
+if(!window.console) window.console={};
+if(!window.console.log) window.console.log=function(){};
+
 var chapterData = [];
 var pauseHashChangeDetection = false;
 
@@ -62,6 +65,49 @@ function renderChapters() {
         var chapterFile = $(chapterData[i]);
         var chapterContent = chapterFile.filter(".content");
         
+        //resize images
+        var chapterImages = chapterContent.find("div.center img");
+        
+        chapterImages.filter(function(index){
+            return Number($(this).attr('width')) > 690;            
+        }).height(function(index,oldHeight){
+            var oldWidth = Number($(this).attr('width'));
+            var oldHeight = Number($(this).attr('height'));
+            return oldHeight*690/oldWidth;
+        }).width(function(index,oldWidth){
+            return 690;
+        });
+        
+        chapterImages.replaceWith(function(){
+            console.log("ImageReplace", this, arguments);
+            var img = $(this);
+            
+            var width = img.width() || Number(img.attr("width"));
+            var height = img.height() || Number(img.attr("height"));
+            
+            var lazyDiv = $("<div></div>").addClass("lazy-image").height(height).width(width);
+            
+            //prevent loading of image
+            img.attr("_src",img.attr("src"));
+            img.removeAttr("src");
+            
+            lazyDiv.data("img",img);
+            
+            lazyDiv.one("inview.QSManual", function(){
+                console.log("REPLACE IMAGE",$(this),lazyDiv.data("img"));
+                var img = lazyDiv.data("img");
+                img.attr("src",img.attr("_src"));
+                img.removeAttr("_src");
+                lazyDiv.replaceWith(img);
+                lazyDiv.remove();
+            })
+            
+            return lazyDiv;
+        });
+        
+        
+        console.log("chapterContent",chapterContent);
+        
         contentDiv.append("<div class='anchor' id='" + h1Id + "'></div>");
         
         var section = $("<section></section>");
@@ -72,6 +118,22 @@ function renderChapters() {
         
         processHeaders(h1Id, chapterContent, i, newToc);
 	}
+    
+    $(window).on("scroll", function() {
+        //console.log("Scroll", this,arguments);
+        //chapter buckets
+        $("section div.content").each(function(index,chapter) {
+           // console.log("Scroll", index, chapter);
+            if(isElementVisible(chapter)){
+                $(chapter).find("div.lazy-image").each(function(index,lazyDiv){
+                    //console.log("Scroll", index, lazyDiv);
+                    if(isElementVisible(lazyDiv)){
+                        $(lazyDiv).trigger("inview.QSManual");
+                    }    
+                });
+            }
+        });
+    });
     
     finalSteps();
 }
@@ -270,4 +332,13 @@ function getSubNum(index1, index2) {
 // To turn on specific manual sections
 function turnOnSection(sectionId) {
     $("." + sectionId).show();
+}
+
+function isElementVisible(elem){
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+    return elemBottom > docViewTop && docViewBottom > elemTop;
 }
