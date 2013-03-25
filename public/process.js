@@ -42,15 +42,22 @@ function renderChapters() {
     var contentDiv = $("#content-div");
     contentDiv.empty();
     
+    var srcAlt = "data-source";
+    //assumes div.center|left
 	for(var i=0; i<chapterData.length; i++) {
-
-        var h1Id = $(chapterData[i]).find("h1").attr("id");
+ 
+        var chapterFile = $(chapterData[i].replace(new RegExp("(<div\\s+class=\"(?:center|left)\"\\s*>\\s*)(<img[^>]*src *= *[\"']?)([^\"']*)","g"),"$1<img "+srcAlt+"=\"$3"));
+        console.log("DATA: ",chapterData[i].replace(new RegExp("(<div\\s+class=\"(?:center|left)\"\\s*>\\s*)(<img[^>]*src *= *[\"']?)([^\"']*)","g"),"$1<img "+srcAlt+"=\"$3"));
+        //var chapterFile = $(chapterData[i]);
+        
+        console.log("WHAT?",chapterFile);
+        var h1Id = chapterFile.find("h1").attr("id");
         if(h1Id == null || h1Id == "") {
             h1Id = "chapter-" + (i+1);
         }
         
         
-		var chapterTitle = $(chapterData[i]).find("h1").text();
+		var chapterTitle = chapterFile.find("h1").text();
 		
         var newToc = toc1.clone();
         
@@ -62,11 +69,11 @@ function renderChapters() {
         
         tocParent.append(newToc);
         
-        var chapterFile = $(chapterData[i]);
+        
         var chapterContent = chapterFile.filter(".content");
         
-        //resize images
-        var chapterImages = chapterContent.find("div.center img");
+        //resize images, assumes div.center, and div.left
+        var chapterImages = chapterContent.find("div.center > img, div.left img");
         
         chapterImages.filter(function(index){
             return Number($(this).attr('width')) > 690;            
@@ -79,7 +86,7 @@ function renderChapters() {
         });
         
         chapterImages.replaceWith(function(){
-            console.log("ImageReplace", this, arguments);
+            //console.log("ImageReplace", this, arguments);
             var img = $(this);
             
             var width = img.width() || Number(img.attr("width"));
@@ -88,7 +95,7 @@ function renderChapters() {
             var lazyDiv = $("<div></div>").addClass("lazy-image").height(height).width(width);
             
             //prevent loading of image
-            img.attr("_src",img.attr("src"));
+            img.attr(srcAlt,img.attr("src"));
             img.removeAttr("src");
             
             lazyDiv.data("img",img);
@@ -96,15 +103,14 @@ function renderChapters() {
             lazyDiv.one("inview.QSManual", function(){
                 console.log("REPLACE IMAGE",$(this),lazyDiv.data("img"));
                 var img = lazyDiv.data("img");
-                img.attr("src",img.attr("_src"));
-                img.removeAttr("_src");
+                img.attr("src",img.attr(srcAlt));
+                img.removeAttr(srcAlt);
                 lazyDiv.replaceWith(img);
                 lazyDiv.remove();
             })
             
             return lazyDiv;
         });
-        
         
         console.log("chapterContent",chapterContent);
         
