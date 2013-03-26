@@ -21,9 +21,6 @@
  	<link href="manual.css" rel="stylesheet" type="text/css"></script> -->
 
 
-
-
-
 <script>
 
 function ready2() {
@@ -65,17 +62,19 @@ function ready2() {
 	
     
     /** ADD PRINT CAPABLITY **/
-    $(".print-icon").click(function(){
+    $(".print-icon").click(function(e){
+        e.preventDefault();//prevent default click
+        
         //loading icon
         console.log("CLICK PRINT");
         
-        var $loadingDiv = $("<div/>").addClass("loading-section-cover");
+        var $loadingDiv = $("<div/>").addClass("preparing-print-cover");
         $loadingDiv.prependTo("body");
+        $loadingDiv.append("<div class='preparing-print-message'>Preparing print out. Please wait...</div>");
+        $loadingDiv.append("<div class='preparing-print-loading'></div>");
         
         var $this = $(this);
         var $section = $this.parents("section");
-
-      
 
         var $iframe;
         if($("#printIframe").length > 0){
@@ -85,8 +84,11 @@ function ready2() {
             //iframe does not exist;
             $iframe = $("<iframe/>").attr({"name":"printIframe", "id":"printIframe"});
             //append to document
-            $iframe.prependTo("body");
+            
         }
+        //append to document/move to before section
+        $iframe.insertBefore($section);
+        
          
         var $iframeHead = $iframe.contents().find("head");
         var $iframeBody = $iframe.contents().find("body");
@@ -98,8 +100,8 @@ function ready2() {
         
             var w = window.frames['printIframe'];
             w.focus();//IE
-            $loadingDiv.remove();
             w.print();
+            $loadingDiv.remove();
         };
         
         //append stylesheet
@@ -166,68 +168,67 @@ type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
 
 <div class="wrap">
     <div class="wrap-inner">
-    
     <aside>
-        <a href="http://www.quickschools.com" target="_blank"><div class="logo"><img src="images/logo.png"></div></a>
-        
-        <div class="initial-load loading-section">
-        Loading...
-        </div>
-        
-        <div class="post-load">
-            <div class="top" style="display:none">Online Manual Version:
-                <a href="#top" class="selected">Teachers</a>
-                <a href="#top">Administrators</a>
-                <a href="#top">Parents</a>
-                <a href="#top">Students</a>
+            <a href="http://www.quickschools.com" target="_blank"><div class="logo"><img src="images/logo.png"></div></a>
+            
+            <div class="initial-load loading-section">
+            Loading...
             </div>
-    
-            <div id="wrapper">
-                
-                <div class="toc1">
-                    <div class="line"></div>
-                    <div class="accordionButton"><a href="#top" class="nav"><span class="chap-text">Introduction</span> <span class="chap-num">Ch. 0</span></a></div>
+            
+            <div class="post-load">
+                <div class="top" style="display:none">Online Manual Version:
+                    <a href="#top" class="selected">Teachers</a>
+                    <a href="#top">Administrators</a>
+                    <a href="#top">Parents</a>
+                    <a href="#top">Students</a>
+                </div>
+        
+                <div id="wrapper">
                     
-                    <div class="toc2Holder accordionContent">
-                        <a href="#chap1-1" class="toc2 sub-nav"><span class="header-text">Sub Section</span> <span class="header-num">1.1</span></a>
+                    <div class="toc1">
+                        <div class="line"></div>
+                        <div class="accordionButton"><a href="#top" class="nav"><span class="chap-text">Introduction</span> <span class="chap-num">Ch. 0</span></a></div>
+                        
+                        <div class="toc2Holder accordionContent">
+                            <a href="#chap1-1" class="toc2 sub-nav"><span class="header-text">Sub Section</span> <span class="header-num">1.1</span></a>
+                        </div>
+                    
                     </div>
-                
-                </div>
-                
-                <div class="line"></div>
-                
-                <div class="accordionButton"><a href="#chap1" class="nav">Teachers <span>Ch. 1</span></a></div>
-                
-                <div class="accordionContent">
-                    <a href="#chap1-1" class="sub-nav">Sub Section <span>1.1</span></a><br/>
-                    <a href="#chap1-2" class="sub-nav">Lorum Ipsum <span>1.2</span></a><br/>
-                    <a href="#chap1-3" class="sub-nav">Dolor <span>1.3</span></a><br/>
-                </div>
-                
-                <div class="line"></div>
-                
-                <div class="accordionButton"><a href="#chap2" class="nav">Students <span>Ch. 2</span></a></div>
-                <div class="accordionContent">
-                    <a href="#chap2-1" class="sub-nav">Lorum <span>2.1</span></a><br/>
-                    <a href="#chap2-2" class="sub-nav">Sub Section <span>2.2</span></a><br/>
-                    <a href="#chap2-3" class="sub-nav">Dolor <span>2.3</span></a><br/>
-                </div>
-                
-                <div class="line"></div>
-                
-                <div class="accordionButton"><a href="#chap3" class="nav">Attendance <span>Ch. 3</span></a></div>
-                <div class="accordionContent">
-                    <a href="#chap3-1" class="sub-nav">Ipsum <span>3.1</span></a><br/>
-                    <a href="#chap3-2" class="sub-nav">Dolor <span>3.2</span></a><br/>
-                    <a href="#chap3-3" class="sub-nav">Sub Section <span>3.3</span></a><br/>
-                </div>
-                
-                <div class="line"></div>
-    
-          	</div> <!-- wrapper -->
-        </div> <!-- post-load -->
+                    
+                    <div class="line"></div>
+                    
+                    <div class="accordionButton"><a href="#chap1" class="nav">Teachers <span>Ch. 1</span></a></div>
+                    
+                    <div class="accordionContent">
+                        <a href="#chap1-1" class="sub-nav">Sub Section <span>1.1</span></a><br/>
+                        <a href="#chap1-2" class="sub-nav">Lorum Ipsum <span>1.2</span></a><br/>
+                        <a href="#chap1-3" class="sub-nav">Dolor <span>1.3</span></a><br/>
+                    </div>
+                    
+                    <div class="line"></div>
+                    
+                    <div class="accordionButton"><a href="#chap2" class="nav">Students <span>Ch. 2</span></a></div>
+                    <div class="accordionContent">
+                        <a href="#chap2-1" class="sub-nav">Lorum <span>2.1</span></a><br/>
+                        <a href="#chap2-2" class="sub-nav">Sub Section <span>2.2</span></a><br/>
+                        <a href="#chap2-3" class="sub-nav">Dolor <span>2.3</span></a><br/>
+                    </div>
+                    
+                    <div class="line"></div>
+                    
+                    <div class="accordionButton"><a href="#chap3" class="nav">Attendance <span>Ch. 3</span></a></div>
+                    <div class="accordionContent">
+                        <a href="#chap3-1" class="sub-nav">Ipsum <span>3.1</span></a><br/>
+                        <a href="#chap3-2" class="sub-nav">Dolor <span>3.2</span></a><br/>
+                        <a href="#chap3-3" class="sub-nav">Sub Section <span>3.3</span></a><br/>
+                    </div>
+                    
+                    <div class="line"></div>
+        
+              	</div> <!-- wrapper -->
+            </div> <!-- post-load -->
+        
     </aside>
-
 <div class="initial-load">
 <section>
 <div class="loading-section">
