@@ -67,14 +67,16 @@ function ready2() {
     /** ADD PRINT CAPABLITY **/
     $(".print-icon").click(function(){
         //loading icon
-        //var $loadingDiv = $("<div/>").addClass("loading-section-cover");
-        //$loadingDiv.prependTo("body");
+        console.log("CLICK PRINT");
+        
+        var $loadingDiv = $("<div/>").addClass("loading-section-cover");
+        $loadingDiv.prependTo("body");
         
         var $this = $(this);
         var $section = $this.parents("section");
 
-        
-    
+      
+
         var $iframe;
         if($("#printIframe").length > 0){
             $iframe = $("#printIframe");
@@ -89,18 +91,33 @@ function ready2() {
         var $iframeHead = $iframe.contents().find("head");
         var $iframeBody = $iframe.contents().find("body");
         
+        var donePreparingPrint = function($iframeBody,$section,$loadingDiv){
+            console.log("donePreparingPrint");
+            //append section content
+            $iframeBody.append($section.html());
+        
+            var w = window.frames['printIframe'];
+            w.focus();//IE
+            $loadingDiv.remove();
+            w.print();
+        };
+        
         //append stylesheet
         $iframeHead.append("<link rel='stylesheet' type='text/css' media='print' href='css/print.css' />");
-        $section.find("div.lazy-image").trigger("inview.QSManual");
-        //append section content
-        $iframeBody.append($section.html());
+        if($section.data("imgsNotLoaded") === 0) {
+            donePreparingPrint($iframeBody,$section,$loadingDiv);
+        } else {
+            console.log("SECTION",$section);
+            $section.one("lazyloaded.QSManual", function(){
+                console.log("SECTION","lazyloaded triggered");
+                donePreparingPrint($iframeBody,$section,$loadingDiv);
+            })
+            $section.find("div.lazy-image").trigger("inview.QSManual");
+            //when all are finally loaded
+
+        }
         
-        var w = window.frames['printIframe'];
-        w.focus();//IE
-        w.print();
-        //$loadingDiv.remove();
-        
-        
+
     });
     
     
@@ -296,7 +313,7 @@ Loading...</div>
 </div> <!-- content-div -->
 
 <footer>
-Copyright 2012 Quickschools
+Copyright 2013 Quickschools
 </footer>
 </div>
 </div>

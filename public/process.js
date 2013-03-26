@@ -120,6 +120,7 @@ function renderChapter(toc1,tocParent,contentDiv,chapterData,order) {
     //resize images, assumes div.center, and div.left
     var chapterImages = chapterContent.find("div.center > img, div.left img");
 
+    
     chapterImages.filter(function(index){
         return Number($(this).attr('width')) > 690;            
     }).height(function(index,oldHeight){
@@ -148,10 +149,21 @@ function renderChapter(toc1,tocParent,contentDiv,chapterData,order) {
         lazyDiv.one("inview.QSManual", function(){
             console.log("REPLACE IMAGE",$(this),lazyDiv.data("img"));
             var img = lazyDiv.data("img");
-            img.attr("src",img.attr(srcAlt));
+            var $section = lazyDiv.closest("section");
+            
+            img.attr("src",img.attr(srcAlt)).one("load", function(){
+                console.log("IMAGE LOADED:", img);
+                console.log("SECTION: ",$section.data("imgsNotLoaded"), $section);
+                $section.data("imgsNotLoaded", $section.data("imgsNotLoaded")-1);
+                if($section.data("imgsNotLoaded") === 0 ) {
+                   $section.trigger("lazyloaded.QSManual"); 
+                }
+            });
             img.removeAttr(srcAlt);
             lazyDiv.replaceWith(img);
             lazyDiv.remove();
+            
+            console.log("END REPLACE IMAGE");
         })
         
         return lazyDiv;
@@ -160,7 +172,9 @@ function renderChapter(toc1,tocParent,contentDiv,chapterData,order) {
     console.log("chapterContent",chapterContent);
     var divAnchor = contentDiv.find("div.anchor#"+h1IdAlt);
     divAnchor.attr("id",h1Id);
-    divAnchor.next("section").append(chapterContent).find("div.loading-section").remove();
+    var $section = divAnchor.next("section");
+    $section.data("imgsNotLoaded", chapterImages.length);
+    $section.append(chapterContent).find("div.loading-section").remove();
     
     processHeaders(h1Id, chapterContent, order, newToc);
 
@@ -230,10 +244,12 @@ function finalSteps() {
     $(window).on("hashchange", function(event) {
         if(!pauseHashChangeDetection) {
             console.log("Triggering hash change:", location.hash);
-            
-            var anchor = $("a[href=" + location.hash +"]");
-            console.log("Anchor is ", anchor);
-            if(anchor.length > 0) scrollToSection(anchor, false);
+            var hash = window.location.hash;
+            if(hash != null && hash != "" && hash != "#") {
+                var anchor = $("a[href=" + hash +"]");
+                console.log("Anchor is ", anchor, anchor.length);
+                if(anchor.length > 0) scrollToSection(anchor, false);
+            }
         }
     });
     
