@@ -1,0 +1,306 @@
+<html>
+<head>
+    <link href="reset.css" rel="stylesheet" type="text/css"></script>
+    <link href="manual.css" rel="stylesheet" type="text/css"></script>
+</head>
+<body>
+
+<div class="content">
+<h1 id="onlinepayments">Online Payments</h1>
+
+<p>Online payments are easy way for your school to manage and collect online credit card payments. QuickSchools uses the online payment service Stripe, so all you need to do is set up an account. Stripe takes care of processing and recording credit card payments, then sends the records right to your QuickSchools account. Once your Stripe account is set up, parents can easily and conveniently pay their bills with their credit cards online right from their QuickSchools Parent Portal.</p> 
+
+<p>This chapter offers detailed information on setting up and managing online payments and setting up and using a Stripe account.</p>
+
+    <li><a href="#introonlinepayments">Introduction to Online Payments</a></li>
+    <li><a href="#enabledisableonlinepayments">Enabling and Disabling Online Payments</a></li>
+    <li><a href="#movingaroundparentpayments">Moving around the Parent Payments Table</a></li>
+    <li><a href="#usingonlinepayments">Using Online Payments</a></li>
+    <li><a href="#accessonlinepayments">Accessing an Online Payment Record</a>
+    <li><a href="#introductionstripe">Introduction to Stripe</a></li>
+        <ul>
+        <li><a href="#settingupstripe">Setting up a Stripe Account</a></li>
+        <li><a href="#syncstripe">Synchronizing Stripe Payment Records with QuickSchools</a></li>
+        <li><a href="#deauthorizetripe">Deauthorizing a Stripe Account</a></li>
+        </ul>
+    <li><a href="#viewingonlinepayments">Viewing an Online Payment</a></li>
+    <li><a href="#sortingonlinepayments">Sorting Parent Payments</a></li>
+    <li><a href="#searchingonlinepayments">Searching for a Parent Payment</a></li>
+    <li><a href="#settingparentpaymentstablepreferences">Setting Parent Payments Table Preferences</a></li>
+    </ul>
+
+
+<h2 id="introonlinepayments">Introduction to Online Payments</h2>
+<p>Online payments provides a quick and convenient way for parents to submit a credit card payment. Online payments are managed through the Parent Payments page which is accessed through the Student Billing feature. Parents can make credit card payments to your school and view their transactions through their Parent Portal.</p>
+
+<p>Online payments are collected through Stripe, an online payment service. Once your Stripe account is set up, online payments are easy for your school to collect and manage and simple for parents to setup and use.</p>
+
+
+<h2 id="enabledisableonlinepayments">Enabling and Disabling Online Payments</h2>
+<p>By default the Online Payments feature comes disabled. After enabling Online Payments, the Parent Payments menu bar option becomes available on the Student Billing page.</p>
+<ol>
+    <li>From the top of the page, click <b>Features</b>.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/features.png" width="680" height="95"/>
+    </div>
+</p>
+<ol start="2">
+    <p>The Features page opens.</p>
+    <li>Go to the row that says School Fees Tracking.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/featuresfeetrackingconfigure.png" width="680" height="280"/>
+    </div>
+</p>
+<ol start="3">
+    <li>Click <b>Configure</b>. The School Fees Tracking dialog box opens.</li>
+</ol>
+<p>
+    <div class="center">
+        <img src="images_ks_fee_tracking/configurationfeetrackingblank.png" width="551" height="680"/>
+    </div>
+</p>
+<ol start="4">
+    <li>Check <b>Turn on Online Payments in the Parent Portal</b>.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/onlinepaymentsenable.png" width="559" height="680"/>
+    </div>
+</p>
+<ol start="5">
+    <li>Click the Select Users who will be able to Manage & View Payments by Parents text box. A list of faculty members opens.</li>
+    <li>From the faculty member list, select who can view and manage online payments.</li>
+    <p><b>Note:</b> If you leave this box blank, nobody will be able to view or manage online payments.</p>
+    <li>Click <b>Save</b> to save your changes. Click <b>Cancel</b> to leave your preferences unchanged.</li>
+</ol>
+
+
+
+<h2 id="movingaroundparentpayments">Moving around the Parent Payments Table</h2>
+<p>By default, 10 categories are displayed on each page of the Parent Payments table. When more than 10 transactions are added, a new page in the Parent Payments table is added. Use the navigation controls at the bottom of the Parent Payments table to scroll through the pages. To change the number of categories shown on each page, see <a href="#settingparentpaymentstablepreferences">Setting Parent Payments Table Preferences</a>.</p>
+<p>
+<div class="center">
+    <img src="images_ks_fee_tracking/pagenavigationparentpayments.png" width="680" height="231"/>
+</div>
+</p>
+
+
+
+
+<h2 id="usingonlinepayments">Using Online Payments</h2>
+<p>Online Payments are made through Stripe so there is no need for your school to handle or process credit card payments. Online payments are posted to the Parent Payments page and to student’s individual accounts when parents make their payments from the QuickSchools Parent Portal.</p> 
+
+
+
+<h2 id="accessonlinepayments">Accessing an Online Payment Record</h2>
+<p> To access a record of online payments that parents have made, go to the Parent Payments page.</p>
+<ol>
+    <li> Click <b>Fee Tracking</b> at the top of the page. The Student Billing page opens.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/accessfeetracking.png" width="680" height="85"/>
+    </div>
+</p>
+<ol start="2">
+    <li>On the right of the Student Billing page, click <b>Parent Payments</b>. The Parent Payments page opens.</li>
+    <p><b>Note:</b> If there is no Parent Payments option at the top of the page, see <a href="#enabledisableonlinepayments">Enabling and Disabling Online Payments</a>.</p>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/onlinepaymentsparentpayments.png" width="680" height="204"/>
+    </div>
+</p>
+
+
+
+
+<h2 id="introductionstripe">Introduction to Stripe</h2>
+<p>QuickSchools uses the online payment service Stripe to manage all online payments to QuickSchools. To receive online payments, you need to setup a Stripe account. A link to Stripe is available within QuickSchools on the Parent Payments page. Once the school's Stripe account is setup, a View and Pay Fees link will be available in the parent portal menu. When parents click View and Pay Fees, they are prompted to enter their credit card information. Once their credit card information has been entered and saved, parents can quickly pay their fees. Generally, online payments are posted to your school bank account by Stripe 7 days after the payment is made.</p>
+
+<p>QuickSchools charges 4.9% + 30 cents on the total amount paid. For a limited time, we're offering a 3.9% + 30 cents transaction fee for schools who set up Stripe accounts early.</p>
+
+
+
+
+
+
+<h3 id="settingupstripe">Setting up a Stripe Account</h3>
+<ol>
+    <li>From the Student Billing table, click <b>Parent Payments</b>. The Parent Payments page opens.</li>
+    <li>Click <b>Connect with Stripe</b>.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/onlinepaymentsconnectstripe.png" width="680" height="293"/>
+    </div>
+</p>
+<ol>
+     <p>You are now at the Stripe Website. The Stripe Account Setup page opens.</p>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/stripeaccountsetup.png" width="680" height="542"/>
+    </div>
+</p>
+<ol start="3">
+<li>Complete the Stripe Account Setup form with your school information.</li>
+<li>Click <b>Authorize Access to this Stripe Account</b> when you are finished. Your account is setup and you will return to QuickSchools. You may need to log back in to your QuickSchools account.</li>
+<li>To access, use, or manage your Stripe account, visit Stripe’s Website at <a href="http://www.stripe.com">Stripe.com</a>.</li>
+</ol>
+
+
+<h3 id="syncstripe">Synchronizing Stripe Payment Records with QuickSchools</h3> 
+<p>Stripe automatically updates your QuickSchools account when online payments are made from the Parent Portal or refunds are issued by your school. These updates usually occur quickly and require no action on your part. However, if a payment or refund is made through the Parent Portal, but your records are not updated immediately, you can synchronize your records with Stripe. This updates your QuickSchools records with the latest payment and refund information that Stripe has recorded.</p>
+
+<p>You can synchronize your QuickSchools account 2 ways:</p>
+<ul>
+<li>Click <b>Synchronize with Stripe</b> from the Parent Payments page.</li>
+</ul>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/parentpaymentssyncstripe.png" width="680" height="260"/>
+    </div>
+</p>
+<ul>
+<li>Click <b>Sync with Stripe</b> from the Online Payment Details dialog box.</li>
+</ul>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/parentpaymentsonlinedetailssync.png" width="637" height="680"/>
+    </div>
+</p>
+
+
+<h3 id="deauthorizetripe">Deauthorizing a Stripe Account</h3>
+<p>If you no longer want to receive online payments from parents through Stripe, you can deauthorize  Stripe from accepting payments on your school’s behalf. Deauthorizing Stripe from your QuickSchools account does not close your Stripe account. To close your Stripe account, go to <a href="http://www.stripe.com">Stripe.com</a>.</p>
+
+<ol>
+<li>From the Parent Payments page, click <b>Disconnect Stripe Account</b>. A confirmation dialog box opens.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/parentpaymentsdisconnectstripe.png" width="680" height="269"/>
+    </div>
+</p>
+<ol start="2">
+<li>Click <b>Yes</b> to deauthorize Stripe from receiving payments from parents on your school’s behalf or <b>Cancel</b> to leave your Stripe account unchanged.</li>
+</ol>
+
+
+
+
+
+
+
+<h2 id="viewingonlinepayments">Viewing an Online Payment</h3>
+<p>All online payments made from the Parent Portal page using Stripe are automatically recorded in your QuickSchools account. To view general online payment information, go to the student’s account. To view detailed online payment information, go to the Parent Payments page.</p>
+
+<h3>Viewing General Online Payment Information</h4>
+<ol>
+<li>From the Student Billing page, click on the Primary Payer or a student name whose account you want to view. The family account or student account opens.</li>
+<li>Click <b>OK</b> when you are finished viewing the account information.</li>
+</ol>
+
+
+<h3>Viewing Detailed Online Payment Information</h4>
+<ol>
+<li>From the Parent Payments page, click on the transaction you want to view. The Online Payment Details dialog box opens.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/parentpaymentspaymentdetails.png" width="638" height="680"/>
+    </div>
+</p>
+<ol start="3">
+<li>Click <b>OK</b> when you are done viewing the information.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+<h2 id="sortingonlinepayments">Sorting Parent Payments</h3>
+<p>To find information faster, you can sort table columns by ascending or descending order.</p>
+<ol>
+    <li>Click on the column that you want to sort. The table sorts information by the selected column in ascending order.</li>
+    <li>Click on the column again to sort by descending order.</li>
+</ol>
+<p>An arrowhead displays in the column that the table is being sorted by. An arrowhead pointing up indicates the table is sorted in ascending order. An arrowhead pointing down indicates the table is sorted in descending order.</p>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/standardchargessortindicator.png" width="680" height="116"/>
+    </div>
+</p>
+<p>In this example, the table is sorted by Standard Charge name in ascending order.</p>
+<ol start="3">
+<li>Click <b>OK</b> to set the number of rows or <b>Cancel</b> to leave the number of rows unchanged.</li>
+</ol>
+
+
+
+
+<h2 id="searchingonlinepayments">Searching for a Parent Payment</h3>
+<p>The search feature enables you to search by date, primary payer, credit card, amount, status or any combination of these parameters.</p>
+<ol>
+    <li>Place your cursor in the Search field.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/parentpaymentssearch.png" width="680" height="148"/>
+    </div>
+</p>
+<ol start="2">
+    <li>Type in the word or value for which you are searching. </li>
+    <li>You can begin your search two ways:</li>
+    <ul>
+        <li>Press <b>Enter</b> on your keyboard.</li>
+        <li>Click the magnifying glass icon at the end of the search field.</li>
+    </ul>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/parentpaymentsmagnifyicon.png" width="411" height="135"/>
+    </div>
+</p>
+<ol start="4">
+    <p>The results of your search display in the Standard Charges table.</p>
+    <li>To return to the main Standard Charges table, click <b>Clear Search</b> below the Search field.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/parentpaymentsclearsearch.png" width="400" height="137"/>
+    </div>
+</p>
+
+
+
+<h2 id="settingparentpaymentstablepreferences">Setting Parent Payments Table Preferences</h3>
+<p>You can set how many rows you want the Parent Payments table to display on each page. By default, 10 rows are displayed on each page.</p>
+<ol>
+    <li>Click the preferences icon at the bottom left of the Parent Payments table. A pop-up menu opens.</li>
+</ol>
+<p>
+    <div class="center">
+    <img src="images_ks_fee_tracking/parentpaymentspreferencesicon.png" width="680" height="273"/>
+    </div>
+</p>
+<ol start="2">
+    <li>Select the number of rows you want to display on each page from the pop-up menu. The table automatically updates.</li>
+    <li>To set a number of rows that is different than the preset options, select <b>Custom</b>. The Number of Rows to Display dialog box opens.</li>
+    <li>In the text field, type the number of rows you want to display. The number must be between 1 and 1000. </li>
+    <li>Click <b>OK</b> to set the number of rows or <b>Cancel</b> to leave the number of rows unchanged.</li>
+</ol>
+
+
+
+</body>
+</html>
