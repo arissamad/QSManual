@@ -199,7 +199,7 @@ body {
 section {
 	width:700px;
 	background:#fff url(../images/gears-bg.png) top right no-repeat;
-	margin-left:220px;
+	margin-left:240px;
 	padding:20px;
 	padding-top:1px;
 	-webkit-box-shadow:  0px 0px 10px 0px rgba(0, 0, 0, .05);
@@ -250,9 +250,12 @@ section {
 }
 
 aside {
-	width:200px;
+	width:220px;
 	position:fixed;
 	margin-top:0px;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -430,7 +433,7 @@ a.nav:hover {
 
 a.nav span.chap-num {
 	color:#00bcf2;
-	right:0px;
+	right:10px;
 	position:absolute;
 }
 
@@ -524,12 +527,15 @@ footer{
  * [aris] My additions
  */ 
 .loading-section-cover{
-    background:url(../images/transparent-loading.gif);
+    background-image:url(../images/transparent-loading.gif);
+    background-color: #666;
     background-repeat:no-repeat;
     background-position:50% 50%;
     height: 100%;
     width: 100%;
-    position: absolute;
+    position: fixed;
+    z-index: 12345;
+    opacity: 0.6;
 } 
  
 .loading-section {
@@ -787,7 +793,40 @@ table.data tr:hover .d0 td{
 }
 
 
+/*
+ * For lazy loading
+ */
+.lazy-image {
+    display: inline-block;
+    background:url(../images/transparent-loading.gif);
+    background-repeat:no-repeat;
+    background-position:50% 50%;
+}
 
+.preparing-print-cover {
+    background-color: rgba(102,102,102,0.6); /* opacity not given to children */
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 12345;
+}
+
+.preparing-print-message {
+    font-size: 6em;
+    line-height: 1em;
+    text-align:center;
+    color: #ffffff;
+    margin: 15% 15% 0 15%;
+    min-height: 100px;
+}
+
+.preparing-print-loading {
+    background-image:url(../images/transparent-loading.gif);
+    background-repeat:no-repeat;
+    background-position:50% 50%;
+    height: 50px;
+    width: 100%;
+}
 
 /*
  * For QuickSchools Admin Staff
