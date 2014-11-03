@@ -96,7 +96,7 @@ function renderChapter(toc1,tocParent,contentDiv,chapterData,order) {
     //prevent image loading by replacing img[src=];
     var chapterData = chapterData.replace(new RegExp("(<div\\s+class=\"(?:center|left)\"\\s*>\\s*)(<img[^>]*src *= *[\"']?)([^\"']*)","g"),"$1<img "+srcAlt+"=\"$3");
     
-    console.log("chapterData: ",chapterData);
+    //console.log("chapterData: ",chapterData);
     var chapterFile = $(chapterData);
     
     var h1Id = chapterFile.find("h1").attr("id");
@@ -113,7 +113,7 @@ function renderChapter(toc1,tocParent,contentDiv,chapterData,order) {
     newToc.find(".chap-text").text(chapterTitle);
     newToc.find(".chap-num").text(getChapNum(order));
 
-    console.log("newToc", newToc);
+    //console.log("newToc", newToc);
 
     var chapterContent = chapterFile.filter(".content");
 
@@ -147,13 +147,13 @@ function renderChapter(toc1,tocParent,contentDiv,chapterData,order) {
         lazyDiv.data("img",img);
         
         lazyDiv.one("inview.QSManual", function(){
-            console.log("REPLACE IMAGE",$(this),lazyDiv.data("img"));
+            //console.log("REPLACE IMAGE",$(this),lazyDiv.data("img"));
             var img = lazyDiv.data("img");
             var $section = lazyDiv.closest("section");
             
             img.attr("src",img.attr(srcAlt)).one("load", function(){
                 console.log("IMAGE LOADED:", img);
-                console.log("SECTION: ",$section.data("imgsNotLoaded"), $section);
+                //console.log("SECTION: ",$section.data("imgsNotLoaded"), $section);
                 $section.data("imgsNotLoaded", $section.data("imgsNotLoaded")-1);
                 if($section.data("imgsNotLoaded") === 0 ) {
                    $section.trigger("lazyloaded.QSManual"); 
@@ -163,13 +163,13 @@ function renderChapter(toc1,tocParent,contentDiv,chapterData,order) {
             lazyDiv.replaceWith(img);
             lazyDiv.remove();
             
-            console.log("END REPLACE IMAGE");
+            //console.log("END REPLACE IMAGE");
         })
         
         return lazyDiv;
     });
 
-    console.log("chapterContent",chapterContent);
+    //console.log("chapterContent",chapterContent);
     var divAnchor = contentDiv.find("div.anchor#"+h1IdAlt);
     divAnchor.attr("id",h1Id);
     var $section = divAnchor.next("section");
@@ -356,7 +356,7 @@ function loadHtml(htmlFile, successFunction) {
       url: htmlFile + "?" + nocache,
       success: successFunction,
       error: function(a,b,c) {
-              log.error("Error loading HTML: " + htmlFile);
+              console.error("Error loading HTML: " + htmlFile);
       },
       dataType: "html"
     });
